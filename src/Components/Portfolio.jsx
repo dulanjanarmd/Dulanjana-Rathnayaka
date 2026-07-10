@@ -1,32 +1,28 @@
 import React, { useEffect } from "react";
 
-const projectList = [
+const projects = [
   {
-    icon: "🐙",
+    tag: "GitHub",
     title: "GitHub Profile",
-    description:
-      "Explore my repositories, open source contributions, and coding projects related to information systems and data analysis.",
+    desc: "Explore my repositories, open source contributions, and coding projects related to information systems and data analysis.",
     url: "https://github.com/dulanjanarmd",
   },
   {
-    icon: "💼",
+    tag: "LinkedIn",
     title: "LinkedIn Profile",
-    description:
-      "Connect with me professionally. View my academic background, skills, certifications, and career journey.",
+    desc: "Connect with me professionally. View my academic background, skills, certifications, and career journey as an aspiring analyst.",
     url: "https://www.linkedin.com/in/dulanjanarmd",
   },
   {
-    icon: "📊",
+    tag: "Coming Soon",
     title: "Data Analysis Projects",
-    description:
-      "Coming soon — data analysis and visualization projects built during my studies at SLIIT.",
+    desc: "Data analysis and visualization projects built during my studies at SLIIT — dashboards, reports, and statistical models.",
     url: "https://github.com/dulanjanarmd",
   },
   {
-    icon: "🏗️",
+    tag: "Coming Soon",
     title: "System Design Work",
-    description:
-      "Coming soon — system analysis and design artifacts including UML diagrams, ERDs, and process models.",
+    desc: "System analysis and design artifacts including UML diagrams, ERDs, DFDs, and process models from academic projects.",
     url: "https://github.com/dulanjanarmd",
   },
 ];
@@ -34,39 +30,44 @@ const projectList = [
 const Portfolio = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
+      entries => entries.forEach(e => e.isIntersecting && e.target.classList.add("visible")),
       { threshold: 0.1 }
     );
-    document.querySelectorAll(".reveal, .reveal-left, .reveal-right").forEach((el) =>
-      observer.observe(el)
-    );
+    document.querySelectorAll(".reveal, .reveal-left, .reveal-right").forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="portfolio">
-      <div className="section-header reveal">
-        <div className="section-tag">Portfolio</div>
-        <h2 className="section-title">
-          My <span>Work</span>
-        </h2>
+    <section id="portfolio" className="section">
+      <div className="portfolio-header">
+        <div className="reveal-left">
+          <div className="section-label">My Work</div>
+          <h2 className="section-title">Recent <span>Projects</span></h2>
+          <div className="divider" />
+        </div>
+        <a
+          href="https://github.com/dulanjanarmd"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-outline reveal-right"
+        >
+          View All →
+        </a>
       </div>
 
       <div className="portfolio-grid">
-        {projectList.map((project, i) => (
+        {projects.map((p, i) => (
           <a
-            key={project.title}
-            href={project.url}
+            key={p.title}
+            href={p.url}
             target="_blank"
             rel="noopener noreferrer"
             className="project-card reveal"
             style={{ transitionDelay: `${i * 0.1}s` }}
           >
-            <div className="project-icon">{project.icon}</div>
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <div className="project-arrow">↗</div>
+            <div className="project-tag">{p.tag}</div>
+            <h3>{p.title}</h3>
+            <p>{p.desc}</p>
           </a>
         ))}
       </div>

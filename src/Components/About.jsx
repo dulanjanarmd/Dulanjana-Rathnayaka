@@ -1,73 +1,117 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
-const description =
-  "I'm an undergraduate at Sri Lanka Institute of Information Technology (SLIIT), pursuing a BSc(Hons) in Information Technology specialized in Information Systems Engineering. Passionate about turning data and systems into meaningful business solutions.";
-
-const skillsList = [
-  "Business Analysis",
-  "Data Analysis",
-  "Systems Analysis",
-  "Information Systems",
-  "Database Management",
-  "Requirements Engineering",
-  "Process Modeling",
-  "Problem Solving",
+const skills = [
+  { name: "Business Analysis", pct: 85 },
+  { name: "Data Analysis", pct: 80 },
+  { name: "Systems Analysis", pct: 78 },
+  { name: "Database Management", pct: 75 },
+  { name: "Requirements Engineering", pct: 82 },
+  { name: "Process Modeling", pct: 70 },
 ];
 
-const detailOrQuote =
-  "Aspiring Business Analyst, Data Analyst, and System Analyst with a strong foundation in Information Systems Engineering. I bridge the gap between technology and business to deliver impactful, data-driven solutions.";
-
 const About = () => {
+  const barsRef = useRef([]);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          // animate skill bars
+          document.querySelectorAll(".skill-bar-fill").forEach(bar => {
+            bar.style.width = bar.dataset.pct + "%";
+          });
+        }
+      }),
       { threshold: 0.15 }
     );
-    document.querySelectorAll(".reveal, .reveal-left, .reveal-right").forEach((el) => observer.observe(el));
+    document.querySelectorAll(".reveal, .reveal-left, .reveal-right").forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="about">
-      <div className="section-header reveal">
-        <div className="section-tag">About Me</div>
-        <h2 className="section-title">
-          Who <span>I Am</span>
-        </h2>
-      </div>
+    <section id="about" className="section">
+      <div className="about-inner">
 
-      <div className="about-grid">
-        <div className="about-card reveal-left">
-          <h3>🎓 Education</h3>
-          <p>
-            <strong style={{ color: "#e2e8f0" }}>BSc(Hons) Information Technology</strong>
-            <br />
-            Specialized in Information Systems Engineering
-            <br />
-            <span style={{ color: "#6c63ff", fontWeight: 600 }}>SLIIT — Sri Lanka</span>
+        {/* LEFT */}
+        <div className="about-left reveal-left">
+          <div className="section-label">About Me</div>
+          <h2 className="section-title">Who I <span>Am</span></h2>
+          <div className="divider" />
+          <p className="about-text">
+            I&apos;m Dulanjana Rathnayaka, an undergraduate at Sri Lanka Institute of
+            Information Technology (SLIIT) pursuing a BSc(Hons) in Information Technology
+            specialized in Information Systems Engineering.
           </p>
-          <div className="stat-row">
-            <div className="stat-box">
-              <div className="num">ISE</div>
-              <div className="label">Specialization</div>
+          <p className="about-text">
+            I am passionate about transforming complex data and systems into meaningful
+            business solutions. My goal is to bridge the gap between technology and
+            business as a Business Analyst, Data Analyst, or System Analyst.
+          </p>
+
+          <div className="about-info">
+            <div className="about-info-item">
+              <div className="info-label">Degree</div>
+              <div className="info-val">BSc(Hons) IT</div>
             </div>
-            <div className="stat-box">
-              <div className="num">IT</div>
-              <div className="label">BSc(Hons)</div>
+            <div className="about-info-item">
+              <div className="info-label">University</div>
+              <div className="info-val">SLIIT</div>
+            </div>
+            <div className="about-info-item">
+              <div className="info-label">Specialization</div>
+              <div className="info-val">ISE</div>
+            </div>
+            <div className="about-info-item">
+              <div className="info-label">Location</div>
+              <div className="info-val">Sri Lanka</div>
+            </div>
+            <div className="about-info-item">
+              <div className="info-label">Email</div>
+              <div className="info-val">dulanjanarmd@gmail.com</div>
+            </div>
+            <div className="about-info-item">
+              <div className="info-label">Status</div>
+              <div className="info-val" style={{ color: "#00ff96" }}>Open to Work</div>
             </div>
           </div>
-          <p style={{ marginTop: "1.5rem" }}>{detailOrQuote}</p>
+
+          <div className="about-stats">
+            <div className="stat-item">
+              <div className="stat-num">3+</div>
+              <div className="stat-lbl">Years Study</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-num">10+</div>
+              <div className="stat-lbl">Projects</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-num">6+</div>
+              <div className="stat-lbl">Skills</div>
+            </div>
+          </div>
         </div>
 
-        <div className="about-card reveal-right">
-          <h3>⚡ Skills & Interests</h3>
-          <p>{description}</p>
-          <div className="skills-grid" style={{ marginTop: "1.5rem" }}>
-            {skillsList.map((skill) => (
-              <div className="skill-chip" key={skill}>{skill}</div>
-            ))}
-          </div>
+        {/* RIGHT */}
+        <div className="about-right reveal-right">
+          <div className="skills-title">My Skills</div>
+          {skills.map(s => (
+            <div className="skill-bar-wrap" key={s.name}>
+              <div className="skill-bar-top">
+                <span>{s.name}</span>
+                <span>{s.pct}%</span>
+              </div>
+              <div className="skill-bar-bg">
+                <div
+                  className="skill-bar-fill"
+                  data-pct={s.pct}
+                  ref={el => barsRef.current.push(el)}
+                />
+              </div>
+            </div>
+          ))}
         </div>
+
       </div>
     </section>
   );
