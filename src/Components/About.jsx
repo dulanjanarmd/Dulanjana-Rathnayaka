@@ -1,83 +1,73 @@
-/**
- * About component
- *
- * Space for you to describe more about yourself.
- */
+import React, { useEffect } from "react";
 
-import React from "react";
-
-/**
- * About background image
- *
- * Below is a sample image. Upload the image of your choice into the "images"
- * directory and import here for use. Then, set imageAltText to string that 
- * represents what you see in that image.
- *
- * Need an image? Check out https://unsplash.com to download a image you
- * freely use on your site.
- */
-import image from "../images/motion-background.jpg";
-
-const imageAltText = "purple and blue abstract background";
-
-/**
- * Sort description that expands on your title on the Home component.
- */
 const description =
-  "I'm a UI/UX student studying at Barnett Technical University. I enjoy creating unique and simplistic user interfaces in creative ways.";
+  "I'm an undergraduate at Sri Lanka Institute of Information Technology (SLIIT), pursuing a BSc(Hons) in Information Technology specialized in Information Systems Engineering. Passionate about turning data and systems into meaningful business solutions.";
 
-/**
- * List of some of skills or technologies you work on, are learning,
- * passionate about, or enjoy,
- */
 const skillsList = [
-  "Web design",
-  "User experience",
-  "Inclusive design",
-  "Focus group testing",
-  "Mobile user interfaces",
-  "Graphic design",
+  "Business Analysis",
+  "Data Analysis",
+  "Systems Analysis",
+  "Information Systems",
+  "Database Management",
+  "Requirements Engineering",
+  "Process Modeling",
+  "Problem Solving",
 ];
 
-/**
- * Use this to give more information about what you are passionate about,
- * how you best work, or even a quote. This will help someone learn more
- * about you on a professional level.
- */
 const detailOrQuote =
-  "I am passionate about solving problems in new creative ways to drive innovation. By leveraging my UI/UX experience I continually look for new and better ways to make tech accessible by all.";
+  "Aspiring Business Analyst, Data Analyst, and System Analyst with a strong foundation in Information Systems Engineering. I bridge the gap between technology and business to deliver impactful, data-driven solutions.";
 
 const About = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
+      { threshold: 0.15 }
+    );
+    document.querySelectorAll(".reveal, .reveal-left, .reveal-right").forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="padding" id="about">
-      <img className="background" src={image} alt={imageAltText} />
-      <div
-        style={{
-          backgroundColor: "white",
-          width: "50%",
-          padding: "4rem",
-          margin: "3rem auto",
-          textAlign: "center",
-        }}
-      >
-        <h2>About Myself</h2>
-        <p className="large">{description}</p>
-        <hr />
-        <ul
-          style={{
-            textAlign: "left",
-            columns: 2,
-            fontSize: "1.25rem",
-            margin: "2rem 3rem",
-            gap: "3rem",
-          }}
-        >
-          {skillsList.map((skill) => (
-            <li key={skill}>{skill}</li>
-          ))}
-        </ul>
-        <hr />
-        <p style={{ padding: "1rem 3rem 0" }}>{detailOrQuote}</p>
+    <section id="about">
+      <div className="section-header reveal">
+        <div className="section-tag">About Me</div>
+        <h2 className="section-title">
+          Who <span>I Am</span>
+        </h2>
+      </div>
+
+      <div className="about-grid">
+        <div className="about-card reveal-left">
+          <h3>🎓 Education</h3>
+          <p>
+            <strong style={{ color: "#e2e8f0" }}>BSc(Hons) Information Technology</strong>
+            <br />
+            Specialized in Information Systems Engineering
+            <br />
+            <span style={{ color: "#6c63ff", fontWeight: 600 }}>SLIIT — Sri Lanka</span>
+          </p>
+          <div className="stat-row">
+            <div className="stat-box">
+              <div className="num">ISE</div>
+              <div className="label">Specialization</div>
+            </div>
+            <div className="stat-box">
+              <div className="num">IT</div>
+              <div className="label">BSc(Hons)</div>
+            </div>
+          </div>
+          <p style={{ marginTop: "1.5rem" }}>{detailOrQuote}</p>
+        </div>
+
+        <div className="about-card reveal-right">
+          <h3>⚡ Skills & Interests</h3>
+          <p>{description}</p>
+          <div className="skills-grid" style={{ marginTop: "1.5rem" }}>
+            {skillsList.map((skill) => (
+              <div className="skill-chip" key={skill}>{skill}</div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
