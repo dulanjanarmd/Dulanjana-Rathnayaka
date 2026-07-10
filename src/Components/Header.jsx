@@ -1,35 +1,44 @@
 import React, { useEffect, useState } from "react";
+import gitHubIcon from "../images/socials/github.svg";
+import linkedInIcon from "../images/socials/linkedin.svg";
+import instagramIcon from "../images/socials/instagram.svg";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState("home");
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 50);
-      const sections = ["home", "about", "services", "portfolio", "footer"];
-      for (const id of sections.reverse()) {
-        const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 120) { setActive(id); break; }
-      }
-    };
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const fn = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", fn);
+    return () => window.removeEventListener("scroll", fn);
   }, []);
 
   return (
     <header className={`header${scrolled ? " scrolled" : ""}`}>
-      <a href="#home" className="header-logo">D<span>.</span>Rathnayaka</a>
+      <a href="#home" className="header-logo">DR.</a>
+
       <nav>
         <ul className="header-nav">
-          {[["home","Home"],["about","About"],["services","Services"],["portfolio","Portfolio"],["footer","Contact"]].map(([id, label]) => (
-            <li key={id}>
-              <a href={`#${id}`} className={active === id ? "active" : ""}>{label}</a>
-            </li>
-          ))}
-          <li><a href="#footer" className="header-cta">Hire Me</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#portfolio">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#footer">Contacts</a></li>
         </ul>
       </nav>
+
+      <div className="header-right">
+        <div className="nav-divider" />
+        <div className="nav-social">
+          <a href="https://www.instagram.com/dulanjanarmd" target="_blank" rel="noopener noreferrer">
+            <img src={instagramIcon} alt="Instagram" />
+          </a>
+          <a href="https://github.com/dulanjanarmd" target="_blank" rel="noopener noreferrer">
+            <img src={gitHubIcon} alt="GitHub" />
+          </a>
+          <a href="https://www.linkedin.com/in/dulanjanarmd" target="_blank" rel="noopener noreferrer">
+            <img src={linkedInIcon} alt="LinkedIn" />
+          </a>
+        </div>
+      </div>
     </header>
   );
 };

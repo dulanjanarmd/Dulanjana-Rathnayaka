@@ -9,37 +9,28 @@ const Footer = ({ name, email, gitHub, linkedIn, instagram }) => (
   <div id="footer">
     <div className="contact-inner">
 
-      {/* LEFT — Info */}
+      {/* LEFT */}
       <div className="reveal-left">
-        <div className="section-label">Get In Touch</div>
-        <h2 className="section-title">Contact <span>Me</span></h2>
-        <div className="divider" />
-        <p style={{ color: "var(--text-muted)", fontSize: "0.92rem", lineHeight: 1.9, marginBottom: "2rem" }}>
+        <div className="sec-label">Get In Touch</div>
+        <h2 className="sec-title">CONTACT <span>ME</span></h2>
+        <p style={{ color: "var(--muted)", fontSize: "0.88rem", lineHeight: 1.9, marginBottom: "2rem" }}>
           I&apos;m currently open to new opportunities. Whether you have a question,
           a project idea, or just want to say hi — my inbox is always open!
         </p>
 
-        <div className="contact-info-item">
-          <div className="contact-icon">📧</div>
-          <div>
-            <div className="ci-label">Email</div>
-            <div className="ci-val">{email}</div>
+        {[
+          { icon: "📧", label: "Email", val: email },
+          { icon: "🎓", label: "University", val: "SLIIT — Sri Lanka" },
+          { icon: "📍", label: "Location", val: "Sri Lanka" },
+        ].map(item => (
+          <div className="contact-info-item" key={item.label}>
+            <div className="c-icon">{item.icon}</div>
+            <div>
+              <div className="ci-label">{item.label}</div>
+              <div className="ci-val">{item.val}</div>
+            </div>
           </div>
-        </div>
-        <div className="contact-info-item">
-          <div className="contact-icon">🎓</div>
-          <div>
-            <div className="ci-label">University</div>
-            <div className="ci-val">SLIIT — Sri Lanka</div>
-          </div>
-        </div>
-        <div className="contact-info-item">
-          <div className="contact-icon">📍</div>
-          <div>
-            <div className="ci-label">Location</div>
-            <div className="ci-val">Sri Lanka</div>
-          </div>
-        </div>
+        ))}
 
         <div className="contact-socials">
           {[
@@ -48,7 +39,10 @@ const Footer = ({ name, email, gitHub, linkedIn, instagram }) => (
             { icon: linkedInIcon, alt: "LinkedIn", href: `https://www.linkedin.com/in/${linkedIn}` },
             { icon: instagramIcon, alt: "Instagram", href: `https://www.instagram.com/${instagram}` },
           ].map(s => (
-            <a key={s.alt} href={s.href} target={s.alt === "Email" ? "_self" : "_blank"} rel="noopener noreferrer" className="contact-social" title={s.alt}>
+            <a key={s.alt} href={s.href}
+              target={s.alt === "Email" ? "_self" : "_blank"}
+              rel="noopener noreferrer"
+              className="c-social" title={s.alt}>
               <img src={s.icon} alt={s.alt} />
             </a>
           ))}
@@ -57,10 +51,8 @@ const Footer = ({ name, email, gitHub, linkedIn, instagram }) => (
 
       {/* RIGHT — Form */}
       <div className="reveal-right">
-        <form
-          className="contact-form"
-          onSubmit={e => { e.preventDefault(); window.location.href = `mailto:${email}`; }}
-        >
+        <form className="contact-form"
+          onSubmit={e => { e.preventDefault(); window.location.href = `mailto:${email}`; }}>
           <div className="form-row">
             <div className="form-group">
               <label>First Name</label>
@@ -72,7 +64,7 @@ const Footer = ({ name, email, gitHub, linkedIn, instagram }) => (
             </div>
           </div>
           <div className="form-group">
-            <label>Email Address</label>
+            <label>Email</label>
             <input type="email" placeholder="john@example.com" required />
           </div>
           <div className="form-group">
@@ -83,19 +75,19 @@ const Footer = ({ name, email, gitHub, linkedIn, instagram }) => (
             <label>Message</label>
             <textarea rows="5" placeholder="Tell me about your project..." required />
           </div>
-          <button type="submit" className="btn-primary" style={{ border: "none", cursor: "pointer", justifyContent: "center" }}>
-            Send Message →
+          <button type="submit" className="hero-btn"
+            style={{ border: "2px solid #fff", background: "transparent", cursor: "pointer", fontFamily: "Inter, sans-serif" }}>
+            Send Message
           </button>
         </form>
       </div>
 
     </div>
 
-    {/* Bottom bar */}
-    <div className="footer-bottom">
-      <div className="footer-logo">D<span>.</span>Rathnayaka</div>
+    <div className="footer-bar">
+      <div className="footer-logo-txt">D. Rathnayaka</div>
       <p className="footer-copy">© {new Date().getFullYear()} {name}. All rights reserved.</p>
-      <p className="footer-copy">Built with React · Deployed on GitHub Pages</p>
+      <p className="footer-copy">Built with React · GitHub Pages</p>
     </div>
   </div>
 );
