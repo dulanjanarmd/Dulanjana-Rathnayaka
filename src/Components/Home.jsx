@@ -48,7 +48,6 @@ const Home = ({ name }) => {
 
   return (
     <section id="home">
-      {/* Simple CSS animated background dots */}
       <div className="hero-bg">
         {Array.from({ length: 18 }).map((_, i) => (
           <span key={i} className="hero-dot" style={{
@@ -62,12 +61,11 @@ const Home = ({ name }) => {
         ))}
       </div>
 
-      {/* LEFT — text, more space */}
+      {/* LEFT */}
       <div className="hero-left">
         <h1 className={`hero-name-block${nameVisible ? " name-visible" : ""}`}>
           <span className="name-line hero-greeting">HI, I&apos;M</span>
-          <AnimatedText text="DULANJANA" className="name-line" delay={0.15} />
-          <AnimatedText text="RATHNAYAKA" className="name-line name-line-2" delay={0.55} />
+          <AnimatedText text="DULANJANA RATHNAYAKA" className="name-line name-full" delay={0.15} />
         </h1>
 
         <div className="hero-ise">
@@ -88,7 +86,7 @@ const Home = ({ name }) => {
         <a href="#portfolio" className="hero-btn">View My Projects</a>
       </div>
 
-      {/* RIGHT — circle photo */}
+      {/* RIGHT */}
       <div className="hero-right">
         <div className="hero-photo-circle">
           <img src={profilePhoto} alt={name} className="hero-photo" />
