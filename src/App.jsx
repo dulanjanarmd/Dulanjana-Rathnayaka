@@ -14,6 +14,8 @@ const siteProps = {
   gitHub: "dulanjanarmd",
   instagram: "dulanjanarmd",
   linkedIn: "dulanjanarmd",
+  facebook: "dulanjanarmd",
+  whatsapp: "94XXXXXXXXX",
 };
 
 const App = () => (

@@ -120,24 +120,14 @@ body {
   overflow: hidden;
 }
 
-/* Simple dot background */
-.hero-bg {
+/* Canvas background */
+#bg-canvas {
   position: absolute;
   inset: 0;
-  pointer-events: none;
+  width: 100%;
+  height: 100%;
   z-index: 0;
-}
-
-.hero-dot {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.12);
-  animation: dotFloat ease-in-out infinite;
-}
-
-@keyframes dotFloat {
-  0%,100% { transform: translateY(0px); opacity: 0.12; }
-  50%      { transform: translateY(-18px); opacity: 0.25; }
+  pointer-events: none;
 }
 
 /* Left panel */
@@ -145,49 +135,53 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 8rem 5rem 4rem 6rem;
+  padding: 9rem 5rem 5rem 8rem;
   position: relative;
   z-index: 2;
-}
-
-.hero-greeting {
-  font-family: "Barlow Condensed", sans-serif;
-  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
-  margin-bottom: 0.1rem;
-  animation: fadeUp 0.5s ease 0.05s both;
+  gap: 0;
 }
 
 /* ── NAME BLOCK ── */
 .hero-name-block {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.2rem;
-  line-height: 1.05;
+  margin-bottom: 2rem;
+  line-height: 1.08;
+  gap: 0;
 }
 
+/* ALL lines — HI I'M + name — same font, same size */
 .name-line {
   font-family: "Barlow Condensed", sans-serif;
-  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
-  font-weight: 700;
+  font-size: clamp(2rem, 3.8vw, 3.4rem);
+  font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #fff;
   display: block;
   overflow: hidden;
+  line-height: 1.05;
 }
 
-/* Full name on one line — slightly bigger than greeting */
-.name-full {
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+/* "HI, I'M" — same size, slightly dimmed */
+.hero-greeting {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(2rem, 3.8vw, 3.4rem);
   font-weight: 900;
-  letter-spacing: -0.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  display: block;
+  overflow: hidden;
+  line-height: 1.05;
+  animation: none;
 }
 
-.name-line-2 { margin-top: 0.05em; }
+.name-full {
+  letter-spacing: 0px;
+}
+
+.name-line-2 { margin-top: 0; }
 
 /* Each letter starts hidden, slides up when .name-visible is added */
 .letter {
@@ -209,21 +203,21 @@ body {
 
 /* ISE subtitle line */
 .hero-ise {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  letter-spacing: 1.5px;
-  color: rgba(255,255,255,0.45);
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.4);
   text-transform: uppercase;
-  margin-bottom: 1.2rem;
+  margin-bottom: 2rem;
   animation: fadeUp 0.6s ease 1.6s both;
 }
 
 /* Typing role line */
 .hero-role-line {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 500;
   color: rgba(255,255,255,0.6);
-  margin-bottom: 1.4rem;
+  margin-bottom: 2rem;
   min-height: 1.5rem;
   animation: fadeUp 0.6s ease 1.8s both;
 }
@@ -249,9 +243,9 @@ body {
 .hero-desc {
   font-size: 0.92rem;
   color: var(--muted);
-  line-height: 1.8;
-  max-width: 360px;
-  margin-bottom: 2.5rem;
+  line-height: 1.9;
+  max-width: 420px;
+  margin-bottom: 3rem;
   animation: fadeUp 0.6s ease 2s both;
 }
 
@@ -259,7 +253,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.9rem 2rem;
+  padding: 1rem 2.2rem;
   background: transparent;
   color: #fff;
   border: 2px solid #fff;
@@ -338,15 +332,15 @@ body {
 ══════════════════════════════ */
 #about {
   background: var(--bg2);
-  padding: 7rem 4rem;
+  padding: 9rem 8rem;
 }
 
 .about-inner {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6rem;
+  gap: 8rem;
   align-items: center;
 }
 
@@ -432,12 +426,12 @@ body {
 ══════════════════════════════ */
 #services {
   background: var(--bg);
-  padding: 7rem 4rem;
+  padding: 9rem 8rem;
 }
 
 .services-top {
-  max-width: 1100px;
-  margin: 0 auto 3.5rem;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -446,7 +440,7 @@ body {
 }
 
 .services-grid {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -455,7 +449,7 @@ body {
 }
 
 .svc-card {
-  padding: 2.5rem 2rem;
+  padding: 3rem 2.5rem;
   border-right: 1px solid var(--border);
   transition: background 0.3s;
   position: relative;
@@ -492,12 +486,12 @@ body {
 ══════════════════════════════ */
 #portfolio {
   background: var(--bg2);
-  padding: 7rem 4rem;
+  padding: 9rem 8rem;
 }
 
 .port-top {
-  max-width: 1100px;
-  margin: 0 auto 3.5rem;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -506,7 +500,7 @@ body {
 }
 
 .port-grid {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -515,7 +509,7 @@ body {
 }
 
 .proj-card {
-  padding: 2.5rem 2rem;
+  padding: 3rem 2.5rem;
   border-right: 1px solid var(--border);
   text-decoration: none;
   color: #fff;
@@ -566,15 +560,15 @@ body {
 ══════════════════════════════ */
 #footer {
   background: var(--bg);
-  padding: 7rem 4rem 3rem;
+  padding: 9rem 8rem 4rem;
 }
 
 .contact-inner {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto 5rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6rem;
+  gap: 8rem;
   align-items: start;
 }
 
@@ -673,9 +667,9 @@ body {
 
 /* Footer bar */
 .footer-bar {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding-top: 2rem;
+  padding-top: 2.5rem;
   border-top: 1px solid var(--border);
   display: flex;
   align-items: center;
@@ -731,11 +725,11 @@ body {
   .header { padding: 1.2rem 2rem; }
   .header-nav { display: none; }
   #home { grid-template-columns: 1fr; min-height: auto; }
-  .hero-left { padding: 7rem 2rem 3rem; }
-  .hero-right { padding: 2rem 2rem 4rem; }
+  .hero-left { padding: 7rem 2.5rem 3rem; }
+  .hero-right { padding: 2rem 2.5rem 4rem; }
   .hero-photo-circle { width: 260px; height: 260px; }
   .about-inner { grid-template-columns: 1fr; gap: 3rem; }
-  #about, #services, #portfolio, #footer { padding: 5rem 2rem; }
+  #about, #services, #portfolio, #footer { padding: 5rem 2.5rem; }
   .services-grid { grid-template-columns: 1fr; }
   .svc-card { border-right: none; border-bottom: 1px solid var(--border); }
   .port-grid { grid-template-columns: 1fr; }

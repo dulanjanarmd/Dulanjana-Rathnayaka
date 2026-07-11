@@ -4,8 +4,13 @@ import envelopeIcon from "../images/socials/envelope.svg";
 import gitHubIcon from "../images/socials/github.svg";
 import instagramIcon from "../images/socials/instagram.svg";
 import linkedInIcon from "../images/socials/linkedin.svg";
+import facebookIcon from "../images/socials/facebook.svg";
+import whatsappIcon from "../images/socials/whatsapp.svg";
+import redditIcon from "../images/socials/reddit.svg";
+import xIcon from "../images/socials/x.svg";
+import mediumIcon from "../images/socials/medium.svg";
 
-const Footer = ({ name, email, gitHub, linkedIn, instagram }) => (
+const Footer = ({ name, email, gitHub, linkedIn, instagram, facebook }) => (
   <div id="footer">
     <div className="contact-inner">
 
@@ -34,10 +39,15 @@ const Footer = ({ name, email, gitHub, linkedIn, instagram }) => (
 
         <div className="contact-socials">
           {[
-            { icon: envelopeIcon, alt: "Email", href: `mailto:${email}` },
-            { icon: gitHubIcon, alt: "GitHub", href: `https://github.com/${gitHub}` },
-            { icon: linkedInIcon, alt: "LinkedIn", href: `https://www.linkedin.com/in/${linkedIn}` },
+            { icon: envelopeIcon,  alt: "Email",     href: `mailto:${email}` },
+            { icon: gitHubIcon,    alt: "GitHub",    href: `https://github.com/${gitHub}` },
+            { icon: linkedInIcon,  alt: "LinkedIn",  href: `https://www.linkedin.com/in/${linkedIn}` },
             { icon: instagramIcon, alt: "Instagram", href: `https://www.instagram.com/${instagram}` },
+            { icon: facebookIcon,  alt: "Facebook",  href: `https://www.facebook.com/${facebook}` },
+            { icon: whatsappIcon,  alt: "WhatsApp",  href: `https://wa.me/${instagram}` },
+            { icon: redditIcon,    alt: "Reddit",    href: `https://www.reddit.com/user/${gitHub}` },
+            { icon: xIcon,         alt: "X",         href: `https://x.com/${gitHub}` },
+            { icon: mediumIcon,    alt: "Medium",    href: `https://medium.com/@${gitHub}` },
           ].map(s => (
             <a key={s.alt} href={s.href}
               target={s.alt === "Email" ? "_self" : "_blank"}
@@ -99,6 +109,7 @@ Footer.propTypes = {
   gitHub: PropTypes.string,
   linkedIn: PropTypes.string,
   instagram: PropTypes.string,
+  facebook: PropTypes.string,
 };
 
 export default Footer;
