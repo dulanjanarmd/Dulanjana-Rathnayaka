@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <header className={`header${scrolled ? " scrolled" : ""}`}>
-      <a href="#home" className="header-logo">DR.</a>
+      <a href="/" className="header-logo">Dulanjana Rathnayaka</a>
 
       <nav>
         <ul className="header-nav">

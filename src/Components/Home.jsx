@@ -1,24 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import profilePhoto from "../images/dulanjana.jpg";
 
-// Words that cycle after the main name
-const ROLES = [
-  "BUSINESS ANALYST",
-  "DATA ANALYST",
-  "SYSTEM ANALYST",
-  "IT UNDERGRADUATE",
-];
+const ROLES = ["BUSINESS ANALYST", "DATA ANALYST", "SYSTEM ANALYST", "IT UNDERGRADUATE"];
 
-// Split a string into letter spans for stagger animation
 const AnimatedText = ({ text, className, delay = 0 }) => (
   <span className={className} aria-label={text}>
     {text.split("").map((ch, i) => (
-      <span
-        key={i}
-        className="letter"
-        style={{ animationDelay: `${delay + i * 0.045}s` }}
-      >
+      <span key={i} className="letter" style={{ animationDelay: `${delay + i * 0.045}s` }}>
         {ch === " " ? "\u00A0" : ch}
       </span>
     ))}
@@ -27,26 +16,23 @@ const AnimatedText = ({ text, className, delay = 0 }) => (
 
 const Home = ({ name }) => {
   const [displayText, setDisplayText] = useState("");
-  const [roleIndex, setRoleIndex]   = useState(0);
-  const [charIndex, setCharIndex]   = useState(0);
-  const [deleting, setDeleting]     = useState(false);
+  const [roleIndex, setRoleIndex]     = useState(0);
+  const [charIndex, setCharIndex]     = useState(0);
+  const [deleting, setDeleting]       = useState(false);
   const [nameVisible, setNameVisible] = useState(false);
 
-  // Trigger name animation on mount
   useEffect(() => {
     const t = setTimeout(() => setNameVisible(true), 100);
     return () => clearTimeout(t);
   }, []);
 
-  // Typing effect for roles
   useEffect(() => {
     const current = ROLES[roleIndex];
-    const speed   = deleting ? 45 : 85;
+    const speed = deleting ? 45 : 85;
     const t = setTimeout(() => {
       if (!deleting) {
         setDisplayText(current.slice(0, charIndex + 1));
-        if (charIndex + 1 === current.length)
-          setTimeout(() => setDeleting(true), 2000);
+        if (charIndex + 1 === current.length) setTimeout(() => setDeleting(true), 2000);
         else setCharIndex(c => c + 1);
       } else {
         setDisplayText(current.slice(0, charIndex - 1));
@@ -62,20 +48,32 @@ const Home = ({ name }) => {
 
   return (
     <section id="home">
-      {/* LEFT */}
-      <div className="hero-left">
+      {/* Simple CSS animated background dots */}
+      <div className="hero-bg">
+        {Array.from({ length: 18 }).map((_, i) => (
+          <span key={i} className="hero-dot" style={{
+            left: `${(i * 5.8) % 100}%`,
+            top: `${(i * 7.3) % 100}%`,
+            animationDelay: `${i * 0.4}s`,
+            animationDuration: `${6 + (i % 4)}s`,
+            width: `${2 + (i % 3)}px`,
+            height: `${2 + (i % 3)}px`,
+          }} />
+        ))}
+      </div>
 
-        {/* HI I'M + NAME — same font, same size */}
+      {/* LEFT — text, more space */}
+      <div className="hero-left">
         <h1 className={`hero-name-block${nameVisible ? " name-visible" : ""}`}>
           <span className="name-line hero-greeting">HI, I&apos;M</span>
           <AnimatedText text="DULANJANA" className="name-line" delay={0.15} />
           <AnimatedText text="RATHNAYAKA" className="name-line name-line-2" delay={0.55} />
         </h1>
 
-        {/* ISE subtitle */}
-        <div className="hero-ise">Information Systems Engineering Undergraduate at SLIIT</div>
+        <div className="hero-ise">
+          Information Systems Engineering Undergraduate at SLIIT
+        </div>
 
-        {/* Typing role */}
         <div className="hero-role-line">
           Aspiring&nbsp;
           <span className="hero-typed">{displayText}</span>
@@ -90,9 +88,11 @@ const Home = ({ name }) => {
         <a href="#portfolio" className="hero-btn">View My Projects</a>
       </div>
 
-      {/* RIGHT */}
+      {/* RIGHT — circle photo */}
       <div className="hero-right">
-        <img src={profilePhoto} alt={name} className="hero-photo" />
+        <div className="hero-photo-circle">
+          <img src={profilePhoto} alt={name} className="hero-photo" />
+        </div>
       </div>
     </section>
   );
