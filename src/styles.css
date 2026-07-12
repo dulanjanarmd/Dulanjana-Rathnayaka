@@ -411,6 +411,75 @@ body {
   color: #fff;
 }
 
+/* Tools chips */
+.about-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.tool-chip {
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.65);
+  transition: border-color 0.25s, color 0.25s;
+  cursor: default;
+}
+
+.tool-chip:hover {
+  border-color: rgba(255,255,255,0.4);
+  color: #fff;
+}
+
+/* Bottom row */
+.about-bottom {
+  max-width: 1200px;
+  margin: 5rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  padding-top: 4rem;
+  border-top: 1px solid var(--border);
+}
+
+.about-bottom-col {}
+
+/* Soft skills grid */
+.soft-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 0.8rem;
+}
+
+.soft-card {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: border-color 0.25s, background 0.25s;
+  cursor: default;
+}
+
+.soft-card:hover {
+  border-color: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.03);
+}
+
+.soft-icon { font-size: 1rem; }
+
+.soft-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+}
+
 /* Skill bars */
 .skill-wrap { margin-bottom: 1.2rem; }
 
@@ -747,6 +816,7 @@ body {
   .hero-right { padding: 2rem 2.5rem 4rem; }
   .hero-photo-circle { width: 260px; height: 260px; }
   .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .about-bottom { grid-template-columns: 1fr; gap: 3rem; margin-top: 3rem; padding-top: 3rem; }
   #about, #services, #portfolio, #footer { padding: 5rem 2.5rem; }
   .services-grid { grid-template-columns: 1fr; }
   .svc-card { border-right: none; border-bottom: 1px solid var(--border); }
