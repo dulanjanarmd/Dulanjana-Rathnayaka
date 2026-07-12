@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import profilePhoto from "../images/dulanjana.jpg";
 
-const ROLES = ["BUSINESS ANALYST", "DATA ANALYST", "SYSTEM ANALYST", "IT UNDERGRADUATE"];
+const ROLES = ["BUSINESS ANALYST", "DATA ANALYST", "SYSTEM ANALYST"];
 
 const AnimatedText = ({ text, className, delay = 0 }) => (
   <span className={className} aria-label={text}>
@@ -196,7 +196,10 @@ const Home = ({ name }) => {
           data-driven insights, analytical thinking, and smart system design.
         </p>
 
-        <a href="#portfolio" className="hero-btn">View My Projects</a>
+        <div className="hero-btns">
+          <a href="#portfolio" className="hero-btn">View My Projects</a>
+          <a href="/cv/dulanjana-rathnayaka-cv.pdf" download className="hero-btn hero-btn-outline">Download CV</a>
+        </div>
       </div>
 
       {/* RIGHT */}
