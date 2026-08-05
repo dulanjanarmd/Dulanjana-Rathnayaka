@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import profilePhoto from "../images/dulanjana.jpg";
+import cvDocument from "../documents/Dulanjana_Rathnayaka_CV.docx";
 
 const ROLES = ["BUSINESS ANALYST", "DATA ANALYST", "SYSTEM ANALYST"];
 
@@ -198,7 +199,7 @@ const Home = ({ name }) => {
 
         <div className="hero-btns">
           <a href="#portfolio" className="hero-btn">View My Projects</a>
-          <a href="/cv/dulanjana-rathnayaka-cv.pdf" download className="hero-btn hero-btn-outline">Download CV</a>
+          <a href={cvDocument} download="Dulanjana_Rathnayaka_CV.docx" className="hero-btn hero-btn-outline">Download CV</a>
         </div>
       </div>
 
