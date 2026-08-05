@@ -27092,8 +27092,6 @@ var _home = require("./Components/Home");
 var _homeDefault = parcelHelpers.interopDefault(_home);
 var _about = require("./Components/About");
 var _aboutDefault = parcelHelpers.interopDefault(_about);
-var _services = require("./Components/Services");
-var _servicesDefault = parcelHelpers.interopDefault(_services);
 var _portfolio = require("./Components/Portfolio");
 var _portfolioDefault = parcelHelpers.interopDefault(_portfolio);
 var _footer = require("./Components/Footer");
@@ -27114,7 +27112,7 @@ const App = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "src/App.jsx",
-                lineNumber: 23,
+                lineNumber: 22,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homeDefault.default), {
@@ -27122,35 +27120,30 @@ const App = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 title: siteProps.title
             }, void 0, false, {
                 fileName: "src/App.jsx",
-                lineNumber: 24,
+                lineNumber: 23,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, {
                 fileName: "src/App.jsx",
-                lineNumber: 25,
-                columnNumber: 5
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _servicesDefault.default), {}, void 0, false, {
-                fileName: "src/App.jsx",
-                lineNumber: 26,
+                lineNumber: 24,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _portfolioDefault.default), {}, void 0, false, {
                 fileName: "src/App.jsx",
-                lineNumber: 27,
+                lineNumber: 25,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {
                 ...siteProps
             }, void 0, false, {
                 fileName: "src/App.jsx",
-                lineNumber: 28,
+                lineNumber: 26,
                 columnNumber: 5
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/App.jsx",
-        lineNumber: 22,
+        lineNumber: 21,
         columnNumber: 3
     }, undefined);
 _c = App;
@@ -27163,7 +27156,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Components/Header":"9Dt2F","./Components/Home":"jIEVO","./Components/About":"kouZu","./Components/Services":"iwRVc","./Components/Portfolio":"lCaEt","./Components/Footer":"7GWgX","./styles.css":"lW6qc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9Dt2F":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Components/Header":"9Dt2F","./Components/Home":"jIEVO","./Components/About":"kouZu","./Components/Portfolio":"lCaEt","./Components/Footer":"7GWgX","./styles.css":"lW6qc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9Dt2F":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$2a62 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27698,8 +27691,7 @@ var _s = $RefreshSig$();
 const ROLES = [
     "BUSINESS ANALYST",
     "DATA ANALYST",
-    "SYSTEM ANALYST",
-    "IT UNDERGRADUATE"
+    "SYSTEM ANALYST"
 ];
 const AnimatedText = ({ text , className , delay =0  })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
         className: className,
@@ -27954,11 +27946,30 @@ const Home = ({ name  })=>{
                         lineNumber: 194,
                         columnNumber: 9
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: "#portfolio",
-                        className: "hero-btn",
-                        children: "View My Projects"
-                    }, void 0, false, {
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "hero-btns",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                href: "#portfolio",
+                                className: "hero-btn",
+                                children: "View My Projects"
+                            }, void 0, false, {
+                                fileName: "src/Components/Home.jsx",
+                                lineNumber: 200,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                href: "/cv/dulanjana-rathnayaka-cv.pdf",
+                                download: true,
+                                className: "hero-btn hero-btn-outline",
+                                children: "Download CV"
+                            }, void 0, false, {
+                                fileName: "src/Components/Home.jsx",
+                                lineNumber: 201,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
                         fileName: "src/Components/Home.jsx",
                         lineNumber: 199,
                         columnNumber: 9
@@ -27979,17 +27990,17 @@ const Home = ({ name  })=>{
                         className: "hero-photo"
                     }, void 0, false, {
                         fileName: "src/Components/Home.jsx",
-                        lineNumber: 205,
+                        lineNumber: 208,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/Components/Home.jsx",
-                    lineNumber: 204,
+                    lineNumber: 207,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Components/Home.jsx",
-                lineNumber: 203,
+                lineNumber: 206,
                 columnNumber: 7
             }, undefined)
         ]
@@ -28788,16 +28799,74 @@ const skills = [
         pct: 78
     },
     {
-        name: "Database Management",
-        pct: 75
-    },
-    {
         name: "Requirements Engineering",
         pct: 82
     },
     {
-        name: "Process Modeling",
-        pct: 70
+        name: "Database Management",
+        pct: 75
+    },
+    {
+        name: "Process Modeling (UML/ERD)",
+        pct: 72
+    }, 
+];
+const tools = [
+    "Microsoft Excel",
+    "Power BI",
+    "SQL",
+    "Python",
+    "Figma",
+    "Draw.io",
+    "Lucidchart",
+    "MS Visio",
+    "GitHub",
+    "Jira",
+    "Trello",
+    "Google Analytics", 
+];
+const softSkills = [
+    {
+        icon: "\uD83E\uDDE0",
+        label: "Critical Thinking"
+    },
+    {
+        icon: "\uD83D\uDCAC",
+        label: "Communication"
+    },
+    {
+        icon: "\uD83E\uDD1D",
+        label: "Team Collaboration"
+    },
+    {
+        icon: "\uD83D\uDD0D",
+        label: "Problem Solving"
+    },
+    {
+        icon: "\uD83D\uDCCB",
+        label: "Project Management"
+    },
+    {
+        icon: "\uD83C\uDFAF",
+        label: "Attention to Detail"
+    }, 
+];
+const interests = [
+    {
+        icon: "\uD83D\uDCCA",
+        label: "Data Visualization"
+    },
+    {
+        icon: "\uD83C\uDFD7️",
+        label: "System Design"
+    },
+    {
+        icon: "\uD83D\uDCA1",
+        label: "Business Strategy"
+    },
+    {
+        icon: "\uD83E\uDD16",
+        label: "AI & Automation"
     }, 
 ];
 const About = ()=>{
@@ -28811,304 +28880,454 @@ const About = ()=>{
                     });
                 }
             }), {
-            threshold: 0.15
+            threshold: 0.12
         });
         document.querySelectorAll(".reveal,.reveal-left,.reveal-right").forEach((el)=>observer.observe(el));
         return ()=>observer.disconnect();
     }, []);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
         id: "about",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "about-inner",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "reveal-left",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "sec-label",
-                            children: "About Me"
-                        }, void 0, false, {
-                            fileName: "src/Components/About.jsx",
-                            lineNumber: 33,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                            className: "sec-title",
-                            children: [
-                                "WHO I ",
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                    children: "AM"
-                                }, void 0, false, {
-                                    fileName: "src/Components/About.jsx",
-                                    lineNumber: 34,
-                                    columnNumber: 43
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/Components/About.jsx",
-                            lineNumber: 34,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            className: "about-text",
-                            children: "I'm Dulanjana Rathnayaka, an undergraduate at Sri Lanka Institute of Information Technology (SLIIT) pursuing a BSc(Hons) in Information Technology specialized in Information Systems Engineering."
-                        }, void 0, false, {
-                            fileName: "src/Components/About.jsx",
-                            lineNumber: 35,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            className: "about-text",
-                            children: "My goal is to bridge the gap between technology and business as a Business Analyst, Data Analyst, or System Analyst — delivering impactful, data-driven solutions."
-                        }, void 0, false, {
-                            fileName: "src/Components/About.jsx",
-                            lineNumber: 40,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "about-details",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "detail-item",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "d-label",
-                                            children: "Degree"
-                                        }, void 0, false, {
-                                            fileName: "src/Components/About.jsx",
-                                            lineNumber: 46,
-                                            columnNumber: 15
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "d-val",
-                                            children: "BSc(Hons) IT"
-                                        }, void 0, false, {
-                                            fileName: "src/Components/About.jsx",
-                                            lineNumber: 47,
-                                            columnNumber: 15
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/Components/About.jsx",
-                                    lineNumber: 45,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "detail-item",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "d-label",
-                                            children: "University"
-                                        }, void 0, false, {
-                                            fileName: "src/Components/About.jsx",
-                                            lineNumber: 50,
-                                            columnNumber: 15
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "d-val",
-                                            children: "SLIIT"
-                                        }, void 0, false, {
-                                            fileName: "src/Components/About.jsx",
-                                            lineNumber: 51,
-                                            columnNumber: 15
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/Components/About.jsx",
-                                    lineNumber: 49,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "detail-item",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "d-label",
-                                            children: "Specialization"
-                                        }, void 0, false, {
-                                            fileName: "src/Components/About.jsx",
-                                            lineNumber: 54,
-                                            columnNumber: 15
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "d-val",
-                                            children: "ISE"
-                                        }, void 0, false, {
-                                            fileName: "src/Components/About.jsx",
-                                            lineNumber: 55,
-                                            columnNumber: 15
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/Components/About.jsx",
-                                    lineNumber: 53,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "detail-item",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "d-label",
-                                            children: "Location"
-                                        }, void 0, false, {
-                                            fileName: "src/Components/About.jsx",
-                                            lineNumber: 58,
-                                            columnNumber: 15
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "d-val",
-                                            children: "Sri Lanka"
-                                        }, void 0, false, {
-                                            fileName: "src/Components/About.jsx",
-                                            lineNumber: 59,
-                                            columnNumber: 15
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/Components/About.jsx",
-                                    lineNumber: 57,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "detail-item",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "d-label",
-                                            children: "Email"
-                                        }, void 0, false, {
-                                            fileName: "src/Components/About.jsx",
-                                            lineNumber: 62,
-                                            columnNumber: 15
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "d-val",
-                                            children: "dulanjanarmd@gmail.com"
-                                        }, void 0, false, {
-                                            fileName: "src/Components/About.jsx",
-                                            lineNumber: 63,
-                                            columnNumber: 15
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/Components/About.jsx",
-                                    lineNumber: 61,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "detail-item",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "d-label",
-                                            children: "Status"
-                                        }, void 0, false, {
-                                            fileName: "src/Components/About.jsx",
-                                            lineNumber: 66,
-                                            columnNumber: 15
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "d-val",
-                                            style: {
-                                                color: "#aaa"
-                                            },
-                                            children: "Open to Work"
-                                        }, void 0, false, {
-                                            fileName: "src/Components/About.jsx",
-                                            lineNumber: 67,
-                                            columnNumber: 15
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/Components/About.jsx",
-                                    lineNumber: 65,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/Components/About.jsx",
-                            lineNumber: 44,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/Components/About.jsx",
-                    lineNumber: 32,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "reveal-right",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "sec-label",
-                            children: "My Skills"
-                        }, void 0, false, {
-                            fileName: "src/Components/About.jsx",
-                            lineNumber: 73,
-                            columnNumber: 11
-                        }, undefined),
-                        skills.map((s)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "skill-wrap",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "about-inner",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "reveal-left",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "sec-label",
+                                children: "About Me"
+                            }, void 0, false, {
+                                fileName: "src/Components/About.jsx",
+                                lineNumber: 59,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                                className: "sec-title",
                                 children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "skill-top",
+                                    "WHO I ",
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        children: "AM"
+                                    }, void 0, false, {
+                                        fileName: "src/Components/About.jsx",
+                                        lineNumber: 60,
+                                        columnNumber: 43
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Components/About.jsx",
+                                lineNumber: 60,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "about-text",
+                                children: [
+                                    "I'm ",
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                        style: {
+                                            color: "#fff"
+                                        },
+                                        children: "Dulanjana Rathnayaka"
+                                    }, void 0, false, {
+                                        fileName: "src/Components/About.jsx",
+                                        lineNumber: 63,
+                                        columnNumber: 22
+                                    }, undefined),
+                                    ", an undergraduate at Sri Lanka Institute of Information Technology (SLIIT) pursuing a ",
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                        style: {
+                                            color: "#fff"
+                                        },
+                                        children: "BSc(Hons) in Information Technology"
+                                    }, void 0, false, {
+                                        fileName: "src/Components/About.jsx",
+                                        lineNumber: 65,
+                                        columnNumber: 24
+                                    }, undefined),
+                                    ", specialized in ",
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                        style: {
+                                            color: "#fff"
+                                        },
+                                        children: "Information Systems Engineering"
+                                    }, void 0, false, {
+                                        fileName: "src/Components/About.jsx",
+                                        lineNumber: 66,
+                                        columnNumber: 28
+                                    }, undefined),
+                                    "."
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Components/About.jsx",
+                                lineNumber: 62,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "about-text",
+                                children: "I am passionate about transforming complex business problems into clear, data-driven solutions. My focus lies in understanding stakeholder needs, modeling systems, and delivering insights that drive smarter decisions."
+                            }, void 0, false, {
+                                fileName: "src/Components/About.jsx",
+                                lineNumber: 68,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "about-text",
+                                children: "I thrive at the intersection of technology and business — whether that means gathering requirements, designing workflows, analyzing datasets, or building system models that align with organizational goals."
+                            }, void 0, false, {
+                                fileName: "src/Components/About.jsx",
+                                lineNumber: 73,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "about-details",
+                                children: [
+                                    {
+                                        label: "Degree",
+                                        val: "BSc(Hons) IT"
+                                    },
+                                    {
+                                        label: "University",
+                                        val: "SLIIT, Sri Lanka"
+                                    },
+                                    {
+                                        label: "Specialization",
+                                        val: "Information Systems Engineering"
+                                    },
+                                    {
+                                        label: "Year",
+                                        val: "Undergraduate"
+                                    },
+                                    {
+                                        label: "Email",
+                                        val: "dulanjanarmd@gmail.com"
+                                    },
+                                    {
+                                        label: "Location",
+                                        val: "Sri Lanka"
+                                    },
+                                    {
+                                        label: "Languages",
+                                        val: "Sinhala, English"
+                                    },
+                                    {
+                                        label: "Status",
+                                        val: "Open to Work ✓"
+                                    }, 
+                                ].map((d)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "detail-item",
                                         children: [
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                children: s.name
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                className: "d-label",
+                                                children: d.label
                                             }, void 0, false, {
                                                 fileName: "src/Components/About.jsx",
-                                                lineNumber: 77,
+                                                lineNumber: 92,
                                                 columnNumber: 17
                                             }, undefined),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                children: [
-                                                    s.pct,
-                                                    "%"
-                                                ]
-                                            }, void 0, true, {
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                className: "d-val",
+                                                children: d.val
+                                            }, void 0, false, {
                                                 fileName: "src/Components/About.jsx",
-                                                lineNumber: 78,
+                                                lineNumber: 93,
                                                 columnNumber: 17
                                             }, undefined)
                                         ]
-                                    }, void 0, true, {
+                                    }, d.label, true, {
                                         fileName: "src/Components/About.jsx",
-                                        lineNumber: 76,
+                                        lineNumber: 91,
                                         columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "skill-bg",
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "skill-fill",
-                                            "data-pct": s.pct
+                                    }, undefined))
+                            }, void 0, false, {
+                                fileName: "src/Components/About.jsx",
+                                lineNumber: 80,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Components/About.jsx",
+                        lineNumber: 58,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "reveal-right",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "sec-label",
+                                children: "Technical Skills"
+                            }, void 0, false, {
+                                fileName: "src/Components/About.jsx",
+                                lineNumber: 101,
+                                columnNumber: 11
+                            }, undefined),
+                            skills.map((s)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "skill-wrap",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "skill-top",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                    children: s.name
+                                                }, void 0, false, {
+                                                    fileName: "src/Components/About.jsx",
+                                                    lineNumber: 105,
+                                                    columnNumber: 17
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                    children: [
+                                                        s.pct,
+                                                        "%"
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "src/Components/About.jsx",
+                                                    lineNumber: 106,
+                                                    columnNumber: 17
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/Components/About.jsx",
+                                            lineNumber: 104,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "skill-bg",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                className: "skill-fill",
+                                                "data-pct": s.pct
+                                            }, void 0, false, {
+                                                fileName: "src/Components/About.jsx",
+                                                lineNumber: 109,
+                                                columnNumber: 17
+                                            }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/Components/About.jsx",
-                                            lineNumber: 81,
-                                            columnNumber: 17
+                                            lineNumber: 108,
+                                            columnNumber: 15
                                         }, undefined)
+                                    ]
+                                }, s.name, true, {
+                                    fileName: "src/Components/About.jsx",
+                                    lineNumber: 103,
+                                    columnNumber: 13
+                                }, undefined)),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "about-tools-wrap reveal",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "sec-label",
+                                        style: {
+                                            marginTop: "2.5rem"
+                                        },
+                                        children: "Tools & Technologies"
                                     }, void 0, false, {
                                         fileName: "src/Components/About.jsx",
-                                        lineNumber: 80,
-                                        columnNumber: 15
+                                        lineNumber: 116,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "about-tools",
+                                        children: tools.map((t)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                className: "tool-chip",
+                                                children: t
+                                            }, t, false, {
+                                                fileName: "src/Components/About.jsx",
+                                                lineNumber: 119,
+                                                columnNumber: 17
+                                            }, undefined))
+                                    }, void 0, false, {
+                                        fileName: "src/Components/About.jsx",
+                                        lineNumber: 117,
+                                        columnNumber: 13
                                     }, undefined)
                                 ]
-                            }, s.name, true, {
+                            }, void 0, true, {
                                 fileName: "src/Components/About.jsx",
-                                lineNumber: 75,
-                                columnNumber: 13
-                            }, undefined))
-                    ]
-                }, void 0, true, {
-                    fileName: "src/Components/About.jsx",
-                    lineNumber: 72,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/Components/About.jsx",
-            lineNumber: 31,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
+                                lineNumber: 115,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Components/About.jsx",
+                        lineNumber: 100,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Components/About.jsx",
+                lineNumber: 55,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "about-bottom reveal",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "about-bottom-col",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "sec-label",
+                                children: "Soft Skills"
+                            }, void 0, false, {
+                                fileName: "src/Components/About.jsx",
+                                lineNumber: 129,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "soft-grid",
+                                children: softSkills.map((s)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "soft-card",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                className: "soft-icon",
+                                                children: s.icon
+                                            }, void 0, false, {
+                                                fileName: "src/Components/About.jsx",
+                                                lineNumber: 133,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                className: "soft-label",
+                                                children: s.label
+                                            }, void 0, false, {
+                                                fileName: "src/Components/About.jsx",
+                                                lineNumber: 134,
+                                                columnNumber: 17
+                                            }, undefined)
+                                        ]
+                                    }, s.label, true, {
+                                        fileName: "src/Components/About.jsx",
+                                        lineNumber: 132,
+                                        columnNumber: 15
+                                    }, undefined))
+                            }, void 0, false, {
+                                fileName: "src/Components/About.jsx",
+                                lineNumber: 130,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Components/About.jsx",
+                        lineNumber: 128,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "about-bottom-col",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "sec-label",
+                                children: "Interests"
+                            }, void 0, false, {
+                                fileName: "src/Components/About.jsx",
+                                lineNumber: 141,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "soft-grid",
+                                children: interests.map((i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "soft-card",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                className: "soft-icon",
+                                                children: i.icon
+                                            }, void 0, false, {
+                                                fileName: "src/Components/About.jsx",
+                                                lineNumber: 145,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                className: "soft-label",
+                                                children: i.label
+                                            }, void 0, false, {
+                                                fileName: "src/Components/About.jsx",
+                                                lineNumber: 146,
+                                                columnNumber: 17
+                                            }, undefined)
+                                        ]
+                                    }, i.label, true, {
+                                        fileName: "src/Components/About.jsx",
+                                        lineNumber: 144,
+                                        columnNumber: 15
+                                    }, undefined))
+                            }, void 0, false, {
+                                fileName: "src/Components/About.jsx",
+                                lineNumber: 142,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Components/About.jsx",
+                        lineNumber: 140,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "about-bottom-col",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "sec-label",
+                                children: "Career Goals"
+                            }, void 0, false, {
+                                fileName: "src/Components/About.jsx",
+                                lineNumber: 153,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "about-text",
+                                style: {
+                                    marginBottom: "1rem"
+                                },
+                                children: [
+                                    "My ambition is to grow into a senior-level ",
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                        style: {
+                                            color: "#fff"
+                                        },
+                                        children: "Business Analyst"
+                                    }, void 0, false, {
+                                        fileName: "src/Components/About.jsx",
+                                        lineNumber: 155,
+                                        columnNumber: 56
+                                    }, undefined),
+                                    " or",
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                        style: {
+                                            color: "#fff"
+                                        },
+                                        children: " Data Analyst"
+                                    }, void 0, false, {
+                                        fileName: "src/Components/About.jsx",
+                                        lineNumber: 156,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    " role, contributing to organizations that value data-driven decision making and continuous improvement."
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Components/About.jsx",
+                                lineNumber: 154,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "about-text",
+                                children: "I aim to bridge the gap between technical teams and business stakeholders, ensuring technology investments deliver real, measurable value."
+                            }, void 0, false, {
+                                fileName: "src/Components/About.jsx",
+                                lineNumber: 159,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Components/About.jsx",
+                        lineNumber: 152,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Components/About.jsx",
+                lineNumber: 127,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "src/Components/About.jsx",
-        lineNumber: 30,
+        lineNumber: 52,
         columnNumber: 5
     }, undefined);
 };
@@ -29119,179 +29338,6 @@ var _c;
 $RefreshReg$(_c, "About");
 
   $parcel$ReactRefreshHelpers$17a8.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iwRVc":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$dd7d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$dd7d.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _s = $RefreshSig$();
-const services = [
-    {
-        num: "01",
-        title: "Business Analysis",
-        desc: "Analyzing business processes, identifying requirements, and delivering solutions that align technology with business goals."
-    },
-    {
-        num: "02",
-        title: "Data Analysis",
-        desc: "Transforming raw data into actionable insights using analytical techniques, visualization, and statistical methods."
-    },
-    {
-        num: "03",
-        title: "System Analysis",
-        desc: "Designing and evaluating information systems to meet organizational needs through structured analysis and modeling."
-    },
-    {
-        num: "04",
-        title: "Database Management",
-        desc: "Designing relational databases, writing SQL queries, and managing data integrity for enterprise applications."
-    },
-    {
-        num: "05",
-        title: "Requirements Engineering",
-        desc: "Gathering, documenting, and managing stakeholder requirements to ensure successful project delivery."
-    },
-    {
-        num: "06",
-        title: "Process Modeling",
-        desc: "Creating UML diagrams, ERDs, and process flow models to visualize and optimize business workflows."
-    }, 
-];
-const Services = ()=>{
-    _s();
-    (0, _react.useEffect)(()=>{
-        const observer = new IntersectionObserver((entries)=>entries.forEach((e)=>e.isIntersecting && e.target.classList.add("visible")), {
-            threshold: 0.1
-        });
-        document.querySelectorAll(".reveal,.reveal-left,.reveal-right").forEach((el)=>observer.observe(el));
-        return ()=>observer.disconnect();
-    }, []);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
-        id: "services",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "services-top",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "reveal-left",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "sec-label",
-                                children: "What I Do"
-                            }, void 0, false, {
-                                fileName: "src/Components/Services.jsx",
-                                lineNumber: 26,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                                className: "sec-title",
-                                children: [
-                                    "MY ",
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                        children: "SERVICES"
-                                    }, void 0, false, {
-                                        fileName: "src/Components/Services.jsx",
-                                        lineNumber: 27,
-                                        columnNumber: 40
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/Components/Services.jsx",
-                                lineNumber: 27,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/Components/Services.jsx",
-                        lineNumber: 25,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "reveal-right",
-                        style: {
-                            color: "var(--muted)",
-                            fontSize: "0.88rem",
-                            lineHeight: 1.8,
-                            maxWidth: "380px"
-                        },
-                        children: "Specialized in bridging the gap between technology and business through analysis, design, and data-driven decision making."
-                    }, void 0, false, {
-                        fileName: "src/Components/Services.jsx",
-                        lineNumber: 29,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/Components/Services.jsx",
-                lineNumber: 24,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "services-grid",
-                children: services.map((s, i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "svc-card reveal",
-                        style: {
-                            transitionDelay: `${i * 0.07}s`
-                        },
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "svc-num",
-                                children: s.num
-                            }, void 0, false, {
-                                fileName: "src/Components/Services.jsx",
-                                lineNumber: 37,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                                children: s.title
-                            }, void 0, false, {
-                                fileName: "src/Components/Services.jsx",
-                                lineNumber: 38,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                children: s.desc
-                            }, void 0, false, {
-                                fileName: "src/Components/Services.jsx",
-                                lineNumber: 39,
-                                columnNumber: 13
-                            }, undefined)
-                        ]
-                    }, s.num, true, {
-                        fileName: "src/Components/Services.jsx",
-                        lineNumber: 36,
-                        columnNumber: 11
-                    }, undefined))
-            }, void 0, false, {
-                fileName: "src/Components/Services.jsx",
-                lineNumber: 34,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/Components/Services.jsx",
-        lineNumber: 23,
-        columnNumber: 5
-    }, undefined);
-};
-_s(Services, "OD7bBpZva5O2jO+Puf00hKivP7c=");
-_c = Services;
-exports.default = Services;
-var _c;
-$RefreshReg$(_c, "Services");
-
-  $parcel$ReactRefreshHelpers$dd7d.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
@@ -29311,32 +29357,133 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _s = $RefreshSig$();
 const projects = [
     {
-        tag: "GitHub",
-        title: "GitHub Profile",
-        desc: "Explore my repositories, open source contributions, and coding projects related to information systems and data analysis.",
-        url: "https://github.com/dulanjanarmd"
-    },
-    {
-        tag: "LinkedIn",
-        title: "LinkedIn Profile",
-        desc: "Connect with me professionally. View my academic background, skills, certifications, and career journey.",
-        url: "https://www.linkedin.com/in/dulanjanarmd"
-    },
-    {
+        id: 1,
+        category: "Data Analysis",
         tag: "Academic",
-        title: "Data Analysis Projects",
-        desc: "Data analysis and visualization projects built during my studies at SLIIT — dashboards, reports, and statistical models.",
-        url: "https://github.com/dulanjanarmd"
+        title: "Healthcare Appointment System Analysis",
+        desc: "Conducted full business analysis for a healthcare appointment management system. Delivered BRD, use case diagrams, process flow models, and stakeholder requirement documentation.",
+        tech: [
+            "SQL",
+            "Draw.io",
+            "MS Visio",
+            "Excel"
+        ],
+        status: "Completed",
+        year: "2024",
+        url: "https://github.com/dulanjanarmd",
+        featured: true
     },
     {
+        id: 2,
+        category: "System Design",
         tag: "Academic",
-        title: "System Design Work",
-        desc: "System analysis and design artifacts including UML diagrams, ERDs, DFDs, and process models from academic projects.",
-        url: "https://github.com/dulanjanarmd"
+        title: "Library Management System",
+        desc: "Designed a complete information system for a university library. Produced ERD, DFD, UML class diagrams, and system architecture documentation.",
+        tech: [
+            "UML",
+            "ERD",
+            "Lucidchart",
+            "MySQL"
+        ],
+        status: "Completed",
+        year: "2024",
+        url: "https://github.com/dulanjanarmd",
+        featured: false
+    },
+    {
+        id: 3,
+        category: "Data Analysis",
+        tag: "Academic",
+        title: "Sales Data Dashboard",
+        desc: "Built an interactive sales performance dashboard analyzing trends, KPIs, and forecasts using Excel and Power BI. Presented insights to stakeholders.",
+        tech: [
+            "Power BI",
+            "Excel",
+            "Python",
+            "SQL"
+        ],
+        status: "Completed",
+        year: "2023",
+        url: "https://github.com/dulanjanarmd",
+        featured: false
+    },
+    {
+        id: 4,
+        category: "Business Analysis",
+        tag: "Academic",
+        title: "E-Commerce Requirements Study",
+        desc: "Performed requirements elicitation and analysis for an e-commerce platform. Delivered functional and non-functional requirements, user stories, and acceptance criteria.",
+        tech: [
+            "Jira",
+            "Confluence",
+            "Figma",
+            "Excel"
+        ],
+        status: "Completed",
+        year: "2024",
+        url: "https://github.com/dulanjanarmd",
+        featured: false
+    },
+    {
+        id: 5,
+        category: "System Design",
+        tag: "Academic",
+        title: "Student Information System",
+        desc: "Analyzed and modeled a student information system for SLIIT. Produced full system documentation including data flow diagrams, entity relationships, and process models.",
+        tech: [
+            "UML",
+            "DFD",
+            "MySQL",
+            "Draw.io"
+        ],
+        status: "Completed",
+        year: "2023",
+        url: "https://github.com/dulanjanarmd",
+        featured: false
+    },
+    {
+        id: 6,
+        category: "Business Analysis",
+        tag: "Personal",
+        title: "Business Process Improvement Study",
+        desc: "Identified inefficiencies in a small business workflow and proposed process improvements using BPMN modeling and gap analysis techniques.",
+        tech: [
+            "BPMN",
+            "Lucidchart",
+            "Excel",
+            "Trello"
+        ],
+        status: "In Progress",
+        year: "2025",
+        url: "https://github.com/dulanjanarmd",
+        featured: false
     }, 
+];
+const FILTERS = [
+    "All",
+    "Data Analysis",
+    "System Design",
+    "Business Analysis"
 ];
 const Portfolio = ()=>{
     _s();
+    const [active, setActive] = (0, _react.useState)("All");
+    const [visible, setVisible] = (0, _react.useState)([]);
+    const filtered = active === "All" ? projects : projects.filter((p)=>p.category === active);
+    (0, _react.useEffect)(()=>{
+        setVisible([]);
+        const t = setTimeout(()=>{
+            filtered.forEach((p, i)=>{
+                setTimeout(()=>setVisible((v)=>[
+                            ...v,
+                            p.id
+                        ]), i * 80);
+            });
+        }, 50);
+        return ()=>clearTimeout(t);
+    }, [
+        active
+    ]);
     (0, _react.useEffect)(()=>{
         const observer = new IntersectionObserver((entries)=>entries.forEach((e)=>e.isIntersecting && e.target.classList.add("visible")), {
             threshold: 0.1
@@ -29344,6 +29491,7 @@ const Portfolio = ()=>{
         document.querySelectorAll(".reveal,.reveal-left,.reveal-right").forEach((el)=>observer.observe(el));
         return ()=>observer.disconnect();
     }, []);
+    const featured = projects.find((p)=>p.featured);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
         id: "portfolio",
         children: [
@@ -29358,7 +29506,7 @@ const Portfolio = ()=>{
                                 children: "My Work"
                             }, void 0, false, {
                                 fileName: "src/Components/Portfolio.jsx",
-                                lineNumber: 44,
+                                lineNumber: 113,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -29369,102 +29517,403 @@ const Portfolio = ()=>{
                                         children: "PROJECTS"
                                     }, void 0, false, {
                                         fileName: "src/Components/Portfolio.jsx",
-                                        lineNumber: 45,
+                                        lineNumber: 114,
                                         columnNumber: 44
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/Components/Portfolio.jsx",
-                                lineNumber: 45,
+                                lineNumber: 114,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Components/Portfolio.jsx",
-                        lineNumber: 43,
+                        lineNumber: 112,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
                         href: "https://github.com/dulanjanarmd",
                         target: "_blank",
                         rel: "noopener noreferrer",
-                        className: "hero-btn reveal-right",
-                        style: {
-                            animation: "none",
-                            opacity: 1
-                        },
-                        children: "View All →"
+                        className: "hero-btn hero-btn-outline reveal-right",
+                        children: "View All on GitHub ↗"
                     }, void 0, false, {
                         fileName: "src/Components/Portfolio.jsx",
-                        lineNumber: 47,
+                        lineNumber: 116,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Components/Portfolio.jsx",
-                lineNumber: 42,
+                lineNumber: 111,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "port-grid",
-                children: projects.map((p, i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: p.url,
-                        target: "_blank",
-                        rel: "noopener noreferrer",
-                        className: "proj-card reveal",
-                        style: {
-                            transitionDelay: `${i * 0.1}s`
-                        },
+                className: "port-stats reveal",
+                children: [
+                    {
+                        num: "6+",
+                        label: "Projects Completed"
+                    },
+                    {
+                        num: "3",
+                        label: "Specializations"
+                    },
+                    {
+                        num: "12+",
+                        label: "Tools Used"
+                    },
+                    {
+                        num: "2+",
+                        label: "Years Experience"
+                    }, 
+                ].map((s)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "port-stat",
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "proj-tag",
-                                children: p.tag
+                                className: "port-stat-num",
+                                children: s.num
                             }, void 0, false, {
                                 fileName: "src/Components/Portfolio.jsx",
-                                lineNumber: 56,
+                                lineNumber: 131,
                                 columnNumber: 13
                             }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                                children: p.title
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "port-stat-label",
+                                children: s.label
                             }, void 0, false, {
                                 fileName: "src/Components/Portfolio.jsx",
-                                lineNumber: 57,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                children: p.desc
-                            }, void 0, false, {
-                                fileName: "src/Components/Portfolio.jsx",
-                                lineNumber: 58,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                className: "proj-arrow",
-                                children: "↗"
-                            }, void 0, false, {
-                                fileName: "src/Components/Portfolio.jsx",
-                                lineNumber: 59,
+                                lineNumber: 132,
                                 columnNumber: 13
                             }, undefined)
                         ]
-                    }, p.title, true, {
+                    }, s.label, true, {
                         fileName: "src/Components/Portfolio.jsx",
-                        lineNumber: 54,
+                        lineNumber: 130,
                         columnNumber: 11
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/Components/Portfolio.jsx",
-                lineNumber: 52,
+                lineNumber: 123,
+                columnNumber: 7
+            }, undefined),
+            featured && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "port-featured reveal",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "port-featured-badge",
+                        children: "★ Featured Project"
+                    }, void 0, false, {
+                        fileName: "src/Components/Portfolio.jsx",
+                        lineNumber: 140,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "port-featured-inner",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "port-featured-left",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "proj-tag",
+                                        children: featured.category
+                                    }, void 0, false, {
+                                        fileName: "src/Components/Portfolio.jsx",
+                                        lineNumber: 143,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                        className: "port-featured-title",
+                                        children: featured.title
+                                    }, void 0, false, {
+                                        fileName: "src/Components/Portfolio.jsx",
+                                        lineNumber: 144,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        className: "port-featured-desc",
+                                        children: featured.desc
+                                    }, void 0, false, {
+                                        fileName: "src/Components/Portfolio.jsx",
+                                        lineNumber: 145,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "proj-tech-row",
+                                        children: featured.tech.map((t)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                className: "proj-tech",
+                                                children: t
+                                            }, t, false, {
+                                                fileName: "src/Components/Portfolio.jsx",
+                                                lineNumber: 147,
+                                                columnNumber: 41
+                                            }, undefined))
+                                    }, void 0, false, {
+                                        fileName: "src/Components/Portfolio.jsx",
+                                        lineNumber: 146,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Components/Portfolio.jsx",
+                                lineNumber: 142,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "port-featured-right",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "port-featured-meta",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                className: "meta-item",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                        className: "meta-label",
+                                                        children: "Status"
+                                                    }, void 0, false, {
+                                                        fileName: "src/Components/Portfolio.jsx",
+                                                        lineNumber: 153,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                        className: "meta-val status-done",
+                                                        children: featured.status
+                                                    }, void 0, false, {
+                                                        fileName: "src/Components/Portfolio.jsx",
+                                                        lineNumber: 154,
+                                                        columnNumber: 19
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/Components/Portfolio.jsx",
+                                                lineNumber: 152,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                className: "meta-item",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                        className: "meta-label",
+                                                        children: "Year"
+                                                    }, void 0, false, {
+                                                        fileName: "src/Components/Portfolio.jsx",
+                                                        lineNumber: 157,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                        className: "meta-val",
+                                                        children: featured.year
+                                                    }, void 0, false, {
+                                                        fileName: "src/Components/Portfolio.jsx",
+                                                        lineNumber: 158,
+                                                        columnNumber: 19
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/Components/Portfolio.jsx",
+                                                lineNumber: 156,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                className: "meta-item",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                        className: "meta-label",
+                                                        children: "Category"
+                                                    }, void 0, false, {
+                                                        fileName: "src/Components/Portfolio.jsx",
+                                                        lineNumber: 161,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                        className: "meta-val",
+                                                        children: featured.category
+                                                    }, void 0, false, {
+                                                        fileName: "src/Components/Portfolio.jsx",
+                                                        lineNumber: 162,
+                                                        columnNumber: 19
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/Components/Portfolio.jsx",
+                                                lineNumber: 160,
+                                                columnNumber: 17
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/Components/Portfolio.jsx",
+                                        lineNumber: 151,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                        href: featured.url,
+                                        target: "_blank",
+                                        rel: "noopener noreferrer",
+                                        className: "hero-btn",
+                                        style: {
+                                            marginTop: "2rem",
+                                            animation: "none"
+                                        },
+                                        children: "View Project ↗"
+                                    }, void 0, false, {
+                                        fileName: "src/Components/Portfolio.jsx",
+                                        lineNumber: 165,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Components/Portfolio.jsx",
+                                lineNumber: 150,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Components/Portfolio.jsx",
+                        lineNumber: 141,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Components/Portfolio.jsx",
+                lineNumber: 139,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "port-filters reveal",
+                children: FILTERS.map((f)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: `port-filter${active === f ? " active" : ""}`,
+                        onClick: ()=>setActive(f),
+                        children: [
+                            f,
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "filter-count",
+                                children: f === "All" ? projects.length : projects.filter((p)=>p.category === f).length
+                            }, void 0, false, {
+                                fileName: "src/Components/Portfolio.jsx",
+                                lineNumber: 183,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, f, true, {
+                        fileName: "src/Components/Portfolio.jsx",
+                        lineNumber: 177,
+                        columnNumber: 11
+                    }, undefined))
+            }, void 0, false, {
+                fileName: "src/Components/Portfolio.jsx",
+                lineNumber: 175,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "port-grid-adv",
+                children: filtered.filter((p)=>!p.featured || active !== "All").map((p)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: p.url,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        className: `proj-card-adv${visible.includes(p.id) ? " card-visible" : ""}`,
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "proj-card-top",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: "proj-tag",
+                                        children: p.category
+                                    }, void 0, false, {
+                                        fileName: "src/Components/Portfolio.jsx",
+                                        lineNumber: 201,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: `proj-status ${p.status === "Completed" ? "status-done" : "status-wip"}`,
+                                        children: p.status
+                                    }, void 0, false, {
+                                        fileName: "src/Components/Portfolio.jsx",
+                                        lineNumber: 202,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Components/Portfolio.jsx",
+                                lineNumber: 200,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                className: "proj-card-title",
+                                children: p.title
+                            }, void 0, false, {
+                                fileName: "src/Components/Portfolio.jsx",
+                                lineNumber: 206,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "proj-card-desc",
+                                children: p.desc
+                            }, void 0, false, {
+                                fileName: "src/Components/Portfolio.jsx",
+                                lineNumber: 207,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "proj-tech-row",
+                                children: p.tech.map((t)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: "proj-tech",
+                                        children: t
+                                    }, t, false, {
+                                        fileName: "src/Components/Portfolio.jsx",
+                                        lineNumber: 209,
+                                        columnNumber: 32
+                                    }, undefined))
+                            }, void 0, false, {
+                                fileName: "src/Components/Portfolio.jsx",
+                                lineNumber: 208,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "proj-card-footer",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: "proj-year",
+                                        children: p.year
+                                    }, void 0, false, {
+                                        fileName: "src/Components/Portfolio.jsx",
+                                        lineNumber: 212,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: "proj-arrow-adv",
+                                        children: "↗"
+                                    }, void 0, false, {
+                                        fileName: "src/Components/Portfolio.jsx",
+                                        lineNumber: 213,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Components/Portfolio.jsx",
+                                lineNumber: 211,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, p.id, true, {
+                        fileName: "src/Components/Portfolio.jsx",
+                        lineNumber: 193,
+                        columnNumber: 11
+                    }, undefined))
+            }, void 0, false, {
+                fileName: "src/Components/Portfolio.jsx",
+                lineNumber: 191,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Components/Portfolio.jsx",
-        lineNumber: 41,
+        lineNumber: 108,
         columnNumber: 5
     }, undefined);
 };
-_s(Portfolio, "OD7bBpZva5O2jO+Puf00hKivP7c=");
+_s(Portfolio, "wM31kCYn9gB3sWQNQWXOmoG/HoQ=");
 _c = Portfolio;
 exports.default = Portfolio;
 var _c;
