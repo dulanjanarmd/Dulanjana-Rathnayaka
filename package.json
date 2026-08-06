@@ -7,7 +7,7 @@
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
-    "predeploy": "parcel build --public-url '/Dulanjana-Rathnayaka/'",
+    "predeploy": "parcel build --public-url \"/Dulanjana-Rathnayaka/\"",
     "deploy": "gh-pages -d dist"
   },
   "author": "Dulanjana Rathnayaka",
