@@ -34,7 +34,7 @@ const AnimatedText = ({ text, className, delay = 0 }) => {
 };
 
 // ─── Canvas Particle Network ───────────────────────────────────────────
-const ParticleCanvas = () => {
+const ParticleCanvas = ({ theme }) => {
   const canvasRef = useRef(null);
   const mouse = useRef({ x: -9999, y: -9999 });
   const animRef = useRef(null);
@@ -84,6 +84,8 @@ const ParticleCanvas = () => {
 
     const draw = () => {
       ctx.clearRect(0, 0, W, H);
+      const isLight = document.documentElement.getAttribute("data-theme") === "light";
+      const rgb = isLight ? "40,40,40" : "255,255,255";
 
       for (const p of particles) {
         // Mouse repulsion
@@ -111,7 +113,7 @@ const ParticleCanvas = () => {
         // Draw dot
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255,255,255,${p.alpha})`;
+        ctx.fillStyle = `rgba(${rgb},${p.alpha})`;
         ctx.fill();
       }
 
@@ -122,11 +124,11 @@ const ParticleCanvas = () => {
           const dx = a.x - b.x, dy = a.y - b.y;
           const d = Math.sqrt(dx * dx + dy * dy);
           if (d < MAX_DIST) {
-            const opacity = (1 - d / MAX_DIST) * 0.07;
+            const opacity = (1 - d / MAX_DIST) * (isLight ? 0.12 : 0.07);
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = `rgba(255,255,255,${opacity})`;
+            ctx.strokeStyle = `rgba(${rgb},${opacity})`;
             ctx.lineWidth = 0.8;
             ctx.stroke();
           }
@@ -143,7 +145,7 @@ const ParticleCanvas = () => {
       window.removeEventListener("resize", init);
       window.removeEventListener("mouseleave", onMouseLeave);
     };
-  }, []);
+  }, [theme]);
 
   return (
     <canvas
@@ -161,8 +163,11 @@ const ParticleCanvas = () => {
   );
 };
 
+ParticleCanvas.defaultProps = { theme: "dark" };
+ParticleCanvas.propTypes = { theme: PropTypes.string };
+
 // ─── Main Component ────────────────────────────────────────────────────
-const Home = ({ name }) => {
+const Home = ({ name, theme }) => {
   const [displayText, setDisplayText] = useState("");
   const [roleIndex, setRoleIndex]     = useState(0);
   const [charIndex, setCharIndex]     = useState(0);
@@ -196,7 +201,7 @@ const Home = ({ name }) => {
 
   return (
     <section id="home">
-      <ParticleCanvas />
+      <ParticleCanvas theme={theme} />
 
       {/* LEFT */}
       <div className="hero-left">
@@ -236,6 +241,7 @@ const Home = ({ name }) => {
   );
 };
 
-Home.defaultProps = { name: "" };
-Home.propTypes = { name: PropTypes.string.isRequired };
+Home.defaultProps = { name: "", theme: "dark" };
+Home.propTypes = { name: PropTypes.string.isRequired, theme: PropTypes.string };
 export default Home;
+

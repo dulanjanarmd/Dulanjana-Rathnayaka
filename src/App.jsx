@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
 import About from "./Components/About";
@@ -20,15 +20,36 @@ const siteProps = {
   medium: "dulanjanarmd",
 };
 
-const App = () => (
-  <div id="main">
-    <Header />
-    <Home name={siteProps.name} title={siteProps.title} />
-    <About />
-    <Education />
-    <Portfolio />
-    <Footer {...siteProps} />
-  </div>
-);
+const App = () => {
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) return savedTheme;
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches
+      ? "light"
+      : "dark";
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    document.body.className = theme === "light" ? "light-mode" : "dark-mode";
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
+  };
+
+  return (
+    <div id="main" className={`app-container ${theme}`}>
+      <Header theme={theme} toggleTheme={toggleTheme} />
+      <Home name={siteProps.name} title={siteProps.title} theme={theme} />
+      <About />
+      <Education />
+      <Portfolio />
+      <Footer {...siteProps} />
+    </div>
+  );
+};
 
 export default App;
+
