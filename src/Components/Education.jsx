@@ -18,7 +18,7 @@ const educationData = [
     id: 2,
     school: "Saranath College, Kuliyapitiya",
     degree: "G.C.E. Advanced Level (A/L)",
-    specialization: "Physical Science Stream",
+    specialization: "Biological Science Stream",
     period: "Completed",
     image: saranathLogo,
     coverImage: true,
