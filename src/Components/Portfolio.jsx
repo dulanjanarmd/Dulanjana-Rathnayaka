@@ -22,22 +22,32 @@ const projects = [
   },
   {
     id: 2,
-    title: "RentLens",
+    title: "RENTLENS",
     category: "Full Stack Development",
     image: rentlensImg,
-    tech: ["React", "Spring Boot", "MySQL", "TailwindCSS", "REST APIs"],
-    desc: "A modern rental management platform enabling users to list and rent properties or items seamlessly.",
-    outcomes: "Automated booking workflows, integrated secure payments, and provided a centralized dashboard for property owners.",
+    tech: ["React", "Spring Boot", "MySQL", "TailwindCSS", "REST APIs", "Leaflet.js"],
+    desc: "A data-driven rental decision platform that helps students and young professionals in Sri Lanka evaluate properties using a transparent Rental Value Score, property comparison, budget-based recommendations, and market analytics.",
+    outcomes: [
+      "Designed and implemented a rule-based Rental Value Score (price, distance, facilities, reviews)",
+      "Built side-by-side property comparison and budget recommendation features",
+      "Developed interactive map search and market analytics dashboard",
+      "Created a complete Software Requirements Specification (SRS) and system architecture"
+    ],
     codeUrl: "https://github.com/dulanjanarmd/RentLens",
   },
   {
     id: 3,
-    title: "NovaBank-LoanSphere",
+    title: "NOVABANK-LOANSPHERE",
     category: "Software Engineering",
     image: novaBankImg,
-    tech: ["Java", "Spring Boot", "PostgreSQL", "Microservices"],
-    desc: "A banking loan management system built to handle loan applications, approvals, and repayment tracking.",
-    outcomes: "Reduced loan processing time by 40% through automated eligibility checks and streamlined approval workflows.",
+    tech: ["Java", "Spring Boot", "React.js", "MySQL", "REST APIs"],
+    desc: "A digital banking platform for Sri Lankan banks that enables online account opening and multi-product loan origination (Personal, Home, Vehicle, SME) with full e-KYC, credit assessment, maker-checker approval, and Core Banking integration.",
+    outcomes: [
+      "Designed complete SRS and end-to-end system flows compliant with CBSL & FIU AML/CFT guidelines",
+      "Implemented secure JWT authentication, role-based access, and encrypted document handling",
+      "Built multi-step wizards for Digital Account Opening and Loan Application with real-time EMI calculation",
+      "Included automated credit scoring, sanctions/PEP screening hooks, and full audit logging"
+    ],
     codeUrl: "https://github.com/dulanjanarmd/NovaBank-LoanSphere",
   },
   {
