@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import rentlensImg from '../images/rentlens.png';
 import libraryHubImg from '../images/libraryhub.png';
+import novaBankImg from '../images/novabank.png';
+import lankaThreadImg from '../images/lankathread.png';
 
 const projects = [
   {
@@ -27,7 +29,7 @@ const projects = [
     id: 3,
     title: "NovaBank-LoanSphere",
     category: "Software Engineering",
-    image: "https://opengraph.githubassets.com/1/dulanjanarmd/NovaBank-LoanSphere",
+    image: novaBankImg,
     tech: ["Java", "Spring Boot", "PostgreSQL", "Microservices"],
     desc: "A banking loan management system built to handle loan applications, approvals, and repayment tracking.",
     outcomes: "Reduced loan processing time by 40% through automated eligibility checks and streamlined approval workflows.",
@@ -37,7 +39,7 @@ const projects = [
     id: 4,
     title: "LankaThread By CeyloFab",
     category: "E-Commerce",
-    image: "https://opengraph.githubassets.com/1/dulanjanarmd/LankaThread-By-CeyloFab",
+    image: lankaThreadImg,
     tech: ["MERN Stack", "React", "Node.js", "MongoDB", "Express"],
     desc: "An e-commerce platform tailored for a Sri Lankan clothing brand, featuring user authentication, cart management, and order processing.",
     outcomes: "Increased online sales conversion rate and provided a seamless mobile-responsive shopping experience.",
