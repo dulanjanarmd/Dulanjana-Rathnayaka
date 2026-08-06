@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import saranathLogo from "../images/saranath.jpg";
 import stJosephLogo from "../images/stjoseph.jpg";
 import sliitLogo from "../images/sliit.png";
@@ -38,8 +38,28 @@ const educationData = [
 ];
 
 const Education = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add("visible");
+      }),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll(".education-section .reveal, .education-section .reveal-up, .education-section .reveal-left, .education-section .reveal-right").forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="education" className="education-section">
+      {/* Blueprint background lines */}
+      <div className="edu-bg-lines" aria-hidden="true">
+        <div className="edu-line edu-line-1" />
+        <div className="edu-line edu-line-2" />
+        <div className="edu-line edu-line-3" />
+        <div className="edu-line edu-line-4" />
+        <div className="edu-line edu-line-5" />
+      </div>
+
       <div className="edu-header reveal">
         <div className="sec-label">Education</div>
         <h2 className="sec-title">ACADEMIC <span>JOURNEY</span></h2>

@@ -6,6 +6,7 @@ import Education from "./Components/Education";
 import Portfolio from "./Components/Portfolio";
 import Footer from "./Components/Footer";
 import "./styles.css";
+import "./animations.css";
 
 const siteProps = {
   name: "Dulanjana Rathnayaka",

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import gitHubIcon from "../images/socials/github.svg";
 import linkedInIcon from "../images/socials/linkedin.svg";
@@ -8,11 +8,30 @@ import redditIcon from "../images/socials/reddit.svg";
 import mediumIcon from "../images/socials/medium.svg";
 import xIcon from "../images/socials/x.svg";
 
-const Footer = ({ name, email, gitHub, linkedIn, instagram, facebook, reddit, medium }) => (
-  <div id="footer" className="modern-footer">
+const Footer = ({ name, email, gitHub, linkedIn, instagram, facebook, reddit, medium }) => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add("visible");
+      }),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll("#footer .reveal-left, #footer .reveal-right").forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div id="footer" className="modern-footer">
+      {/* Background: radial glow + corner accents */}
+      <div className="footer-glow" aria-hidden="true" />
+      <div className="footer-corner footer-corner-tl" aria-hidden="true" />
+      <div className="footer-corner footer-corner-tr" aria-hidden="true" />
+      <div className="footer-corner footer-corner-bl" aria-hidden="true" />
+      <div className="footer-corner footer-corner-br" aria-hidden="true" />
+
     <div className="edu-header reveal-left">
       <div className="sec-label">Contact</div>
-      <h2 className="sec-title">LET'S WORK <span>TOGETHER.</span></h2>
+      <h2 className="sec-title">LET&apos;S WORK <span>TOGETHER.</span></h2>
     </div>
 
     <div className="clean-contact-grid">
@@ -60,8 +79,9 @@ const Footer = ({ name, email, gitHub, linkedIn, instagram, facebook, reddit, me
         <p className="mf-tech">Built with React & Parcel · Deployed on GitHub Pages</p>
       </div>
     </div>
-  </div>
-);
+    </div>
+  );
+};
 
 Footer.defaultProps = { name: "" };
 Footer.propTypes = {

@@ -40,6 +40,11 @@ const About = () => {
 
   return (
     <section id="about" className="modern-about">
+      {/* Ambient orb backgrounds */}
+      <div className="about-orb about-orb-1" aria-hidden="true" />
+      <div className="about-orb about-orb-2" aria-hidden="true" />
+      <div className="about-orb about-orb-3" aria-hidden="true" />
+
       <div className="about-header reveal-up">
         <div className="sec-label">Discover</div>
         <h2 className="sec-title">ABOUT <span>ME</span></h2>
