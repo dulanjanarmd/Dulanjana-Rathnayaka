@@ -7,8 +7,8 @@
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
-    "predeploy": "parcel build --public-url \"/Dulanjana-Rathnayaka/\"",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "parcel build --dist-dir build --public-url \"/Dulanjana-Rathnayaka/\" --no-cache",
+    "deploy": "gh-pages -d build"
   },
   "author": "Dulanjana Rathnayaka",
   "license": "ISC",

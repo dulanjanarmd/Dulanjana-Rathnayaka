@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import rentlensImg from '../images/rentlens.png';
 
 const projects = [
   {
@@ -15,7 +16,7 @@ const projects = [
     id: 2,
     title: "RentLens",
     category: "Full Stack Development",
-    image: "https://opengraph.githubassets.com/1/dulanjanarmd/RentLens",
+    image: rentlensImg,
     tech: ["React", "Spring Boot", "MySQL", "TailwindCSS", "REST APIs"],
     desc: "A modern rental management platform enabling users to list and rent properties or items seamlessly.",
     outcomes: "Automated booking workflows, integrated secure payments, and provided a centralized dashboard for property owners.",
