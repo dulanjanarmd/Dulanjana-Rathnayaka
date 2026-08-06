@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import rentlensImg from '../images/rentlens.png';
+import libraryHubImg from '../images/libraryhub.png';
 
 const projects = [
   {
     id: 1,
     title: "LibraryHub",
     category: "System Architecture & Design",
-    image: "https://opengraph.githubassets.com/1/dulanjanarmd/LibraryHub",
+    image: libraryHubImg,
     tech: ["Java", "Spring Boot", "MySQL", "React", "UML"],
     desc: "A comprehensive library management system designed to track books, members, and transactions effectively with a modern tech stack.",
     outcomes: "Streamlined library operations, improved book tracking, and enhanced user experience for both staff and members.",
