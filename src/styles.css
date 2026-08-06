@@ -1497,7 +1497,7 @@ body {
 .intro-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .intro-card h3 {
@@ -1638,12 +1638,25 @@ body {
   font-size: 0.95rem;
 }
 
+.philosophy-section {
+  margin-top: 2rem;
+}
+
+.philosophy-section h3 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .philosophy-section p {
   color: var(--text-muted, #aaa);
   line-height: 1.7;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-style: italic;
-  border-left: 3px solid #60a5fa;
+  border-left: 3px solid var(--accent, #4dabf7);
   padding-left: 1rem;
 }
 
@@ -1693,7 +1706,7 @@ body {
 }
 
 .skill-category {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .skill-category-title {
@@ -1735,7 +1748,7 @@ body {
 ══════════════════════════════ */
 .intro-content > h3, .skills-card > h3 {
   font-family: "Barlow Condensed", sans-serif;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #fff;
   margin-bottom: 0.5rem;
@@ -1744,7 +1757,7 @@ body {
 
 .intro-subtitle, .tech-subtitle {
   font-family: "Inter", sans-serif;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--accent, #4dabf7);
   margin-bottom: 2rem;
@@ -1752,7 +1765,7 @@ body {
 
 .intro-content p {
   font-family: "Inter", sans-serif;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   line-height: 1.7;
   color: var(--text-muted, #aaa);
   margin-bottom: 1.5rem;
@@ -1760,18 +1773,18 @@ body {
 
 .personal-details {
   margin-top: 2rem;
-  padding-top: 2rem;
+  padding-top: 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .pd-item {
   display: flex;
   gap: 1rem;
   font-family: "Inter", sans-serif;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
 }
 
 .pd-label {

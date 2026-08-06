@@ -54,8 +54,7 @@ const About = () => {
             <h4 className="intro-subtitle">Information Systems Engineering Undergraduate at SLIIT</h4>
             
             <p>
-              I am an aspiring <strong>Business Analyst (BA)</strong> and <strong>Systems Analyst (SA)</strong> based in Malabe, Sri Lanka. 
-              While my primary focus lies in bridging the gap between business needs and technical solutions, I also have a strong secondary interest in <strong>Data Analysis (DA)</strong>.
+              I am primarily an aspiring <strong>Business Analyst (BA)</strong>, with a secondary focus on <strong>Systems Analysis (SA)</strong> and <strong>Data Analysis (DA)</strong>. Based in Malabe, Sri Lanka, my core passion lies in bridging the gap between business needs and technical solutions.
             </p>
             <p>
               My journey is rooted in understanding complex business requirements, process modeling, and designing scalable system architectures. 
@@ -80,6 +79,15 @@ const About = () => {
                 <span className="pd-value">Data Analytics, System Design, Automation</span>
               </div>
             </div>
+          </div>
+
+          <div className="philosophy-section">
+            <h3>My Philosophy</h3>
+            <p>
+              "Technology is only as good as the business problem it solves." <br/>
+              I aim to ensure that every system designed and every line of code written aligns perfectly 
+              with overarching organizational goals and user needs.
+            </p>
           </div>
         </div>
 
