@@ -48,7 +48,7 @@ const Education = () => {
       <div className="education-timeline reveal">
         {educationData.map((item, index) => (
           <div className="education-card" key={item.id}>
-            <div className="edu-image-wrapper" style={{ background: '#fff' }}>
+            <div className="edu-image-wrapper">
               <img src={item.image} alt={item.school} className={`edu-logo ${item.coverImage ? 'edu-logo-cover' : ''}`} />
             </div>
             <div className="edu-content">

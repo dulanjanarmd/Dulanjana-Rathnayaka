@@ -51,24 +51,22 @@ const About = () => {
         <div className="about-card intro-card glass-panel reveal-left">
           <div className="intro-content">
             <h3>Hello! I'm Dulanjana Rathnayaka</h3>
-            <h4 className="intro-subtitle">Information Systems Engineering Undergraduate at SLIIT</h4>
+            <h4 className="intro-subtitle">Aspiring Business Analyst | Information Systems Engineering Undergraduate at SLIIT</h4>
             
             <p>
-              I am primarily an aspiring <strong>Business Analyst (BA)</strong>, with a secondary focus on <strong>Systems Analysis (SA)</strong> and <strong>Data Analysis (DA)</strong>. Based in Malabe, Sri Lanka, my core passion lies in bridging the gap between business needs and technical solutions.
+              I am an aspiring <strong>Business Analyst (BA)</strong> with a strong secondary focus on <strong>Systems Analysis (SA)</strong> and <strong>Data Analysis (DA)</strong>. Based in Malabe, Sri Lanka, I am passionate about bridging the gap between business needs and technical solutions — turning complex problems into clear, actionable strategies that deliver real value.
             </p>
             <p>
-              My journey is rooted in understanding complex business requirements, process modeling, and designing scalable system architectures. 
-              Because I possess practical hands-on experience in <strong>Full Stack Development</strong> and <strong>Data Science</strong>, 
-              I am uniquely positioned to communicate effectively with technical teams and ensure that technology investments deliver real business value.
+              My academic and practical journey is rooted in understanding complex business requirements, process modeling, and designing scalable system architectures. Through hands-on experience in Full Stack Development and Data Science, I have developed the ability to communicate effectively with both business stakeholders and technical teams. This unique combination allows me to ensure that technology investments are aligned with business goals and deliver measurable outcomes.
             </p>
             <p>
-              I thrive on transforming chaotic workflows into streamlined processes, and leveraging data to drive smart, actionable decisions.
+              I thrive on transforming chaotic, inefficient workflows into streamlined, data-driven processes. Whether it’s gathering and analyzing requirements, modeling business processes, or leveraging data to support smarter decision-making, I am driven by the goal of creating solutions that are both practical and impactful.
             </p>
 
             <div className="personal-details">
               <div className="pd-item">
                 <span className="pd-label">Education:</span>
-                <span className="pd-value">BSc (Hons) IT - SLIIT</span>
+                <span className="pd-value">BSc (Hons) in Information Technology Specialising in Information Systems Engineering – SLIIT</span>
               </div>
               <div className="pd-item">
                 <span className="pd-label">Location:</span>
@@ -76,7 +74,7 @@ const About = () => {
               </div>
               <div className="pd-item">
                 <span className="pd-label">Interests:</span>
-                <span className="pd-value">Data Analytics, System Design, Automation</span>
+                <span className="pd-value">Business Analysis &middot; Systems Analysis &middot; Data Analysis</span>
               </div>
             </div>
           </div>
