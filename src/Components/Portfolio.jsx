@@ -7,12 +7,17 @@ import lankaThreadImg from '../images/lankathread.png';
 const projects = [
   {
     id: 1,
-    title: "LibraryHub",
-    category: "System Architecture & Design",
+    title: "LIBRARYHUB",
+    category: "Business Process Improvement + Data Analytics",
     image: libraryHubImg,
-    tech: ["Java", "Spring Boot", "MySQL", "React", "UML"],
-    desc: "A comprehensive library management system designed to track books, members, and transactions effectively with a modern tech stack.",
-    outcomes: "Streamlined library operations, improved book tracking, and enhanced user experience for both staff and members.",
+    tech: ["Java", "Spring Boot", "MySQL", "React", "Chart.js", "UML"],
+    desc: "Designed and developed an Online Library Management System focused on improving university library operations through process digitization and data-driven insights. The system supports real-world workflows for students, faculty, and librarians while providing management with actionable analytics.",
+    outcomes: [
+      "Digitized core library processes (issue, return, reservation, inventory)",
+      "Built real-time dashboards tracking operational KPIs",
+      "Enabled data-driven decisions through borrowing trends and usage reports",
+      "Improved service efficiency and resource utilization for library staff and members"
+    ],
     codeUrl: "https://github.com/dulanjanarmd/LibraryHub",
   },
   {
@@ -86,7 +91,15 @@ const Portfolio = () => {
               
               <div className="new-proj-outcomes">
                 <strong>Key Outcomes:</strong>
-                <p>{p.outcomes}</p>
+                {Array.isArray(p.outcomes) ? (
+                  <ul>
+                    {p.outcomes.map((outcome, idx) => (
+                      <li key={idx}>{outcome}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>{p.outcomes}</p>
+                )}
               </div>
 
               <div className="new-proj-actions">
