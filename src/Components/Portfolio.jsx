@@ -1,221 +1,104 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 const projects = [
   {
     id: 1,
-    category: "Data Analysis",
-    tag: "Academic",
-    title: "Healthcare Appointment System Analysis",
-    desc: "Conducted full business analysis for a healthcare appointment management system. Delivered BRD, use case diagrams, process flow models, and stakeholder requirement documentation.",
-    tech: ["SQL", "Draw.io", "MS Visio", "Excel"],
-    status: "Completed",
-    year: "2024",
-    url: "https://github.com/dulanjanarmd",
-    featured: true,
+    title: "LibraryHub",
+    category: "System Architecture & Design",
+    image: "https://opengraph.githubassets.com/1/dulanjanarmd/LibraryHub",
+    tech: ["Java", "Spring Boot", "MySQL", "React", "UML"],
+    desc: "A comprehensive library management system designed to track books, members, and transactions effectively with a modern tech stack.",
+    outcomes: "Streamlined library operations, improved book tracking, and enhanced user experience for both staff and members.",
+    codeUrl: "https://github.com/dulanjanarmd/LibraryHub",
   },
   {
     id: 2,
-    category: "System Design",
-    tag: "Academic",
-    title: "Library Management System",
-    desc: "Designed a complete information system for a university library. Produced ERD, DFD, UML class diagrams, and system architecture documentation.",
-    tech: ["UML", "ERD", "Lucidchart", "MySQL"],
-    status: "Completed",
-    year: "2024",
-    url: "https://github.com/dulanjanarmd",
-    featured: false,
+    title: "RentLens",
+    category: "Full Stack Development",
+    image: "https://opengraph.githubassets.com/1/dulanjanarmd/RentLens",
+    tech: ["React", "Spring Boot", "MySQL", "TailwindCSS", "REST APIs"],
+    desc: "A modern rental management platform enabling users to list and rent properties or items seamlessly.",
+    outcomes: "Automated booking workflows, integrated secure payments, and provided a centralized dashboard for property owners.",
+    codeUrl: "https://github.com/dulanjanarmd/RentLens",
   },
   {
     id: 3,
-    category: "Data Analysis",
-    tag: "Academic",
-    title: "Sales Data Dashboard",
-    desc: "Built an interactive sales performance dashboard analyzing trends, KPIs, and forecasts using Excel and Power BI. Presented insights to stakeholders.",
-    tech: ["Power BI", "Excel", "Python", "SQL"],
-    status: "Completed",
-    year: "2023",
-    url: "https://github.com/dulanjanarmd",
-    featured: false,
+    title: "NovaBank-LoanSphere",
+    category: "Software Engineering",
+    image: "https://opengraph.githubassets.com/1/dulanjanarmd/NovaBank-LoanSphere",
+    tech: ["Java", "Spring Boot", "PostgreSQL", "Microservices"],
+    desc: "A banking loan management system built to handle loan applications, approvals, and repayment tracking.",
+    outcomes: "Reduced loan processing time by 40% through automated eligibility checks and streamlined approval workflows.",
+    codeUrl: "https://github.com/dulanjanarmd/NovaBank-LoanSphere",
   },
   {
     id: 4,
-    category: "Business Analysis",
-    tag: "Academic",
-    title: "E-Commerce Requirements Study",
-    desc: "Performed requirements elicitation and analysis for an e-commerce platform. Delivered functional and non-functional requirements, user stories, and acceptance criteria.",
-    tech: ["Jira", "Confluence", "Figma", "Excel"],
-    status: "Completed",
-    year: "2024",
-    url: "https://github.com/dulanjanarmd",
-    featured: false,
-  },
-  {
-    id: 5,
-    category: "System Design",
-    tag: "Academic",
-    title: "Student Information System",
-    desc: "Analyzed and modeled a student information system for SLIIT. Produced full system documentation including data flow diagrams, entity relationships, and process models.",
-    tech: ["UML", "DFD", "MySQL", "Draw.io"],
-    status: "Completed",
-    year: "2023",
-    url: "https://github.com/dulanjanarmd",
-    featured: false,
-  },
-  {
-    id: 6,
-    category: "Business Analysis",
-    tag: "Personal",
-    title: "Business Process Improvement Study",
-    desc: "Identified inefficiencies in a small business workflow and proposed process improvements using BPMN modeling and gap analysis techniques.",
-    tech: ["BPMN", "Lucidchart", "Excel", "Trello"],
-    status: "In Progress",
-    year: "2025",
-    url: "https://github.com/dulanjanarmd",
-    featured: false,
-  },
+    title: "LankaThread By CeyloFab",
+    category: "E-Commerce",
+    image: "https://opengraph.githubassets.com/1/dulanjanarmd/LankaThread-By-CeyloFab",
+    tech: ["MERN Stack", "React", "Node.js", "MongoDB", "Express"],
+    desc: "An e-commerce platform tailored for a Sri Lankan clothing brand, featuring user authentication, cart management, and order processing.",
+    outcomes: "Increased online sales conversion rate and provided a seamless mobile-responsive shopping experience.",
+    codeUrl: "https://github.com/dulanjanarmd/LankaThread-By-CeyloFab",
+  }
 ];
 
-const FILTERS = ["All", "Data Analysis", "System Design", "Business Analysis"];
-
 const Portfolio = () => {
-  const [active, setActive] = useState("All");
-  const [visible, setVisible] = useState([]);
-
-  const filtered = active === "All" ? projects : projects.filter(p => p.category === active);
-
-  useEffect(() => {
-    setVisible([]);
-    const t = setTimeout(() => {
-      filtered.forEach((p, i) => {
-        setTimeout(() => setVisible(v => [...v, p.id]), i * 80);
-      });
-    }, 50);
-    return () => clearTimeout(t);
-  }, [active]);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
-      entries => entries.forEach(e => e.isIntersecting && e.target.classList.add("visible")),
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add("card-visible");
+        }
+      }),
       { threshold: 0.1 }
     );
-    document.querySelectorAll(".reveal,.reveal-left,.reveal-right").forEach(el => observer.observe(el));
+    document.querySelectorAll(".new-proj-card, .reveal-left").forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
-  const featured = projects.find(p => p.featured);
-
   return (
     <section id="portfolio">
-
-      {/* Header */}
-      <div className="port-top">
-        <div className="reveal-left">
-          <div className="sec-label">My Work</div>
-          <h2 className="sec-title">RECENT <span>PROJECTS</span></h2>
-        </div>
-        <a href="https://github.com/dulanjanarmd" target="_blank" rel="noopener noreferrer"
-          className="hero-btn hero-btn-outline reveal-right">
-          View All on GitHub ↗
-        </a>
+      <div className="edu-header reveal-left">
+        <div className="sec-label">My Work</div>
+        <h2 className="sec-title">RECENT <span>PROJECTS</span></h2>
       </div>
 
-      {/* Stats row */}
-      <div className="port-stats reveal">
-        {[
-          { num: "6+", label: "Projects Completed" },
-          { num: "3",  label: "Specializations" },
-          { num: "12+", label: "Tools Used" },
-          { num: "2+",  label: "Years Experience" },
-        ].map(s => (
-          <div className="port-stat" key={s.label}>
-            <div className="port-stat-num">{s.num}</div>
-            <div className="port-stat-label">{s.label}</div>
+      <div className="new-port-grid">
+        {projects.map((p) => (
+          <div key={p.id} className="new-proj-card">
+            <div className="new-proj-img">
+              <img src={p.image} alt={p.title} />
+            </div>
+            <div className="new-proj-body">
+              <h3 className="new-proj-title">{p.title}</h3>
+              <div className="new-proj-category">{p.category}</div>
+              
+              <div className="new-proj-tech">
+                {p.tech.map(t => <span key={t} className="new-proj-tag">{t}</span>)}
+              </div>
+              
+              <p className="new-proj-desc">{p.desc}</p>
+              
+              <div className="new-proj-outcomes">
+                <strong>Key Outcomes:</strong>
+                <p>{p.outcomes}</p>
+              </div>
+
+              <div className="new-proj-actions">
+                {p.codeUrl && (
+                  <a href={p.codeUrl} target="_blank" rel="noopener noreferrer" className="new-proj-btn">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                    Code
+                  </a>
+                )}
+              </div>
+            </div>
           </div>
         ))}
       </div>
-
-      {/* Featured project */}
-      {featured && (
-        <div className="port-featured reveal">
-          <div className="port-featured-badge">★ Featured Project</div>
-          <div className="port-featured-inner">
-            <div className="port-featured-left">
-              <div className="proj-tag">{featured.category}</div>
-              <h3 className="port-featured-title">{featured.title}</h3>
-              <p className="port-featured-desc">{featured.desc}</p>
-              <div className="proj-tech-row">
-                {featured.tech.map(t => <span className="proj-tech" key={t}>{t}</span>)}
-              </div>
-            </div>
-            <div className="port-featured-right">
-              <div className="port-featured-meta">
-                <div className="meta-item">
-                  <span className="meta-label">Status</span>
-                  <span className="meta-val status-done">{featured.status}</span>
-                </div>
-                <div className="meta-item">
-                  <span className="meta-label">Year</span>
-                  <span className="meta-val">{featured.year}</span>
-                </div>
-                <div className="meta-item">
-                  <span className="meta-label">Category</span>
-                  <span className="meta-val">{featured.category}</span>
-                </div>
-              </div>
-              <a href={featured.url} target="_blank" rel="noopener noreferrer"
-                className="hero-btn" style={{ marginTop: "2rem", animation: "none" }}>
-                View Project ↗
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Filter tabs */}
-      <div className="port-filters reveal">
-        {FILTERS.map(f => (
-          <button
-            key={f}
-            className={`port-filter${active === f ? " active" : ""}`}
-            onClick={() => setActive(f)}
-          >
-            {f}
-            <span className="filter-count">
-              {f === "All" ? projects.length : projects.filter(p => p.category === f).length}
-            </span>
-          </button>
-        ))}
-      </div>
-
-      {/* Project grid */}
-      <div className="port-grid-adv">
-        {filtered.filter(p => !p.featured || active !== "All").map(p => (
-          <a
-            key={p.id}
-            href={p.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`proj-card-adv${visible.includes(p.id) ? " card-visible" : ""}`}
-          >
-            <div className="proj-card-top">
-              <span className="proj-tag">{p.category}</span>
-              <span className={`proj-status ${p.status === "Completed" ? "status-done" : "status-wip"}`}>
-                {p.status}
-              </span>
-            </div>
-            <h3 className="proj-card-title">{p.title}</h3>
-            <p className="proj-card-desc">{p.desc}</p>
-            <div className="proj-tech-row">
-              {p.tech.map(t => <span className="proj-tech" key={t}>{t}</span>)}
-            </div>
-            <div className="proj-card-footer">
-              <span className="proj-year">{p.year}</span>
-              <span className="proj-arrow-adv">↗</span>
-            </div>
-          </a>
-        ))}
-      </div>
-
     </section>
   );
 };

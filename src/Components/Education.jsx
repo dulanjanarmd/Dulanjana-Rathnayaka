@@ -10,7 +10,7 @@ const educationData = [
     degree: "BSc (Hons) in Information Technology",
     specialization: "Information Systems Engineering",
     period: "Present",
-    image: sliitLogo,
+    badgeText: "SLIIT",
     description: "Currently pursuing my undergraduate degree, focusing on systems engineering, data analysis, and business analysis methodologies.",
   },
   {
@@ -19,7 +19,7 @@ const educationData = [
     degree: "G.C.E. Advanced Level (A/L)",
     specialization: "Physical Science Stream",
     period: "Completed",
-    image: saranathLogo,
+    badgeText: "SC",
     description: "Successfully completed Advanced Level examinations.",
   },
   {
@@ -28,7 +28,7 @@ const educationData = [
     degree: "G.C.E. Ordinary Level (O/L)",
     specialization: "Secondary Education",
     period: "Completed",
-    image: stJosephLogo,
+    badgeText: "SJC",
     description: "Successfully completed Ordinary Level examinations with excellent academic performance.",
   },
 ];
@@ -36,14 +36,16 @@ const educationData = [
 const Education = () => {
   return (
     <section id="education" className="education-section">
-      <div className="sec-label reveal">Education</div>
-      <h2 className="sec-title reveal">ACADEMIC <span>JOURNEY</span></h2>
+      <div className="edu-header reveal">
+        <div className="sec-label">Education</div>
+        <h2 className="sec-title">ACADEMIC <span>JOURNEY</span></h2>
+      </div>
       
       <div className="education-timeline reveal">
         {educationData.map((item, index) => (
           <div className="education-card" key={item.id}>
             <div className="edu-image-wrapper">
-              <img src={item.image} alt={item.school} className="edu-logo" />
+              <span className="edu-badge">{item.badgeText}</span>
             </div>
             <div className="edu-content">
               <h3 className="edu-school">{item.school}</h3>

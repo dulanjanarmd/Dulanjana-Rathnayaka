@@ -16,6 +16,7 @@ const siteProps = {
   linkedIn: "dulanjanarmd",
   facebook: "dulanjanarmd",
   whatsapp: "94XXXXXXXXX",
+  phone: "+94 7X XXX XXXX",
 };
 
 const App = () => (
