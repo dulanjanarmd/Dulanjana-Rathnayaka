@@ -4,11 +4,11 @@ import gitHubIcon from "../images/socials/github.svg";
 import linkedInIcon from "../images/socials/linkedin.svg";
 import instagramIcon from "../images/socials/instagram.svg";
 import facebookIcon from "../images/socials/facebook.svg";
+import redditIcon from "../images/socials/reddit.svg";
+import mediumIcon from "../images/socials/medium.svg";
 import xIcon from "../images/socials/x.svg";
-import envelopeIcon from "../images/socials/envelope.svg";
-import whatsappIcon from "../images/socials/whatsapp.svg";
 
-const Footer = ({ name, email, phone, gitHub, linkedIn, instagram, facebook }) => (
+const Footer = ({ name, email, gitHub, linkedIn, instagram, facebook, reddit, medium }) => (
   <div id="footer" className="modern-footer">
     <div className="edu-header reveal-left">
       <div className="sec-label">Contact</div>
@@ -33,13 +33,14 @@ const Footer = ({ name, email, phone, gitHub, linkedIn, instagram, facebook }) =
         <div className="cc-label">CONNECT WITH ME</div>
         <div className="cc-social-list">
           {[
-            { name: "Phone",     icon: whatsappIcon,  href: phone ? `tel:${phone.replace(/\s+/g, '')}` : "#" },
             { name: "LinkedIn",  icon: linkedInIcon,  href: `https://www.linkedin.com/in/${linkedIn}` },
             { name: "GitHub",    icon: gitHubIcon,    href: `https://github.com/${gitHub}` },
             { name: "X",         icon: xIcon,         href: `https://x.com/${gitHub}` },
             { name: "Facebook",  icon: facebookIcon,  href: `https://www.facebook.com/${facebook}` },
             { name: "Instagram", icon: instagramIcon, href: `https://www.instagram.com/${instagram}` },
-          ].map(s => (
+            { name: "Reddit",    icon: redditIcon,    href: `https://www.reddit.com/user/${reddit}` },
+            { name: "Medium",    icon: mediumIcon,    href: `https://medium.com/@${medium}` },
+          ].map((s, i) => (
             <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" className="cc-social-item">
               <div className="cc-social-left">
                 <img src={s.icon} alt={s.name} />
@@ -66,11 +67,12 @@ Footer.defaultProps = { name: "" };
 Footer.propTypes = {
   name: PropTypes.string.isRequired,
   email: PropTypes.string,
-  phone: PropTypes.string,
   gitHub: PropTypes.string,
   linkedIn: PropTypes.string,
   instagram: PropTypes.string,
   facebook: PropTypes.string,
+  reddit: PropTypes.string,
+  medium: PropTypes.string,
 };
 
 export default Footer;

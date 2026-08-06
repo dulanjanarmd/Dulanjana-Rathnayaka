@@ -10,6 +10,7 @@ const educationData = [
     degree: "BSc (Hons) in Information Technology",
     specialization: "Information Systems Engineering",
     period: "Present",
+    image: sliitLogo,
     badgeText: "SLIIT",
     description: "Currently pursuing my undergraduate degree, focusing on systems engineering, data analysis, and business analysis methodologies.",
   },
@@ -19,6 +20,8 @@ const educationData = [
     degree: "G.C.E. Advanced Level (A/L)",
     specialization: "Physical Science Stream",
     period: "Completed",
+    image: saranathLogo,
+    coverImage: true,
     badgeText: "SC",
     description: "Successfully completed Advanced Level examinations.",
   },
@@ -28,6 +31,7 @@ const educationData = [
     degree: "G.C.E. Ordinary Level (O/L)",
     specialization: "Secondary Education",
     period: "Completed",
+    image: stJosephLogo,
     badgeText: "SJC",
     description: "Successfully completed Ordinary Level examinations with excellent academic performance.",
   },
@@ -44,8 +48,8 @@ const Education = () => {
       <div className="education-timeline reveal">
         {educationData.map((item, index) => (
           <div className="education-card" key={item.id}>
-            <div className="edu-image-wrapper">
-              <span className="edu-badge">{item.badgeText}</span>
+            <div className="edu-image-wrapper" style={{ background: '#fff' }}>
+              <img src={item.image} alt={item.school} className={`edu-logo ${item.coverImage ? 'edu-logo-cover' : ''}`} />
             </div>
             <div className="edu-content">
               <h3 className="edu-school">{item.school}</h3>

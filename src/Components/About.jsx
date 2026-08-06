@@ -1,16 +1,27 @@
 import React, { useEffect } from "react";
 import profilePhoto from "../images/dulanjana.jpg";
 
-const technicalSkills = [
-  { category: "Systems & Business Analysis", items: ["UML", "ERD", "BPMN", "Requirements Engineering", "Process Modeling"] },
-  { category: "Data Science & Tools", items: ["Data Analysis", "Power BI", "Excel", "Jupyter", "SQL"] },
-  { category: "Languages", items: ["JavaScript", "Python", "Java", "HTML/CSS"] },
-  { category: "Frameworks & Databases", items: ["React.js", "Node.js", "Spring Boot", "MySQL", "MongoDB"] }
-];
-
-const softSkills = [
-  "Critical Thinking", "Problem Solving", "Effective Communication", 
-  "Team Collaboration", "Agile Methodologies", "Project Management"
+const skillCategories = [
+  {
+    title: "BUSINESS ANALYSIS (BA)",
+    skills: ["Requirements Gathering", "Stakeholder Management", "Process Modeling", "BPMN", "Agile/Scrum", "User Research", "Risk Assessment"]
+  },
+  {
+    title: "DATA ANALYSIS (DA)",
+    skills: ["Data Modeling", "SQL", "Power BI", "Excel", "Data Visualization", "Statistical Analysis", "A/B Testing"]
+  },
+  {
+    title: "SYSTEMS ANALYSIS (SA)",
+    skills: ["System Architecture", "UML", "ERD", "API Design", "Systems Integration", "Technical Documentation"]
+  },
+  {
+    title: "TECHNICAL SKILLS",
+    skills: ["JavaScript/TypeScript", "React/Next.js", "Node.js/Express", "Python", "Java", "MySQL", "MongoDB", "Spring Boot"]
+  },
+  {
+    title: "SOFT SKILLS",
+    skills: ["Critical Thinking", "Problem-Solving", "Effective Communication", "Team Collaboration", "Project Management", "Leadership"]
+  }
 ];
 
 const About = () => {
@@ -72,45 +83,24 @@ const About = () => {
           </div>
         </div>
 
-        {/* Technical Stack Grid */}
-        <div className="about-card tech-card glass-panel reveal-right">
-          <h3>Technical Arsenal</h3>
-          <p className="tech-subtitle">Technologies and tools I work with daily</p>
+        {/* Skills Card */}
+        <div className="about-card skills-card glass-panel reveal-right">
+          <h3>Professional Skills</h3>
+          <p className="tech-subtitle">Core competencies and technical arsenal</p>
           
-          <div className="tech-groups">
-            {technicalSkills.map((skillGroup, idx) => (
-              <div className="tech-group" key={idx}>
-                <div className="tech-group-title">{skillGroup.category}</div>
-                <div className="tech-pills">
-                  {skillGroup.items.map(item => (
-                    <span className="tech-pill" key={item}>{item}</span>
+          <div className="skills-list" style={{ marginTop: '2rem' }}>
+            {skillCategories.map((category, index) => (
+              <div className="skill-category" key={index}>
+                <h3 className="skill-category-title">{category.title}</h3>
+                <div className="skill-pill-container">
+                  {category.skills.map((skill, i) => (
+                    <span className="skill-pill-dark" key={i}>
+                      {skill}
+                    </span>
                   ))}
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Soft Skills & Philosophy */}
-        <div className="about-card bottom-card glass-panel reveal-up">
-          <div className="soft-skills-section">
-            <h3>Professional Skills</h3>
-            <div className="soft-skills-grid">
-              {softSkills.map((skill, idx) => (
-                <div className="soft-skill-item" key={idx}>
-                  <div className="ss-dot"></div>
-                  <span>{skill}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="philosophy-section">
-            <h3>My Philosophy</h3>
-            <p>
-              "Technology is only as good as the business problem it solves." <br/>
-              I aim to ensure that every system designed and every line of code written aligns perfectly 
-              with overarching organizational goals and user needs.
-            </p>
           </div>
         </div>
 

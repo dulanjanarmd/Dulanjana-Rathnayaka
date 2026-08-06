@@ -15,8 +15,8 @@ const siteProps = {
   instagram: "dulanjanarmd",
   linkedIn: "dulanjanarmd",
   facebook: "dulanjanarmd",
-  whatsapp: "94XXXXXXXXX",
-  phone: "+94 7X XXX XXXX",
+  reddit: "dulanjanarmd",
+  medium: "dulanjanarmd",
 };
 
 const App = () => (
