@@ -42,12 +42,19 @@ const projects = [
   },
   {
     id: 4,
-    title: "LankaThread By CeyloFab",
-    category: "E-Commerce",
+    title: "LANKATHREAD BY CEYLOFAB",
+    category: "E-Commerce Platform | System Design & Modeling",
     image: lankaThreadImg,
-    tech: ["MERN Stack", "React", "Node.js", "MongoDB", "Express"],
-    desc: "An e-commerce platform tailored for a Sri Lankan clothing brand, featuring user authentication, cart management, and order processing.",
-    outcomes: "Increased online sales conversion rate and provided a seamless mobile-responsive shopping experience.",
+    tech: ["Requirements Engineering", "BPMN", "UML", "Figma", "REST API", "Database Design"],
+    desc: "An end-to-end e-commerce platform designed for a Sri Lankan fashion brand, focused on clean mobile-first experience, local payment preferences (Cash on Delivery), and efficient admin management.",
+    outcomes: [
+      "Gathered and documented complete functional requirements with user stories for Customer and Admin roles.",
+      "Created full BPMN diagrams for Order Placement, Payment, and Delivery workflows.",
+      "Developed complete UML suite (Use Case, Class, Sequence, State, Component diagrams).",
+      "Designed high-fidelity Figma prototype covering Product pages, Cart, and Checkout with size/color variants and Out-of-Stock handling.",
+      "Modeled MySQL database schema including Products, Variants, Orders, Customers, and Promotions.",
+      "Defined REST API requirements for product, inventory, order, and customer management."
+    ],
     codeUrl: "https://github.com/dulanjanarmd/LankaThread-By-CeyloFab",
   }
 ];
