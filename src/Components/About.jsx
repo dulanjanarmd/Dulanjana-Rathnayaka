@@ -4,7 +4,7 @@ import profilePhoto from "../images/dulanjana.jpg";
 const skillCategories = [
   {
     title: "BUSINESS ANALYSIS (BA)",
-    skills: ["Requirements Gathering", "Stakeholder Management", "Process Modeling", "BPMN", "Agile/Scrum", "User Research", "Risk Assessment"]
+    skills: ["Requirements Gathering", "Stakeholder Management", "Process Modeling", "BPMN", "Agile/Scrum", "User Research", "Risk Assessment", "Use Case Modeling", "SWOT Analysis", "Gap Analysis", "UAT", "Jira/Confluence"]
   },
   {
     title: "DATA ANALYSIS (DA)",

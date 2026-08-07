@@ -33,6 +33,7 @@ const Header = () => {
           <li><a href="#portfolio" onClick={closeMenu}>Projects</a></li>
           <li><a href="#about" onClick={closeMenu}>About</a></li>
           <li><a href="#education" onClick={closeMenu}>Education</a></li>
+          <li><a href="#certificates" onClick={closeMenu}>Certificates</a></li>
           <li><a href="#footer" onClick={closeMenu}>Contacts</a></li>
         </ul>
       </nav>

@@ -33,10 +33,9 @@ const AnimatedText = ({ text, className, delay = 0 }) => {
   );
 };
 
-// ─── Canvas Particle Network ───────────────────────────────────────────
-const ParticleCanvas = () => {
+// ─── IT Related Animation (Floating Code & Tools) ─────────────────────────
+const CodeCanvas = () => {
   const canvasRef = useRef(null);
-  const mouse = useRef({ x: -9999, y: -9999 });
   const animRef = useRef(null);
 
   useEffect(() => {
@@ -44,93 +43,78 @@ const ParticleCanvas = () => {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
 
-    let W, H, particles;
-    const NUM = 80;
-    const MAX_DIST = 140;
-    const MOUSE_RADIUS = 120;
+    let W, H, textElements;
+    const NUM_ELEMENTS = 35;
+
+    const snippets = [
+      "SELECT * FROM users;",
+      "public static void main",
+      "System.out.println();",
+      "import java.util.*;",
+      "Jira",
+      "Confluence",
+      "React.js",
+      "Spring Boot",
+      "MySQL",
+      "JOIN orders ON id",
+      "Data Analysis",
+      "Business Intelligence",
+      "npm run build",
+      "git commit -m",
+      "UML Diagrams",
+      "BPMN",
+      "Agile / Scrum"
+    ];
 
     const resize = () => {
-      W = canvas.width  = canvas.offsetWidth;
+      W = canvas.width = canvas.offsetWidth;
       H = canvas.height = canvas.offsetHeight;
     };
 
-    const mkParticle = () => ({
-      x:  Math.random() * W,
-      y:  Math.random() * H,
-      vx: (Math.random() - 0.5) * 0.35,
-      vy: (Math.random() - 0.5) * 0.35,
-      r:  Math.random() * 1.5 + 0.8,
-      alpha: Math.random() * 0.5 + 0.2,
-    });
+    const mkElement = () => {
+      const text = snippets[Math.floor(Math.random() * snippets.length)];
+      return {
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4 - 0.2, // slight upward drift
+        text: text,
+        size: Math.random() * 12 + 10,
+        alpha: Math.random() * 0.08 + 0.02,
+      };
+    };
 
     const init = () => {
       resize();
-      particles = Array.from({ length: NUM }, mkParticle);
+      textElements = Array.from({ length: NUM_ELEMENTS }, mkElement);
     };
-
-    const onMouseMove = (e) => {
-      const rect = canvas.getBoundingClientRect();
-      mouse.current.x = e.clientX - rect.left;
-      mouse.current.y = e.clientY - rect.top;
-    };
-    const onMouseLeave = () => { mouse.current.x = -9999; mouse.current.y = -9999; };
 
     window.addEventListener("resize", init);
-    canvas.addEventListener("mousemove", onMouseMove);
-    canvas.parentElement.addEventListener("mousemove", onMouseMove);
-    window.addEventListener("mouseleave", onMouseLeave);
-
     init();
 
     const draw = () => {
       ctx.clearRect(0, 0, W, H);
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      
+      for (const t of textElements) {
+        t.x += t.vx;
+        t.y += t.vy;
 
-      for (const p of particles) {
-        // Mouse repulsion
-        const dx = p.x - mouse.current.x;
-        const dy = p.y - mouse.current.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < MOUSE_RADIUS) {
-          const force = (MOUSE_RADIUS - dist) / MOUSE_RADIUS;
-          p.vx += (dx / dist) * force * 0.08;
-          p.vy += (dy / dist) * force * 0.08;
-        }
-
-        // Velocity damping
-        p.vx *= 0.98;
-        p.vy *= 0.98;
-        p.x += p.vx;
-        p.y += p.vy;
+        ctx.font = `bold ${t.size}px monospace`;
+        const textWidth = ctx.measureText(t.text).width;
 
         // Wrap edges
-        if (p.x < 0) p.x = W;
-        if (p.x > W) p.x = 0;
-        if (p.y < 0) p.y = H;
-        if (p.y > H) p.y = 0;
-
-        // Draw dot
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255,255,255,${p.alpha})`;
-        ctx.fill();
-      }
-
-      // Draw connecting lines
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const a = particles[i], b = particles[j];
-          const dx = a.x - b.x, dy = a.y - b.y;
-          const d = Math.sqrt(dx * dx + dy * dy);
-          if (d < MAX_DIST) {
-            const opacity = (1 - d / MAX_DIST) * 0.07;
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = `rgba(255,255,255,${opacity})`;
-            ctx.lineWidth = 0.8;
-            ctx.stroke();
-          }
+        if (t.x < -textWidth) t.x = W + textWidth;
+        if (t.x > W + textWidth) t.x = -textWidth;
+        if (t.y < -t.size) {
+          t.y = H + t.size;
+          t.x = Math.random() * W; // randomize x on vertical wrap
         }
+        if (t.y > H + t.size) t.y = -t.size;
+
+        ctx.fillStyle = `rgba(255, 255, 255, ${t.alpha})`;
+        ctx.fillText(t.text, t.x, t.y);
       }
 
       animRef.current = requestAnimationFrame(draw);
@@ -141,7 +125,6 @@ const ParticleCanvas = () => {
     return () => {
       cancelAnimationFrame(animRef.current);
       window.removeEventListener("resize", init);
-      window.removeEventListener("mouseleave", onMouseLeave);
     };
   }, []);
 
@@ -196,7 +179,7 @@ const Home = ({ name }) => {
 
   return (
     <section id="home">
-      <ParticleCanvas />
+      <CodeCanvas />
 
       {/* LEFT */}
       <div className="hero-left">

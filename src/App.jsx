@@ -3,6 +3,7 @@ import Header from "./Components/Header";
 import Home from "./Components/Home";
 import About from "./Components/About";
 import Education from "./Components/Education";
+import Certificates from "./Components/Certificates";
 import Portfolio from "./Components/Portfolio";
 import Footer from "./Components/Footer";
 import "./styles.css";
@@ -26,6 +27,7 @@ const App = () => (
     <Home name={siteProps.name} title={siteProps.title} />
     <About />
     <Education />
+    <Certificates />
     <Portfolio />
     <Footer {...siteProps} />
   </div>
