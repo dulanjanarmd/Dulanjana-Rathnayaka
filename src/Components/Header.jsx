@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <header className={`header${scrolled ? " scrolled" : ""}${menuOpen ? " menu-is-open" : ""}`}>
-      <a href="/" className="header-logo" onClick={closeMenu}>Dulanjana Rathnayaka</a>
+      <a href="#home" className="header-logo" onClick={closeMenu}>Dulanjana Rathnayaka</a>
 
       <button 
         className={`mobile-toggle${menuOpen ? " active" : ""}`} 

@@ -93,6 +93,11 @@ const CodeCanvas = () => {
     init();
 
     const draw = () => {
+      if (window.innerWidth <= 768) {
+        animRef.current = requestAnimationFrame(draw);
+        return;
+      }
+      
       ctx.clearRect(0, 0, W, H);
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
@@ -131,6 +136,7 @@ const CodeCanvas = () => {
   return (
     <canvas
       ref={canvasRef}
+      className="hero-canvas"
       style={{
         position: "absolute",
         inset: 0,

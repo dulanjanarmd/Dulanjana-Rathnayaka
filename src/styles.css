@@ -1934,3 +1934,33 @@ body {
   background: rgba(255, 255, 255, 0.08);
   border-color: #fff;
 }
+
+/* --- Disable heavy animations on mobile --- */
+@media (max-width: 768px) {
+  /* Prevent reveal animations from hiding content or causing layout shifts */
+  .reveal, .reveal-up, .reveal-left, .reveal-right, 
+  .cert-card, .new-proj-card, .proj-card-adv {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+  
+  /* Disable hero entrance animations */
+  .letter, .hero-ise, .hero-role-line, .hero-desc, .hero-btns {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  /* Disable float animation */
+  .hero-photo-circle {
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  /* Hide heavy canvas on mobile */
+  .hero-canvas {
+    display: none !important;
+  }
+}
+
