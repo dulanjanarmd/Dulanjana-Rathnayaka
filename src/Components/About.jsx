@@ -3,24 +3,28 @@ import profilePhoto from "../images/dulanjana.jpg";
 
 const skillCategories = [
   {
-    title: "BUSINESS ANALYSIS (BA)",
-    skills: ["Requirements Gathering", "Stakeholder Management", "Process Modeling", "BPMN", "Agile/Scrum", "User Research", "Risk Assessment", "Use Case Modeling", "SWOT Analysis", "Gap Analysis", "UAT", "Jira/Confluence"]
+    title: "BUSINESS ANALYSIS",
+    skills: ["Requirements Elicitation", "Requirements Analysis", "Functional Requirements", "Non-Functional Requirements", "Stakeholder Management", "Stakeholder Analysis", "Stakeholder Engagement", "Business Process Analysis", "Data Analysis", "Gap Analysis"]
   },
   {
-    title: "DATA ANALYSIS (DA)",
-    skills: ["Data Modeling", "SQL", "Power BI", "Excel", "Data Visualization", "Statistical Analysis", "A/B Testing"]
+    title: "REQUIREMENTS & MODELLING",
+    skills: ["User Stories", "Acceptance Criteria", "Use Case Modelling", "BPMN", "UML", "Wireframing", "Business Process Modelling", "Documentation", "Test Cases"]
   },
   {
-    title: "SYSTEMS ANALYSIS (SA)",
-    skills: ["System Architecture", "UML", "ERD", "API Design", "Systems Integration", "Technical Documentation"]
+    title: "PROJECT MANAGEMENT",
+    skills: ["Agile Scrum", "SDLC", "Sprint Planning", "Backlog Management", "MoSCoW Prioritisation", "Change Management", "Risk Identification"]
   },
   {
-    title: "TECHNICAL SKILLS",
-    skills: ["JavaScript/TypeScript", "React/Next.js", "Node.js/Express", "Python", "Java", "MySQL", "MongoDB", "Spring Boot"]
+    title: "DATA & TECHNICAL",
+    skills: ["SQL", "Power BI", "Excel", "Python (Pandas)", "Java", "Spring Boot", "MySQL", "REST APIs", "Git"]
+  },
+  {
+    title: "TOOLS",
+    skills: ["Jira", "Trello", "Figma", "Lucidchart", "GitHub", "Microsoft Office", "Confluence", "Draw.io"]
   },
   {
     title: "SOFT SKILLS",
-    skills: ["Critical Thinking", "Problem-Solving", "Effective Communication", "Team Collaboration", "Project Management", "Leadership"]
+    skills: ["Written and Verbal Communication", "Problem Solving", "Time Management", "Analytical Thinking"]
   }
 ];
 
@@ -56,16 +60,16 @@ const About = () => {
         <div className="about-card intro-card glass-panel reveal-left">
           <div className="intro-content">
             <h3>Hello! I'm Dulanjana Rathnayaka</h3>
-            <h4 className="intro-subtitle">Aspiring Business Analyst | Information Systems Engineering Undergraduate at SLIIT</h4>
+            <h4 className="intro-subtitle">Business Analyst Intern | Information Systems Engineering Undergraduate at SLIIT</h4>
             
             <p>
-              I am an aspiring <strong>Business Analyst (BA)</strong> with a strong secondary focus on <strong>Systems Analysis (SA)</strong> and <strong>Data Analysis (DA)</strong>. Based in Malabe, Sri Lanka, I am passionate about bridging the gap between business needs and technical solutions — turning complex problems into clear, actionable strategies that deliver real value.
+              I am a third-year <strong>Information Systems Engineering</strong> undergraduate seeking a <strong>Business Analyst</strong> internship, with hands-on experience translating business needs into structured requirements and system solutions across client-facing and individual projects.
             </p>
             <p>
-              My academic and practical journey is rooted in understanding complex business requirements, process modeling, and designing scalable system architectures. Through hands-on experience in Full Stack Development and Data Science, I have developed the ability to communicate effectively with both business stakeholders and technical teams. This unique combination allows me to ensure that technology investments are aligned with business goals and deliver measurable outcomes.
+              Having served as a Product Owner and Development Team Member on a client-facing healthcare system and led a 6-member Agile Scrum team, I am skilled in collaborating with stakeholders and development teams to ensure successful project delivery. My expertise lies in requirements analysis, stakeholder management, process mapping, requirements traceability, and Agile delivery.
             </p>
             <p>
-              I thrive on transforming chaotic, inefficient workflows into streamlined, data-driven processes. Whether it’s gathering and analyzing requirements, modeling business processes, or leveraging data to support smarter decision-making, I am driven by the goal of creating solutions that are both practical and impactful.
+              Complementing my business analysis skills is a strong technical foundation in SQL, Power BI, Java, and system design, allowing me to bridge the gap between business objectives and technical implementation to create practical, impactful solutions.
             </p>
 
             <div className="personal-details">

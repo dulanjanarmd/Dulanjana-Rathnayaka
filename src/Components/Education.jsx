@@ -9,10 +9,10 @@ const educationData = [
     school: "Sri Lanka Institute of Information Technology (SLIIT)",
     degree: "BSc (Hons) in Information Technology",
     specialization: "Information Systems Engineering",
-    period: "Present",
+    period: "Oct 2024 - Jun 2028",
     image: sliitLogo,
     badgeText: "SLIIT",
-    description: "Currently pursuing my undergraduate degree, focusing on systems engineering, data analysis, and business analysis methodologies.",
+    description: "Currently in Year 3, Semester 1 | GPA: 3.11/4.0. Pursuing my undergraduate degree focusing on systems engineering, data analysis, and business analysis methodologies.",
   },
   {
     id: 2,

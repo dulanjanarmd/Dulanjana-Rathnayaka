@@ -3,27 +3,19 @@ import React, { useEffect } from "react";
 const certificatesData = [
   {
     id: 1,
-    title: "Placeholder Certificate 1",
-    issuer: "Issuing Organization",
-    date: "Month 2024",
+    title: "IBM Business Analyst Professional Certificate",
+    issuer: "Coursera",
+    date: "2024",
     link: "#",
-    image: "https://via.placeholder.com/400x250/1a1a1a/60a5fa?text=Certificate+1"
+    image: "https://via.placeholder.com/400x250/1a1a1a/60a5fa?text=IBM+Business+Analyst"
   },
   {
     id: 2,
-    title: "Placeholder Certificate 2",
-    issuer: "Issuing Organization",
-    date: "Month 2024",
+    title: "IBM Data Analyst Professional Certificate",
+    issuer: "Coursera",
+    date: "2024",
     link: "#",
-    image: "https://via.placeholder.com/400x250/1a1a1a/60a5fa?text=Certificate+2"
-  },
-  {
-    id: 3,
-    title: "Placeholder Certificate 3",
-    issuer: "Issuing Organization",
-    date: "Month 2024",
-    link: "#",
-    image: "https://via.placeholder.com/400x250/1a1a1a/60a5fa?text=Certificate+3"
+    image: "https://via.placeholder.com/400x250/1a1a1a/60a5fa?text=IBM+Data+Analyst"
   }
 ];
 
