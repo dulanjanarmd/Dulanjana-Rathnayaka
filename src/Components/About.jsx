@@ -75,7 +75,7 @@ const About = () => {
             <div className="personal-details">
               <div className="pd-item">
                 <span className="pd-label">Education:</span>
-                <span className="pd-value">BSc (Hons) in Information Technology Specialising in Information Systems Engineering – SLIIT</span>
+                <span className="pd-value">BSc (Hons) in Information Systems Engineering – SLIIT</span>
               </div>
               <div className="pd-item">
                 <span className="pd-label">Location:</span>
