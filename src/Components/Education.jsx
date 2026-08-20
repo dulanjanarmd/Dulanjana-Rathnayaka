@@ -67,7 +67,7 @@ const Education = () => {
         <div className="cert-list">
           {educationData.map((item, index) => (
             <div className="cert-list-item" key={item.id}>
-              <div className="cert-item-img-wrapper">
+              <div className="edu-item-img-wrapper">
                 <img src={item.image} alt={item.school} className={item.coverImage ? 'edu-logo-cover' : ''} />
               </div>
               <div className="cert-content">
