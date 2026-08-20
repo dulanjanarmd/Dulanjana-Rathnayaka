@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 import profilePhoto from "../images/dulanjana.jpg";
-import cvDocument from "../documents/Dulanjana_Rathnayaka_CV.pdf";
+import cvDocument from "../documents/Dulanjana_Rathanayaka_Resume.pdf";
 
-const ROLES = ["BUSINESS ANALYST", "DATA ANALYST", "SYSTEM ANALYST"];
+const ROLES = ["BUSINESS ANALYST INTERN", "DATA ANALYST", "SYSTEMS ANALYST"];
 
 const AnimatedText = ({ text, className, delay = 0 }) => {
   const words = text.split(" ");
@@ -199,7 +199,6 @@ const Home = ({ name }) => {
         </div>
 
         <div className="hero-role-line">
-          Aspiring&nbsp;
           <span className="hero-typed">{displayText}</span>
           <span className="typing-cursor" />
         </div>
@@ -211,7 +210,7 @@ const Home = ({ name }) => {
 
         <div className="hero-btns">
           <a href="#portfolio" className="hero-btn">View My Projects</a>
-          <a href={cvDocument} download="Dulanjana_Rathnayaka_CV.pdf" className="hero-btn hero-btn-outline">Download Resume</a>
+          <a href={cvDocument} download="Dulanjana_Rathanayaka_Resume.pdf" className="hero-btn hero-btn-outline">Download Resume</a>
         </div>
       </div>
 
