@@ -1,71 +1,95 @@
 import React, { useEffect } from "react";
 import rentlensImg from '../images/rentlens.png';
 import libraryHubImg from '../images/libraryhub.png';
-import novaBankImg from '../images/novabank.png';
 import lankaThreadImg from '../images/lankathread.png';
 
 const projects = [
   {
     id: 1,
-    title: "LIBRARYHUB",
-    category: "Business Process Improvement + Data Analytics",
-    image: libraryHubImg,
-    tech: ["Java", "Spring Boot", "MySQL", "React", "Chart.js", "UML"],
-    desc: "Designed and developed an Online Library Management System focused on improving university library operations through process digitization and data-driven insights. The system supports real-world workflows for students, faculty, and librarians while providing management with actionable analytics.",
-    outcomes: [
-      "Digitized core library processes (issue, return, reservation, inventory)",
-      "Built real-time dashboards tracking operational KPIs",
-      "Enabled data-driven decisions through borrowing trends and usage reports",
-      "Improved service efficiency and resource utilization for library staff and members"
-    ],
-    codeUrl: "https://github.com/dulanjanarmd/LibraryHub",
-  },
-  {
-    id: 2,
     title: "RENTLENS",
-    category: "Full Stack Development",
+    category: "Full Stack Development & Data Analytics",
     image: rentlensImg,
-    tech: ["React", "Spring Boot", "MySQL", "TailwindCSS", "REST APIs", "Leaflet.js"],
-    desc: "A data-driven rental decision platform that helps students and young professionals in Sri Lanka evaluate properties using a transparent Rental Value Score, property comparison, budget-based recommendations, and market analytics.",
+    tech: ["React.js", "Spring Boot", "Java 17", "MySQL", "Leaflet.js", "Recharts", "REST APIs"],
+    desc: "A data-driven rental decision platform that helps students and young professionals evaluate properties using a transparent Rental Value Score, property comparison, budget-based recommendations, and market analytics.",
     outcomes: [
-      "Designed and implemented a rule-based Rental Value Score (price, distance, facilities, reviews)",
-      "Built side-by-side property comparison and budget recommendation features",
-      "Developed interactive map search and market analytics dashboard",
-      "Created a complete Software Requirements Specification (SRS) and system architecture"
+      "Authored a Business Requirements Document (BRD) and Software Requirements Specification (SRS) covering 8 functional modules.",
+      "Prioritised requirements using MoSCoW and defined 10 user stories with acceptance criteria.",
+      "Built a Requirements Traceability Matrix (RTM) linking user stories to system modules.",
+      "Defined a data dictionary and entity relationships for property comparison and market reporting."
     ],
     codeUrl: "https://github.com/dulanjanarmd/RentLens",
   },
   {
-    id: 3,
-    title: "NOVABANK-LOANSPHERE",
-    category: "Software Engineering",
-    image: novaBankImg,
-    tech: ["Java", "Spring Boot", "React.js", "MySQL", "REST APIs"],
-    desc: "A digital banking platform for Sri Lankan banks that enables online account opening and multi-product loan origination (Personal, Home, Vehicle, SME) with full e-KYC, credit assessment, maker-checker approval, and Core Banking integration.",
+    id: 2,
+    title: "LANKATHREAD",
+    category: "E-Commerce Platform",
+    image: lankaThreadImg,
+    tech: ["BPMN", "UML", "Figma", "Requirements Analysis", "REST API Design", "MySQL"],
+    desc: "An online fashion store e-commerce platform with a focus on seamless order placement, cash-on-delivery, and WhatsApp support.",
     outcomes: [
-      "Designed complete SRS and end-to-end system flows compliant with CBSL & FIU AML/CFT guidelines",
-      "Implemented secure JWT authentication, role-based access, and encrypted document handling",
-      "Built multi-step wizards for Digital Account Opening and Loan Application with real-time EMI calculation",
-      "Included automated credit scoring, sanctions/PEP screening hooks, and full audit logging"
+      "Elicited and documented functional and non-functional requirements through 12 user stories covering Customer and Admin roles.",
+      "Mapped order placement, payment processing, and delivery workflows using BPMN swimlanes and decision gateways.",
+      "Modelled 5 UML diagrams (Use Case, Class, Sequence, State, Component) to translate business requirements into system behaviour.",
+      "Developed high-fidelity Figma wireframes for product listing, details, cart, and checkout flows, and translated design into MySQL data model."
     ],
-    codeUrl: "https://github.com/dulanjanarmd/NovaBank-LoanSphere",
+    codeUrl: "https://github.com/dulanjanarmd/LankaThread",
+  },
+  {
+    id: 3,
+    title: "LIBRARYHUB",
+    category: "Business Process & Data Analytics",
+    image: libraryHubImg,
+    tech: ["Spring Boot", "Spring Security", "JWT", "MySQL", "React.js", "Vite", "Chart.js", "REST APIs"],
+    desc: "An Online Library Management System improving university library operations through process digitization and data-driven insights.",
+    outcomes: [
+      "Digitized 3 core library workflows: issue/return, reservations, and inventory management.",
+      "Defined role-based access requirements for 4 user groups: Students, Faculty, Librarians, and Admins.",
+      "Developed an operational dashboard with 4 KPIs covering daily issues, returns, overdue items, and pending reservations to support performance monitoring."
+    ],
+    codeUrl: "https://github.com/dulanjanarmd/LibraryHub",
   },
   {
     id: 4,
-    title: "LANKATHREAD BY CEYLOFAB",
-    category: "E-Commerce Platform | System Design & Modeling",
-    image: lankaThreadImg,
-    tech: ["Requirements Engineering", "BPMN", "UML", "Figma", "REST API", "Database Design"],
-    desc: "An end-to-end e-commerce platform designed for a Sri Lankan fashion brand, focused on clean mobile-first experience, local payment preferences (Cash on Delivery), and efficient admin management.",
+    title: "GLOBAL SUPERSTORE SALES ANALYSIS & DASHBOARD",
+    category: "Data Analysis",
+    image: "https://via.placeholder.com/600x400/1a1a1a/60a5fa?text=Global+Superstore+Dashboard",
+    tech: ["Power BI", "Python (Pandas)", "Excel"],
+    desc: "A comprehensive sales and performance analysis dashboard leveraging retail dataset.",
     outcomes: [
-      "Gathered and documented complete functional requirements with user stories for Customer and Admin roles.",
-      "Created full BPMN diagrams for Order Placement, Payment, and Delivery workflows.",
-      "Developed complete UML suite (Use Case, Class, Sequence, State, Component diagrams).",
-      "Designed high-fidelity Figma prototype covering Product pages, Cart, and Checkout with size/color variants and Out-of-Stock handling.",
-      "Modeled MySQL database schema including Products, Variants, Orders, Customers, and Promotions.",
-      "Defined REST API requirements for product, inventory, order, and customer management."
+      "Analysed a retail dataset containing 50,000+ records using Python (Pandas) and Excel to identify sales, profit, and margin patterns.",
+      "Designed interactive Power BI dashboards with KPI cards and filters to support data-driven decision-making.",
+      "Identified top-performing products and underperforming areas through visual analysis."
     ],
-    codeUrl: "https://github.com/dulanjanarmd/LankaThread-By-CeyloFab",
+    codeUrl: "https://github.com/dulanjanarmd/Superstore-Sales-Analysis",
+  },
+  {
+    id: 5,
+    title: "PRIME MEDICAL",
+    category: "Doctor Appointment & Patient Management System",
+    image: "https://via.placeholder.com/600x400/1a1a1a/60a5fa?text=Prime+Medical",
+    tech: ["Agile Scrum", "Requirements Gathering", "Spring Boot", "React", "MySQL"],
+    desc: "A complete appointment and patient management system built for healthcare providers.",
+    outcomes: [
+      "Conducted stakeholder interviews to elicit business requirements for appointments, consultations, prescriptions, pharmacy, and billing operations.",
+      "Converted stakeholder needs into user stories and prioritised the product backlog across 6 epics within a 14-week Agile delivery cycle.",
+      "Specified clear acceptance criteria across 6 core areas and validated system functionality during UAT."
+    ],
+    codeUrl: "https://github.com/dulanjanarmd/PrimeMedical-PharmInvent",
+  },
+  {
+    id: 6,
+    title: "LANKA HEALTH INSURANCE",
+    category: "Health Insurance Management System",
+    image: "https://via.placeholder.com/600x400/1a1a1a/60a5fa?text=Lanka+Health+Insurance",
+    tech: ["Agile Scrum", "UML", "Requirements Analysis", "Spring Boot", "MySQL"],
+    desc: "A health insurance management system for tracking policies and insurance claims.",
+    outcomes: [
+      "Led a 6-member team through a 14-week Agile Scrum project, coordinating requirements activities and sprint planning.",
+      "Elicited and analysed requirements for 6 system components, mapping business needs to functional system capabilities.",
+      "Created 5 UML models, including Use Case, Class, Sequence, Activity, and ER diagrams.",
+      "Designed workflows for insurance claims, policy management, and role-based access."
+    ],
+    codeUrl: "https://github.com/dulanjanarmd/Lanka-Health-Insurance",
   }
 ];
 
