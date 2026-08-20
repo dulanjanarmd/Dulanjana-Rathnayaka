@@ -6,6 +6,7 @@ import Education from "./Components/Education";
 import Certificates from "./Components/Certificates";
 import Portfolio from "./Components/Portfolio";
 import Footer from "./Components/Footer";
+import Background3D from "./Components/Background3D";
 import "./styles.css";
 import "./animations.css";
 
@@ -23,6 +24,7 @@ const siteProps = {
 
 const App = () => (
   <div id="main">
+    <Background3D />
     <Header />
     <Home name={siteProps.name} title={siteProps.title} />
     <About />

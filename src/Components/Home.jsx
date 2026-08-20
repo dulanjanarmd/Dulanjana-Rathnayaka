@@ -33,122 +33,7 @@ const AnimatedText = ({ text, className, delay = 0 }) => {
   );
 };
 
-// ─── IT Related Animation (Floating Code & Tools) ─────────────────────────
-const CodeCanvas = () => {
-  const canvasRef = useRef(null);
-  const animRef = useRef(null);
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-
-    let W, H, textElements;
-    const NUM_ELEMENTS = 35;
-
-    const snippets = [
-      "SELECT * FROM users;",
-      "public static void main",
-      "System.out.println();",
-      "import java.util.*;",
-      "Jira",
-      "Confluence",
-      "React.js",
-      "Spring Boot",
-      "MySQL",
-      "JOIN orders ON id",
-      "Data Analysis",
-      "Business Intelligence",
-      "npm run build",
-      "git commit -m",
-      "UML Diagrams",
-      "BPMN",
-      "Agile / Scrum"
-    ];
-
-    const resize = () => {
-      W = canvas.width = canvas.offsetWidth;
-      H = canvas.height = canvas.offsetHeight;
-    };
-
-    const mkElement = () => {
-      const text = snippets[Math.floor(Math.random() * snippets.length)];
-      return {
-        x: Math.random() * W,
-        y: Math.random() * H,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4 - 0.2, // slight upward drift
-        text: text,
-        size: Math.random() * 12 + 10,
-        alpha: Math.random() * 0.08 + 0.02,
-      };
-    };
-
-    const init = () => {
-      resize();
-      textElements = Array.from({ length: NUM_ELEMENTS }, mkElement);
-    };
-
-    window.addEventListener("resize", init);
-    init();
-
-    const draw = () => {
-      if (window.innerWidth <= 768) {
-        animRef.current = requestAnimationFrame(draw);
-        return;
-      }
-      
-      ctx.clearRect(0, 0, W, H);
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      
-      for (const t of textElements) {
-        t.x += t.vx;
-        t.y += t.vy;
-
-        ctx.font = `bold ${t.size}px monospace`;
-        const textWidth = ctx.measureText(t.text).width;
-
-        // Wrap edges
-        if (t.x < -textWidth) t.x = W + textWidth;
-        if (t.x > W + textWidth) t.x = -textWidth;
-        if (t.y < -t.size) {
-          t.y = H + t.size;
-          t.x = Math.random() * W; // randomize x on vertical wrap
-        }
-        if (t.y > H + t.size) t.y = -t.size;
-
-        ctx.fillStyle = `rgba(255, 255, 255, ${t.alpha})`;
-        ctx.fillText(t.text, t.x, t.y);
-      }
-
-      animRef.current = requestAnimationFrame(draw);
-    };
-
-    draw();
-
-    return () => {
-      cancelAnimationFrame(animRef.current);
-      window.removeEventListener("resize", init);
-    };
-  }, []);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      className="hero-canvas"
-      style={{
-        position: "absolute",
-        inset: 0,
-        width: "100%",
-        height: "100%",
-        zIndex: 0,
-        pointerEvents: "none",
-        display: "block",
-      }}
-    />
-  );
-};
 
 // ─── Main Component ────────────────────────────────────────────────────
 const Home = ({ name }) => {
@@ -185,7 +70,6 @@ const Home = ({ name }) => {
 
   return (
     <section id="home">
-      <CodeCanvas />
 
       {/* LEFT */}
       <div className="hero-left">
