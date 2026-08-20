@@ -60,7 +60,7 @@ const About = () => {
         <div className="about-card intro-card glass-panel reveal-left">
           <div className="intro-content">
             <h3>Hello! I'm Dulanjana Rathnayaka</h3>
-            <h4 className="intro-subtitle">Business Analyst Intern | Information Systems Engineering Undergraduate at SLIIT</h4>
+            <h4 className="intro-subtitle">Business Analyst | Information Systems Engineering Undergraduate at SLIIT</h4>
             
             <p>
               I am a third-year <strong>Information Systems Engineering</strong> undergraduate seeking a <strong>Business Analyst</strong> internship, with hands-on experience translating business needs into structured requirements and system solutions across client-facing and individual projects.
