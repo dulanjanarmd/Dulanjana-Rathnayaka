@@ -40,24 +40,28 @@ const Certificates = () => {
         <h2 className="sec-title">MY <span>CERTIFICATES</span></h2>
       </div>
       
-      <div className="cert-grid">
-        {certificatesData.map(cert => (
-          <div key={cert.id} className="cert-card">
-            <div className="cert-img-wrapper">
-              <img src={cert.image} alt={cert.title} />
-            </div>
-            <div className="cert-content">
-              <h3 className="cert-title">{cert.title}</h3>
-              <div className="cert-issuer">{cert.issuer}</div>
-              <div className="cert-date">{cert.date}</div>
-              <div className="cert-actions">
-                <a href={cert.link} target="_blank" rel="noopener noreferrer" className="cert-btn">
-                  View Credential
-                </a>
+      <div className="cert-single-box cert-card card-visible">
+        <div className="cert-img-wrapper">
+          <img src="https://via.placeholder.com/600x800/1a1a1a/60a5fa?text=Coursera+Certificates" alt="Certificates" />
+        </div>
+        <div className="cert-list-wrapper">
+          <h3 className="cert-main-title">Professional Certificates</h3>
+          <div className="cert-list">
+            {certificatesData.map(cert => (
+              <div key={cert.id} className="cert-list-item">
+                <div className="cert-content">
+                  <h4 className="cert-title">{cert.title}</h4>
+                  <div className="cert-issuer">{cert.issuer} • {cert.date}</div>
+                </div>
+                <div className="cert-actions">
+                  <a href={cert.link} target="_blank" rel="noopener noreferrer" className="cert-btn-small">
+                    View
+                  </a>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );
