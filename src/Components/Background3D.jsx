@@ -1,106 +1,38 @@
 import React, { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Stars, Sphere } from '@react-three/drei';
+import { Stars, Float, Sphere, MeshDistortMaterial } from '@react-three/drei';
 import * as THREE from 'three';
 
-// 1. The Sun (Pulsating Tech Star)
-const GlowingSun = () => {
-  const sunRef = useRef();
-  const glowRef = useRef();
-  
-  useFrame((state, delta) => {
-    sunRef.current.rotation.y += delta * 0.2;
-    sunRef.current.rotation.x += delta * 0.1;
-    
-    // Pulse the outer glow
-    const t = state.clock.getElapsedTime();
-    const scale = 1.2 + Math.sin(t * 2) * 0.05;
-    glowRef.current.scale.set(scale, scale, scale);
-  });
-
-  return (
-    <group>
-      <mesh ref={sunRef}>
-        <sphereGeometry args={[2.5, 32, 32]} />
-        <meshBasicMaterial color="#ffffff" />
-      </mesh>
-      <mesh ref={glowRef}>
-        <sphereGeometry args={[2.5, 32, 32]} />
-        <meshBasicMaterial color="#00e5ff" transparent opacity={0.4} blending={THREE.AdditiveBlending} wireframe />
-      </mesh>
-      <pointLight intensity={5} distance={100} color="#00e5ff" />
-    </group>
-  );
-};
-
-// 2. Futuristic Planet
-const Planet = ({ orbitRadius, orbitSpeed, size, color, wireframe = false, hasRing = false, tilt = 0 }) => {
-  const groupRef = useRef();
-  const planetRef = useRef();
-  const ringRef = useRef();
-
-  useFrame((state, delta) => {
-    // Orbit around the sun
-    groupRef.current.rotation.y += delta * orbitSpeed;
-    // Planet's own rotation
-    planetRef.current.rotation.y += delta * 1.5;
-    if (ringRef.current) {
-      ringRef.current.rotation.z -= delta * 0.5;
-    }
-  });
-
-  return (
-    <group ref={groupRef}>
-      {/* The actual planet */}
-      <group position={[orbitRadius, 0, 0]} rotation={[0, 0, tilt]}>
-        <mesh ref={planetRef}>
-          <sphereGeometry args={[size, 32, 32]} />
-          {wireframe ? (
-            <meshBasicMaterial color={color} wireframe transparent opacity={0.8} blending={THREE.AdditiveBlending} />
-          ) : (
-            <meshStandardMaterial color={color} metalness={0.9} roughness={0.1} />
-          )}
-        </mesh>
-        
-        {/* Holographic Ring */}
-        {hasRing && (
-          <mesh ref={ringRef} rotation={[Math.PI / 2.2, 0, 0]}>
-            <torusGeometry args={[size * 1.8, 0.02, 16, 100]} />
-            <meshBasicMaterial color={color} transparent opacity={0.9} blending={THREE.AdditiveBlending} />
-          </mesh>
-        )}
-      </group>
-      
-      {/* Orbit Line */}
-      <mesh rotation={[Math.PI / 2, 0, 0]}>
-        <torusGeometry args={[orbitRadius, 0.01, 16, 120]} />
-        <meshBasicMaterial color="#ffffff" transparent opacity={0.06} />
-      </mesh>
-    </group>
-  );
-};
-
-// 3. Tech Asteroid Belt / Data Stream
-const GalaxyDust = () => {
+const ParticleRing = () => {
   const pointsRef = useRef();
-  const count = 5000;
-  
+
+  const count = 2500;
   const positions = useMemo(() => {
-    const pos = new Float32Array(count * 3);
+    const positions = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
-      const radius = 9 + Math.random() * 20; // Spread from r=9 to r=29
-      const theta = Math.random() * Math.PI * 2;
-      const y = (Math.random() - 0.5) * 3; // Vertical spread
+      const theta = THREE.MathUtils.randFloatSpread(360); 
+      const phi = THREE.MathUtils.randFloatSpread(360); 
       
-      pos[i * 3] = radius * Math.cos(theta);
-      pos[i * 3 + 1] = y;
-      pos[i * 3 + 2] = radius * Math.sin(theta);
+      let x = (3 + Math.random() * 3) * Math.cos(theta) * Math.sin(phi);
+      let y = (3 + Math.random() * 3) * Math.sin(theta) * Math.sin(phi);
+      let z = (3 + Math.random() * 3) * Math.cos(phi);
+
+      x *= 2.8;
+      y *= 1.2;
+      z *= 1.5;
+
+      positions[i * 3] = x;
+      positions[i * 3 + 1] = y;
+      positions[i * 3 + 2] = z;
     }
-    return pos;
+    return positions;
   }, [count]);
 
   useFrame((state, delta) => {
-    pointsRef.current.rotation.y -= delta * 0.03;
+    if (pointsRef.current) {
+      pointsRef.current.rotation.y += delta * 0.03;
+      pointsRef.current.rotation.x += delta * 0.015;
+    }
   });
 
   return (
@@ -114,62 +46,47 @@ const GalaxyDust = () => {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.03}
-        color="#aa00ff"
-        transparent
-        opacity={0.6}
+        size={0.035}
+        color="#88ccff"
+        sizeAttenuation={true}
+        transparent={true}
+        opacity={0.5}
         blending={THREE.AdditiveBlending}
-        sizeAttenuation
       />
     </points>
   );
 };
 
-// 4. Cinematic Camera Controller
-const CinematicCamera = () => {
-  useFrame((state) => {
-    const t = state.clock.getElapsedTime();
-    // Slowly orbit the camera around the solar system
-    state.camera.position.x = Math.sin(t * 0.05) * 25;
-    state.camera.position.z = Math.cos(t * 0.05) * 25;
-    // Slowly bob up and down
-    state.camera.position.y = 8 + Math.sin(t * 0.1) * 6;
-    
-    // Always look at the center (the sun)
-    state.camera.lookAt(0, 0, 0);
-  });
-  return null;
+const AnimatedSphere = () => {
+  return (
+    <Float speed={1.5} rotationIntensity={1.5} floatIntensity={2}>
+      <Sphere args={[1, 64, 64]} scale={1.5}>
+        <MeshDistortMaterial
+          color="#0f0f0f"
+          envMapIntensity={1}
+          clearcoat={0.9}
+          clearcoatRoughness={0.1}
+          metalness={0.8}
+          roughness={0.2}
+          distort={0.3}
+          speed={2}
+        />
+      </Sphere>
+    </Float>
+  );
 };
 
 const Background3D = () => {
   return (
-    <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: -99, pointerEvents: 'none', background: '#020202' }}>
-      <Canvas camera={{ position: [0, 10, 30], fov: 50 }} dpr={[1, 2]}>
-        <ambientLight intensity={0.15} />
+    <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: -99, pointerEvents: 'none', background: '#050505' }}>
+      <Canvas camera={{ position: [0, 0, 10], fov: 45 }} dpr={[1, 2]}>
+        <ambientLight intensity={0.4} />
+        <directionalLight position={[5, 5, 5]} intensity={1} color="#ffffff" />
+        <directionalLight position={[-5, -5, -5]} intensity={2.5} color="#0066ff" />
         
-        {/* Animated Camera */}
-        <CinematicCamera />
-        
-        {/* Deep Space Stars */}
-        <Stars radius={150} depth={50} count={8000} factor={6} saturation={1} fade speed={2} />
-        
-        {/* Center Star */}
-        <GlowingSun />
-        
-        {/* Inner Data Planet */}
-        <Planet orbitRadius={6} orbitSpeed={0.8} size={0.5} color="#00ffcc" wireframe />
-        
-        {/* Medium Standard Planet */}
-        <Planet orbitRadius={10} orbitSpeed={0.4} size={1.2} color="#3377ff" />
-        
-        {/* Giant Holographic Ringed Planet */}
-        <Planet orbitRadius={16} orbitSpeed={0.2} size={1.8} color="#ff00aa" wireframe hasRing tilt={0.4} />
-        
-        {/* Outer Gas Giant */}
-        <Planet orbitRadius={24} orbitSpeed={0.1} size={2.2} color="#ffaa00" hasRing tilt={-0.2} />
-        
-        {/* Asteroid Belt */}
-        <GalaxyDust />
+        <Stars radius={100} depth={50} count={6000} factor={4} saturation={0} fade speed={1.5} />
+        <ParticleRing />
+        <AnimatedSphere />
       </Canvas>
     </div>
   );

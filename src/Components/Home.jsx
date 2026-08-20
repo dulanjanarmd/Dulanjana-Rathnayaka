@@ -100,8 +100,11 @@ const Home = ({ name }) => {
 
       {/* RIGHT */}
       <div className="hero-right">
-        <div className="hero-photo-circle">
-          <img src={profilePhoto} alt={name} className="hero-photo" />
+        <div className="hero-photo-wrapper">
+          <div className="hero-photo-circle">
+            <div className="glare"></div>
+            <img src={profilePhoto} alt={name} className="hero-photo" />
+          </div>
         </div>
       </div>
     </section>

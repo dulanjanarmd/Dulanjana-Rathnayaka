@@ -834,3 +834,62 @@ html, body, #app, #main {
   }
 }
 
+/* ==========================================================================
+   ADVANCED 3D 4K INTERACTIONS
+   ========================================================================== */
+
+/* Universal 3D Box Hover Engine */
+.about-card, .education-card, .new-proj-card, .cert-list-container, .clean-contact-cta, .clean-contact-socials {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
+  will-change: transform, box-shadow;
+}
+
+.about-card::after, .education-card::after, .new-proj-card::after, .cert-list-container::after, .clean-contact-cta::after, .clean-contact-socials::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 40%);
+  opacity: 0;
+  transition: opacity 0.6s;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.about-card:hover, .education-card:hover, .new-proj-card:hover, .cert-list-container:hover, .clean-contact-cta:hover, .clean-contact-socials:hover {
+  box-shadow: 
+    -10px 15px 30px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(0, 102, 255, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2) !important;
+  z-index: 10;
+}
+
+.about-card:hover::after, .education-card:hover::after, .new-proj-card:hover::after, .cert-list-container:hover::after, .clean-contact-cta:hover::after, .clean-contact-socials:hover::after {
+  opacity: 1;
+}
+
+/* Universal 3D Button Hover Engine */
+.hero-btn, .new-proj-btn, .cert-btn-small, .header-nav a, .cc-social-item {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease !important;
+  will-change: transform, box-shadow;
+}
+
+.hero-btn:hover, .new-proj-btn:hover, .cert-btn-small:hover, .header-nav a:hover, .cc-social-item:hover {
+  box-shadow: 
+    -5px 10px 20px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(0, 102, 255, 0.5),
+    inset 1px 1px 3px rgba(255,255,255,0.3), 
+    inset -1px -1px 3px rgba(0,0,0,0.4) !important;
+  z-index: 10;
+}
+
+.hero-btn:active, .new-proj-btn:active, .cert-btn-small:active, .header-nav a:active, .cc-social-item:active {
+  transform: perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(0.95, 0.95, 0.95) translateZ(0px) !important;
+  box-shadow: 
+    0px 2px 5px rgba(0, 0, 0, 0.4),
+    0 0 5px rgba(0, 102, 255, 0.3),
+    inset 2px 2px 5px rgba(0,0,0,0.6) !important;
+}
