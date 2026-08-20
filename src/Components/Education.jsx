@@ -7,8 +7,7 @@ const educationData = [
   {
     id: 1,
     school: "Sri Lanka Institute of Information Technology (SLIIT)",
-    degree: "BSc (Hons) in Information Technology",
-    specialization: "Information Systems Engineering",
+    degree: "BSc (Hons) in Information Systems Engineering",
     period: "Oct 2024 - Jun 2028",
     image: sliitLogo,
     badgeText: "SLIIT",
@@ -17,8 +16,7 @@ const educationData = [
   {
     id: 2,
     school: "Saranath College, Kuliyapitiya",
-    degree: "G.C.E. Advanced Level (A/L)",
-    specialization: "Biological Science Stream",
+    degree: "G.C.E. Advanced Level (A/L) - Biological Science",
     period: "Completed",
     image: saranathLogo,
     coverImage: true,
@@ -28,8 +26,7 @@ const educationData = [
   {
     id: 3,
     school: "St. Joseph's College, Kuliyapitiya",
-    degree: "G.C.E. Ordinary Level (O/L)",
-    specialization: "Secondary Education",
+    degree: "G.C.E. Ordinary Level (O/L) - Secondary Education",
     period: "Completed",
     image: stJosephLogo,
     badgeText: "SJC",
