@@ -62,21 +62,22 @@ const Education = () => {
         <h2 className="sec-title">ACADEMIC <span>JOURNEY</span></h2>
       </div>
       
-      <div className="education-timeline reveal">
-        {educationData.map((item, index) => (
-          <div className="education-card" key={item.id}>
-            <div className="edu-image-wrapper">
-              <img src={item.image} alt={item.school} className={`edu-logo ${item.coverImage ? 'edu-logo-cover' : ''}`} />
+      <div className="cert-list-container cert-card card-visible">
+        <h3 className="cert-main-title text-center">Academic Qualifications</h3>
+        <div className="cert-list">
+          {educationData.map((item, index) => (
+            <div className="cert-list-item" key={item.id}>
+              <div className="cert-item-img-wrapper">
+                <img src={item.image} alt={item.school} className={item.coverImage ? 'edu-logo-cover' : ''} />
+              </div>
+              <div className="cert-content">
+                <h4 className="cert-title">{item.school}</h4>
+                <div className="cert-issuer">{item.degree} • {item.period}</div>
+                <div className="edu-description" style={{fontSize: '0.85rem', color: '#888', marginTop: '0.5rem'}}>{item.description}</div>
+              </div>
             </div>
-            <div className="edu-content">
-              <h3 className="edu-school">{item.school}</h3>
-              <h4 className="edu-degree">{item.degree}</h4>
-
-              <div className="edu-period">{item.period}</div>
-              <p className="edu-description">{item.description}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
