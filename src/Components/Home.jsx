@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import profilePhoto from "../images/dulanjana.jpg";
 import cvDocument from "../documents/Dulanjana_Rathanayaka_Resume.pdf";
 
-const ROLES = ["BUSINESS ANALYST INTERN", "DATA ANALYST", "SYSTEMS ANALYST"];
+const ROLES = ["BUSINESS ANALYST INTERN", "SYSTEMS ANALYST"];
 
 const AnimatedText = ({ text, className, delay = 0 }) => {
   const words = text.split(" ");
