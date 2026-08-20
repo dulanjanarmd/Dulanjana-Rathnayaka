@@ -1032,12 +1032,25 @@ body {
 .education-timeline {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
   max-width: 900px;
   margin: 4rem auto 0;
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.education-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  bottom: 1rem;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .education-card {
+  position: relative;
   display: flex;
   align-items: flex-start;
   gap: 1.5rem;
@@ -1046,6 +1059,20 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  left: calc(-2.5rem - 6px);
+  top: 4.5rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--bg-alt);
+  z-index: 2;
+  box-shadow: 0 0 10px var(--accent);
 }
 
 .education-card:hover {
