@@ -71,7 +71,7 @@ const Education = () => {
             <div className="edu-content">
               <h3 className="edu-school">{item.school}</h3>
               <h4 className="edu-degree">{item.degree}</h4>
-              {item.specialization && <span className="edu-specialization">{item.specialization}</span>}
+
               <div className="edu-period">{item.period}</div>
               <p className="edu-description">{item.description}</p>
             </div>
