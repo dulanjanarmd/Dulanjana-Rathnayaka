@@ -5,34 +5,6 @@ import cvDocument from "../documents/Dulanjana_Rathanayaka_Resume.pdf";
 
 const ROLES = ["BUSINESS ANALYST", "SYSTEMS ANALYST"];
 
-const AnimatedText = ({ text, className, delay = 0 }) => {
-  const words = text.split(" ");
-  let globalLetterIdx = 0;
-
-  return (
-    <span className={className} aria-label={text}>
-      {words.map((word, wIdx) => {
-        const letters = word.split("").map((ch) => {
-          const idx = globalLetterIdx++;
-          return (
-            <span key={idx} className="letter" style={{ animationDelay: `${delay + idx * 0.045}s` }}>
-              {ch}
-            </span>
-          );
-        });
-        globalLetterIdx++; // account for space delay
-
-        return (
-          <span key={wIdx} className="word-span" style={{ display: "inline-block", whiteSpace: "nowrap" }}>
-            {letters}
-            {wIdx < words.length - 1 && <span className="word-space" style={{ display: "inline-block" }}>&nbsp;</span>}
-          </span>
-        );
-      })}
-    </span>
-  );
-};
-
 
 
 // ─── Main Component ────────────────────────────────────────────────────
@@ -75,7 +47,7 @@ const Home = ({ name }) => {
       <div className="hero-left">
         <h1 className={`hero-name-block${nameVisible ? " name-visible" : ""}`}>
           <span className="name-line hero-greeting">HI, I&apos;M</span>
-          <AnimatedText text="DULANJANA RATHNAYAKA" className="name-line name-full" delay={0.15} />
+          <span className="name-line name-full">DULANJANA RATHNAYAKA</span>
         </h1>
 
         <div className="hero-ise">

@@ -199,7 +199,6 @@ body {
   line-height: 1.08;
   gap: 0;
   transform-style: preserve-3d;
-  animation: titleFloat3D 6s ease-in-out infinite;
 }
 
 /* ALL lines — HI I'M + name — same font, same size */
