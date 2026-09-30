@@ -15,7 +15,7 @@ const Background3D = () => {
         boxShadow: '100px 0px 150px -50px rgba(197, 17, 98, 0.4), inset -50px 0 100px rgba(247, 151, 30, 0.4)',
         borderRight: '40px solid #f7971e',
         borderBottom: '40px solid #c51162',
-        opacity: 0.8
+        opacity: 0.25
       }} />
 
       {/* Sweeping wave on the bottom right */}
@@ -29,7 +29,7 @@ const Background3D = () => {
         boxShadow: '-100px -50px 150px -50px rgba(197, 17, 98, 0.4), inset 50px 50px 100px rgba(255, 215, 0, 0.3)',
         borderLeft: '40px solid #c51162',
         borderTop: '40px solid #ffd700',
-        opacity: 0.8
+        opacity: 0.25
       }} />
 
     </div>

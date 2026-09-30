@@ -355,31 +355,12 @@
 
 /* CTA Buttons — background slide in on hover */
 .hero-btn {
-  position: relative;
-  overflow: hidden;
-  transition: color 0.3s ease, transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease !important;
-  z-index: 1;
-}
-
-.hero-btn::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255,255,255,0.08);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
-  z-index: -1;
-}
-
-.hero-btn:hover::before {
-  transform: scaleX(1);
-  transform-origin: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 .hero-btn:hover {
   transform: translateY(-3px) !important;
-  box-shadow: 0 12px 24px rgba(0,0,0,0.5) !important;
+  box-shadow: 0 12px 30px rgba(197, 17, 98, 0.6) !important;
 }
 
 /* Enhanced terminal cursor */
@@ -840,7 +821,6 @@ html, body, #app, #main {
 .about-card:hover, .education-card:hover, .new-proj-card:hover, .cert-list-container:hover, .clean-contact-cta:hover, .clean-contact-socials:hover {
   box-shadow: 
     -10px 15px 30px rgba(0, 0, 0, 0.6),
-    0 0 30px rgba(0, 102, 255, 0.3),
     inset 0 0 0 1px rgba(255, 255, 255, 0.2) !important;
   z-index: 10;
 }
@@ -860,7 +840,6 @@ html, body, #app, #main {
 .hero-btn:hover, .new-proj-btn:hover, .cert-btn-small:hover, .cc-social-item:hover {
   box-shadow: 
     -5px 10px 20px rgba(0, 0, 0, 0.4),
-    0 0 20px rgba(0, 102, 255, 0.5),
     inset 1px 1px 3px rgba(255,255,255,0.3), 
     inset -1px -1px 3px rgba(0,0,0,0.4) !important;
   z-index: 10;
@@ -870,6 +849,5 @@ html, body, #app, #main {
   transform: perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(0.95, 0.95, 0.95) translateZ(0px) !important;
   box-shadow: 
     0px 2px 5px rgba(0, 0, 0, 0.4),
-    0 0 5px rgba(0, 102, 255, 0.3),
     inset 2px 2px 5px rgba(0,0,0,0.6) !important;
 }
