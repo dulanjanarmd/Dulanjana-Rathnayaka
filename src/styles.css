@@ -2353,4 +2353,31 @@ body {
   .cc-social-arrow {
     display: none;
   }
+  
+  /* Fix layout grids for mobile */
+  .about-container,
+  .about-inner,
+  .new-port-grid,
+  .edu-grid,
+  .cert-grid,
+  .services-grid,
+  .cc-footer-grid,
+  .about-bottom {
+    grid-template-columns: 1fr !important;
+    display: grid !important;
+    gap: 2rem !important;
+  }
+  
+  /* Fix padding and sizing */
+  section {
+    padding: 4rem 1.5rem !important;
+  }
+  
+  nav ul {
+    display: none; /* Can add hamburger menu later, but hiding keeps it from breaking */
+  }
+
+  .intro-card, .skills-card {
+    width: 100%;
+  }
 }
