@@ -48,13 +48,14 @@ const Footer = ({ name, email, gitHub, linkedIn, reddit, medium }) => {
 
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}>
               <div className="cc-label" style={{ marginBottom: 0 }}>CONNECT WITH ME</div>
-              <div className="cc-inline-socials" style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+              <div className="cc-inline-socials" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
                 {[
-                  { name: "LinkedIn", icon: linkedInIcon, href: `https://www.linkedin.com/in/${linkedIn}` },
-                  { name: "GitHub", icon: gitHubIcon, href: `https://github.com/${gitHub}` },
+                  { name: "LinkedIn", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg", href: `https://www.linkedin.com/in/${linkedIn}` },
+                  { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg", href: `https://github.com/${gitHub}`, style: { filter: 'invert(1)' } },
                 ].map((s) => (
-                  <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" className="inline-social-item" title={s.name}>
-                    <img src={s.icon} alt={s.name} style={{ width: '28px', height: '28px', opacity: '0.8', transition: 'opacity 0.3s ease' }} />
+                  <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" className="inline-social-item" title={s.name} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', textDecoration: 'none', color: '#ffffff', fontWeight: 600, fontSize: '1rem', transition: 'opacity 0.3s ease' }}>
+                    <img src={s.icon} alt={s.name} style={{ width: '32px', height: '32px', ...(s.style || {}) }} />
+                    <span>{s.name}</span>
                   </a>
                 ))}
               </div>
