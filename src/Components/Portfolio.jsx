@@ -2,8 +2,18 @@ import React, { useEffect } from "react";
 import rentlensImg from '../images/rentlens.png';
 import libraryHubImg from '../images/libraryhub.png';
 import lankaThreadImg from '../images/lankathread.png';
+import novaBankImg from '../images/novabank.png';
 
 const projects = [
+  {
+    id: 0,
+    title: "NOVABANK",
+    category: "Banking System & Analytics",
+    image: novaBankImg,
+    tech: ["Java", "Spring Boot", "React", "MySQL", "Data Analysis"],
+    desc: "A comprehensive core banking solution with integrated financial analytics and transaction management.",
+    codeUrl: "https://github.com/dulanjanarmd/NovaBank",
+  },
   {
     id: 1,
     title: "RENTLENS",
@@ -129,19 +139,6 @@ const Portfolio = () => {
               </div>
               
               <p className="new-proj-desc">{p.desc}</p>
-              
-              <div className="new-proj-outcomes">
-                <strong>Key Outcomes:</strong>
-                {Array.isArray(p.outcomes) ? (
-                  <ul>
-                    {p.outcomes.map((outcome, idx) => (
-                      <li key={idx}>{outcome}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p>{p.outcomes}</p>
-                )}
-              </div>
 
               <div className="new-proj-actions">
                 {p.codeUrl && (

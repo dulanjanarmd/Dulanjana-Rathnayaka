@@ -300,6 +300,14 @@ body {
   line-height: 1.9;
   max-width: 450px;
   margin-bottom: 3rem;
+  text-align: justify;
+}
+
+.about-card p,
+.cc-desc {
+  text-align: justify;
+  line-height: 1.8;
+  color: var(--muted);
 }
 
 .hero-btns {
