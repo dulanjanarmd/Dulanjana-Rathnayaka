@@ -58,20 +58,7 @@ const projects = [
     ],
     codeUrl: "https://github.com/dulanjanarmd/LibraryHub",
   },
-  {
-    id: 4,
-    title: "GLOBAL SUPERSTORE SALES ANALYSIS & DASHBOARD",
-    category: "Data Analysis",
-    image: "https://via.placeholder.com/600x400/1a1a1a/60a5fa?text=Global+Superstore+Dashboard",
-    tech: ["Power BI", "Python (Pandas)", "Excel"],
-    desc: "A comprehensive sales and performance analysis dashboard leveraging retail dataset.",
-    outcomes: [
-      "Analysed a retail dataset containing 50,000+ records using Python (Pandas) and Excel to identify sales, profit, and margin patterns.",
-      "Designed interactive Power BI dashboards with KPI cards and filters to support data-driven decision-making.",
-      "Identified top-performing products and underperforming areas through visual analysis."
-    ],
-    codeUrl: "https://github.com/dulanjanarmd/Superstore-Sales-Analysis",
-  },
+
   {
     id: 5,
     title: "PRIME MEDICAL",
