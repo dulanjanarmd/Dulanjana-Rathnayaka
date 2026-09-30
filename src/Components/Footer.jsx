@@ -2,13 +2,11 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import gitHubIcon from "../images/socials/github.svg";
 import linkedInIcon from "../images/socials/linkedin.svg";
-import instagramIcon from "../images/socials/instagram.svg";
-import facebookIcon from "../images/socials/facebook.svg";
 import redditIcon from "../images/socials/reddit.svg";
 import mediumIcon from "../images/socials/medium.svg";
 import xIcon from "../images/socials/x.svg";
 
-const Footer = ({ name, email, gitHub, linkedIn, instagram, facebook, reddit, medium }) => {
+const Footer = ({ name, email, gitHub, linkedIn, reddit, medium }) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => entries.forEach(e => {
@@ -35,39 +33,31 @@ const Footer = ({ name, email, gitHub, linkedIn, instagram, facebook, reddit, me
     </div>
 
     <div className="clean-contact-grid">
-      {/* LEFT — CTA */}
+      {/* CTA & Socials */}
       <div className="clean-contact-cta reveal-left">
         <div className="cc-label">GET IN TOUCH</div>
         <h3 className="cc-title">Have an idea?<br/>Let's build it.</h3>
-        <p className="cc-desc">
+        <p className="cc-desc" style={{ margin: '0 auto 3rem' }}>
           Open to consulting, collaborations, and interesting conversations about tech, business analysis, and product.
         </p>
-        <a href={`mailto:${email}`} className="hero-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.8rem', padding: '0.8rem 1.5rem', width: 'fit-content' }}>
-          {email} <span className="arrow">→</span>
-        </a>
-      </div>
-
-      {/* RIGHT — Socials */}
-      <div className="clean-contact-socials reveal-right">
-        <div className="cc-label">CONNECT WITH ME</div>
-        <div className="cc-social-list">
-          {[
-            { name: "LinkedIn",  icon: linkedInIcon,  href: `https://www.linkedin.com/in/${linkedIn}` },
-            { name: "GitHub",    icon: gitHubIcon,    href: `https://github.com/${gitHub}` },
-            { name: "X",         icon: xIcon,         href: `https://x.com/${gitHub}` },
-            { name: "Facebook",  icon: facebookIcon,  href: `https://www.facebook.com/${facebook}` },
-            { name: "Instagram", icon: instagramIcon, href: `https://www.instagram.com/${instagram}` },
-            { name: "Reddit",    icon: redditIcon,    href: `https://www.reddit.com/user/${reddit}` },
-            { name: "Medium",    icon: mediumIcon,    href: `https://medium.com/@${medium}` },
-          ].map((s, i) => (
-            <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" className="cc-social-item">
-              <div className="cc-social-left">
-                <img src={s.icon} alt={s.name} />
-                <span>{s.name}</span>
-              </div>
-              <span className="cc-social-arrow">→</span>
-            </a>
-          ))}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3rem' }}>
+          <a href={`mailto:${email}`} className="hero-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.8rem', padding: '0.8rem 1.5rem', width: 'fit-content', textTransform: 'lowercase' }}>
+            {email} <span className="arrow">→</span>
+          </a>
+          
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}>
+            <div className="cc-label" style={{ marginBottom: 0 }}>CONNECT WITH ME</div>
+            <div className="cc-inline-socials" style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+              {[
+                { name: "LinkedIn",  icon: linkedInIcon,  href: `https://www.linkedin.com/in/${linkedIn}` },
+                { name: "GitHub",    icon: gitHubIcon,    href: `https://github.com/${gitHub}` },
+              ].map((s) => (
+                <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" className="inline-social-item" title={s.name}>
+                  <img src={s.icon} alt={s.name} style={{ width: '28px', height: '28px', opacity: '0.8', transition: 'opacity 0.3s ease' }} />
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -89,8 +79,6 @@ Footer.propTypes = {
   email: PropTypes.string,
   gitHub: PropTypes.string,
   linkedIn: PropTypes.string,
-  instagram: PropTypes.string,
-  facebook: PropTypes.string,
   reddit: PropTypes.string,
   medium: PropTypes.string,
 };

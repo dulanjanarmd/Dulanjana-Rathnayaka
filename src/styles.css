@@ -228,6 +228,15 @@ body {
 
 .name-full {
   letter-spacing: 0px;
+  color: #ffffff;
+  text-shadow: 
+    1px 1px 0 #999,
+    2px 2px 0 #888,
+    3px 3px 0 #777,
+    4px 4px 0 #666,
+    5px 5px 0 #555,
+    6px 6px 0 #444,
+    7px 7px 15px rgba(0, 0, 0, 0.6);
 }
 
 .name-line-2 {
@@ -1646,11 +1655,12 @@ body {
 }
 
 .clean-contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
   margin: 0 auto 5rem;
+  text-align: center;
 }
 
 .clean-contact-cta {
