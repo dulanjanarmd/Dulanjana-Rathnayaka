@@ -78,6 +78,9 @@ body {
   text-transform: uppercase;
   white-space: nowrap;
 }
+.mobile-toggle {
+  display: none;
+}
 
 .header-nav {
   display: flex;
@@ -2373,11 +2376,78 @@ body {
     padding: 4rem 1.5rem !important;
   }
   
-  nav ul {
-    display: none; /* Can add hamburger menu later, but hiding keeps it from breaking */
-  }
-
   .intro-card, .skills-card {
     width: 100%;
+  }
+
+  /* --- Mobile Hamburger Menu --- */
+  .mobile-toggle {
+    display: flex !important;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  .mobile-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-main);
+    transition: 0.3s;
+    border-radius: 3px;
+  }
+  .mobile-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .mobile-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .header-nav-container {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: right 0.4s ease;
+    border-left: 1px solid var(--border);
+  }
+  .header-nav-container.mobile-visible {
+    right: 0;
+  }
+  .header-nav {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+  .header-nav a {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+
+  /* --- Typography & Touch Targets --- */
+  .hero-title {
+    font-size: clamp(2.5rem, 10vw, 4rem) !important;
+  }
+  .sec-title {
+    font-size: 2.5rem !important;
+  }
+  .hero-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-btn {
+    width: 100%;
+    text-align: center;
+    padding: 1rem !important; /* Larger touch target */
   }
 }
