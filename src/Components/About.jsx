@@ -4,27 +4,23 @@ import profilePhoto from "../images/dulanjana.jpg";
 const skillCategories = [
   {
     title: "BUSINESS ANALYSIS",
-    skills: ["Requirements Elicitation", "Requirements Analysis", "Functional Requirements", "Non-Functional Requirements", "Stakeholder Management", "Stakeholder Analysis", "Stakeholder Engagement", "Business Process Analysis", "Data Analysis", "Gap Analysis"]
+    skills: ["Requirements Elicitation", "Stakeholder Management", "Business Process Analysis", "Gap Analysis"]
   },
   {
     title: "REQUIREMENTS & MODELLING",
-    skills: ["User Stories", "Acceptance Criteria", "Use Case Modelling", "BPMN", "UML", "Wireframing", "Business Process Modelling", "Documentation", "Test Cases"]
+    skills: ["User Stories & AC", "UML & BPMN", "Wireframing", "Test Cases"]
   },
   {
     title: "PROJECT MANAGEMENT",
-    skills: ["Agile Scrum", "SDLC", "Sprint Planning", "Backlog Management", "MoSCoW Prioritisation", "Change Management", "Risk Identification"]
+    skills: ["Agile Scrum", "Sprint Planning", "Risk Management"]
   },
   {
     title: "DATA & TECHNICAL",
-    skills: ["SQL", "Power BI", "Excel", "Python (Pandas)", "Java", "Spring Boot", "MySQL", "REST APIs", "Git"]
+    skills: ["SQL & MySQL", "Power BI", "Java & Spring Boot", "REST APIs", "Python"]
   },
   {
     title: "TOOLS",
-    skills: ["Jira", "Trello", "Figma", "Lucidchart", "GitHub", "Microsoft Office", "Confluence", "Draw.io"]
-  },
-  {
-    title: "SOFT SKILLS",
-    skills: ["Written and Verbal Communication", "Problem Solving", "Time Management", "Analytical Thinking"]
+    skills: ["Jira", "Figma", "Lucidchart", "GitHub"]
   }
 ];
 
@@ -63,13 +59,10 @@ const About = () => {
             <h4 className="intro-subtitle">Business Analyst | Information Systems Engineering Undergraduate at SLIIT</h4>
             
             <p>
-              I am a third-year <strong>Information Systems Engineering</strong> undergraduate seeking a <strong>Business Analyst</strong> internship, with hands-on experience translating business needs into structured requirements and system solutions across client-facing and individual projects.
+              I am a third-year <strong>Information Systems Engineering</strong> undergraduate at SLIIT, actively seeking a <strong>Business Analyst</strong> internship. I specialize in bridging the gap between business objectives and technical implementation by translating complex needs into structured requirements and scalable system solutions.
             </p>
             <p>
-              Having served as a Product Owner and Development Team Member on a client-facing healthcare system and led a 6-member Agile Scrum team, I am skilled in collaborating with stakeholders and development teams to ensure successful project delivery. My expertise lies in requirements analysis, stakeholder management, process mapping, requirements traceability, and Agile delivery.
-            </p>
-            <p>
-              Complementing my business analysis skills is a strong technical foundation in SQL, Power BI, Java, and system design, allowing me to bridge the gap between business objectives and technical implementation to create practical, impactful solutions.
+              With hands-on experience as a Product Owner and Agile Scrum team lead for a client-facing healthcare system, my expertise spans requirements analysis, stakeholder management, and Agile delivery—backed by a strong technical foundation in SQL, Power BI, and system design.
             </p>
 
             <div className="personal-details">
