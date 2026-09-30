@@ -1,15 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Barlow+Condensed:wght@700;800;900&display=swap");
 
 :root {
-  --bg: rgba(255, 255, 255, 0.1);
-  --bg2: rgba(255, 255, 255, 0.25);
-  --bg3: rgba(255, 255, 255, 0.4);
-  --accent: #6b4cff;
-  --muted: #555555;
-  --border: rgba(255, 255, 255, 0.6);
-  --glass-bg: rgba(255, 255, 255, 0.3);
-  --glass-border: rgba(255, 255, 255, 0.7);
-  --glass-shadow: 0 8px 32px 0 rgba(100, 100, 150, 0.1);
+  --bg: rgba(5, 10, 21, 0.4);
+  --bg2: rgba(10, 20, 35, 0.5);
+  --bg3: rgba(15, 25, 45, 0.6);
+  --accent: #f7971e;
+  --muted: #aaaaaa;
+  --border: rgba(255, 255, 255, 0.15);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
 }
 
 *,
@@ -87,45 +87,35 @@ body {
 
 .header-nav a {
   position: relative;
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff;
   text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  padding: 0.6rem 1.4rem;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
   display: inline-block;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 30px;
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.3),
-    inset 0 2px 4px 0 rgba(255, 255, 255, 0.4),
-    inset 0 -2px 4px 0 rgba(0, 0, 0, 0.2),
-    inset 0 0 10px 0 rgba(255, 255, 255, 0.1);
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-  overflow: hidden;
+  background: transparent;
+}
+
+.header-nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
 }
 
 .header-nav a:hover {
-  color: #ffffff;
-  background: var(--glass-bg);
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 
-    0 12px 40px 0 rgba(0, 102, 255, 0.3),
-    inset 0 2px 4px 0 rgba(255, 255, 255, 0.6),
-    inset 0 -2px 4px 0 rgba(0, 0, 0, 0.3),
-    inset 0 0 15px 0 rgba(255, 255, 255, 0.2);
+  color: var(--accent);
 }
 
-.header-nav a:hover::before {
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
+.header-nav a:hover::after {
+  width: 100%;
 }
 
 .header-right {
@@ -321,43 +311,27 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 1rem 2.2rem;
-  background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.05) 100%);
+  padding: 1rem 2.5rem;
+  background: linear-gradient(90deg, #f7971e, #c51162);
   color: #ffffff;
-  border-top: 1px solid rgba(255,255,255,0.5);
-  border-left: 1px solid rgba(255,255,255,0.3);
-  border-right: 1px solid rgba(255,255,255,0.1);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  border-radius: 8px;
-  font-size: 0.82rem;
-  font-weight: 800;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
   text-decoration: none;
   width: fit-content;
   cursor: pointer;
   font-family: "Inter", sans-serif;
-  backdrop-filter: blur(12px);
-  box-shadow: 
-    -2px -2px 10px rgba(255,255,255,0.1), 
-    6px 6px 20px rgba(0,0,0,0.6), 
-    inset 0 2px 2px rgba(255,255,255,0.6), 
-    inset 0 -2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 20px rgba(197, 17, 98, 0.4);
 }
 
 .hero-btn-outline {
-  background: linear-gradient(135deg, rgba(0,102,255,0.2) 0%, rgba(0,102,255,0.05) 100%);
+  background: transparent;
   color: #ffffff;
-  border-top: 1px solid rgba(0,102,255,0.5);
-  border-left: 1px solid rgba(0,102,255,0.3);
-  border-right: 1px solid rgba(0,102,255,0.1);
-  border-bottom: 1px solid rgba(0,102,255,0.05);
-  backdrop-filter: blur(12px);
-  box-shadow: 
-    -2px -2px 10px rgba(0,102,255,0.1), 
-    6px 6px 20px rgba(0,0,0,0.6), 
-    inset 0 2px 2px rgba(255,255,255,0.2), 
-    inset 0 -2px 5px rgba(0,0,0,0.4);
+  border: 2px solid #c51162;
+  box-shadow: none;
 }
 
 /* Right panel — photo */

@@ -337,27 +337,7 @@
   100% { opacity: 1; transform: translateY(0); }
 }
 
-.header-nav a {
-  position: relative;
-  display: inline-block;
-}
 
-.header-nav a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -5px;
-  left: 50%;
-  background-color: #ffffff;
-  transition: width 0.3s ease, left 0.3s ease;
-  border-radius: 2px;
-}
-
-.header-nav a:hover::after {
-  width: 100%;
-  left: 0;
-}
 
 
 /* ==========================================================================
@@ -870,14 +850,14 @@ html, body, #app, #main {
 }
 
 /* Universal 3D Button Hover Engine */
-.hero-btn, .new-proj-btn, .cert-btn-small, .header-nav a, .cc-social-item {
+.hero-btn, .new-proj-btn, .cert-btn-small, .cc-social-item {
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease !important;
   will-change: transform, box-shadow;
 }
 
-.hero-btn:hover, .new-proj-btn:hover, .cert-btn-small:hover, .header-nav a:hover, .cc-social-item:hover {
+.hero-btn:hover, .new-proj-btn:hover, .cert-btn-small:hover, .cc-social-item:hover {
   box-shadow: 
     -5px 10px 20px rgba(0, 0, 0, 0.4),
     0 0 20px rgba(0, 102, 255, 0.5),
@@ -886,7 +866,7 @@ html, body, #app, #main {
   z-index: 10;
 }
 
-.hero-btn:active, .new-proj-btn:active, .cert-btn-small:active, .header-nav a:active, .cc-social-item:active {
+.hero-btn:active, .new-proj-btn:active, .cert-btn-small:active, .cc-social-item:active {
   transform: perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(0.95, 0.95, 0.95) translateZ(0px) !important;
   box-shadow: 
     0px 2px 5px rgba(0, 0, 0, 0.4),
