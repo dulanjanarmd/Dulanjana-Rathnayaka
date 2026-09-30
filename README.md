@@ -1,23 +1,15 @@
 <div align="center">
-
-<!-- You can replace the below image URL with a screenshot of your actual portfolio later -->
-<img src="https://via.placeholder.com/1000x300/1a1a1a/f7971e?text=DULANJANA+RATHNAYAKA+-+PORTFOLIO" alt="Portfolio Banner" />
-
-<br/>
-
-<h1>🚀 Dulanjana Rathnayaka | Personal Portfolio</h1>
-<p><strong>Business Analyst & Systems Analyst</strong></p>
-
-<p>
-  <a href="https://dulanjanarmd.github.io/Dulanjana-Rathnayaka">View Live Website</a>
-  ·
-  <a href="https://github.com/dulanjanarmd/Dulanjana-Rathnayaka/issues">Report Bug</a>
-  ·
-  <a href="https://www.linkedin.com/in/dulanjanarmd/">LinkedIn</a>
-</p>
-
-<!-- Technology Badges -->
-<p>
+  <h1>🚀 Dulanjana Rathnayaka | Personal Portfolio</h1>
+  <p><strong>Business Analyst & Systems Analyst</strong></p>
+  
+  <p>
+    <a href="https://dulanjanarmd.github.io/Dulanjana-Rathnayaka">View Live Website</a>
+    ·
+    <a href="https://github.com/dulanjanarmd/Dulanjana-Rathnayaka/issues">Report Bug</a>
+    ·
+    <a href="https://www.linkedin.com/in/dulanjanarmd/">LinkedIn</a>
+  </p>
+  
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
   <img src="https://img.shields.io/badge/Parcel-D3A74A?style=for-the-badge&logo=parcel&logoColor=white" alt="Parcel" />
@@ -48,7 +40,7 @@
 
 ---
 
-## 📖 About The Project
+## About The Project
 
 This repository hosts my professional portfolio, custom-built from the ground up. Rather than relying on generic templates, this application serves as a testament to my ability to translate business requirements into functional, optimized, and beautiful digital solutions. 
 
@@ -59,7 +51,8 @@ It is designed to highlight my professional journey, Agile Scrum leadership, and
 
 While my primary focus is on requirements engineering, system design, and product ownership, I built this portfolio to demonstrate that I can effectively bridge the gap between high-level business objectives and low-level technical execution. 
 
-### Key Architectural Features
+### ✨ Key Features
+
 - **Dynamic Abstract Theme**: A fully custom-built CSS architecture featuring sweeping abstract ribbons, a dark neon palette (Orange & Magenta), and smooth glassmorphism.
 - **Universal 3D Engine**: Employs an `IntersectionObserver` paired with mouse-tracking mathematics to create spatial depth, tilt effects, and glowing borders across major UI elements.
 - **Optimized Delivery**: Bundled with Parcel for lightning-fast HMR (Hot Module Replacement), asset minification, and optimized production builds.
@@ -76,7 +69,7 @@ This project adheres to modern web design principles:
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 | Category | Technology / Tool | Purpose |
 | :--- | :--- | :--- |
@@ -109,7 +102,7 @@ Dulanjana-Rathnayaka/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 Follow these instructions to run the project locally.
 
@@ -139,7 +132,7 @@ Follow these instructions to run the project locally.
 
 ---
 
-## 📦 Deployment
+## 📦 Deployment & Scripts
 
 This project includes automated NPM scripts for building and deploying directly to GitHub Pages.
 
@@ -162,22 +155,11 @@ To push a new version live:
 
 ---
 
-## 📬 Contact
+## Contact
 
 **Dulanjana Rathnayaka**  
-Aspiring Business Analyst & Systems Analyst  
+Aspiring Business & Systems Analyst  
 📧 [dulanjanarmd@gmail.com](mailto:dulanjanarmd@gmail.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/dulanjanarmd/) | [GitHub](https://github.com/dulanjanarmd)
 
-**Connect with me:**
-<br/>
-<a href="https://www.linkedin.com/in/dulanjanarmd/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-<a href="https://github.com/dulanjanarmd"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
-
-<br/>
-<br/>
-<p align="center">
-  <i>Designed and developed by Dulanjana Rathnayaka</i>
-</p>
-<p align="center">
-  <a href="#top">🔼 Back to top</a>
-</p>
+<p align="right">(<a href="#top">back to top</a>)</p>
