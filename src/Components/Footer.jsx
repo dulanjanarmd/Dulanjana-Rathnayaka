@@ -1,11 +1,5 @@
-
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import gitHubIcon from "../images/socials/github.svg";
-import linkedInIcon from "../images/socials/linkedin.svg";
-import redditIcon from "../images/socials/reddit.svg";
-import mediumIcon from "../images/socials/medium.svg";
-import xIcon from "../images/socials/x.svg";
 
 const Footer = ({ name, email, gitHub, linkedIn, reddit, medium }) => {
   useEffect(() => {

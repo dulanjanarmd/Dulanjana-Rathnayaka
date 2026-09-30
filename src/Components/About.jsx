@@ -76,7 +76,7 @@ const About = () => {
               </div>
               <div className="pd-item">
                 <span className="pd-label">Interests:</span>
-                <span className="pd-value">Business Analysis &middot; Systems Analysis &middot; Data Analysis</span>
+                <span className="pd-value">Business Analysis &middot; Systems Analysis</span>
               </div>
             </div>
           </div>

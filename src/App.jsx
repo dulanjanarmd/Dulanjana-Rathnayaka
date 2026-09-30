@@ -12,7 +12,7 @@ import "./animations.css";
 
 const siteProps = {
   name: "Dulanjana Rathnayaka",
-  title: "Aspiring Business Analyst | Data Analyst | System Analyst",
+  title: "Aspiring Business Analyst | System Analyst",
   email: "dulanjanarmd@gmail.com",
   gitHub: "dulanjanarmd",
   instagram: "dulanjanarmd",
