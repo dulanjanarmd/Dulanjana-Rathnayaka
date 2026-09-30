@@ -1,12 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Barlow+Condensed:wght@700;800;900&display=swap");
 
 :root {
-  --bg: rgba(26, 26, 26, 0.4);
-  --bg2: rgba(20, 20, 20, 0.5);
-  --bg3: rgba(34, 34, 34, 0.6);
-  --accent: #ffffff;
-  --muted: #888888;
-  --border: rgba(255, 255, 255, 0.1);
+  --bg: rgba(255, 255, 255, 0.1);
+  --bg2: rgba(255, 255, 255, 0.25);
+  --bg3: rgba(255, 255, 255, 0.4);
+  --accent: #6b4cff;
+  --muted: #555555;
+  --border: rgba(255, 255, 255, 0.6);
+  --glass-bg: rgba(255, 255, 255, 0.3);
+  --glass-border: rgba(255, 255, 255, 0.7);
+  --glass-shadow: 0 8px 32px 0 rgba(100, 100, 150, 0.1);
 }
 
 *,
@@ -23,8 +26,8 @@ html {
 
 body {
   font-family: "Inter", sans-serif;
-  background: var(--bg);
-  color: #fff;
+  background: transparent;
+  color: #ffffff;
   overflow-x: hidden;
 }
 
@@ -59,7 +62,7 @@ body {
 }
 
 .header.scrolled {
-  background: rgba(26, 26, 26, 0.4);
+  background: var(--glass-bg);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
@@ -68,7 +71,7 @@ body {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -93,8 +96,8 @@ body {
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   padding: 0.6rem 1.4rem;
   display: inline-block;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   border-left: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 30px;
@@ -110,8 +113,8 @@ body {
 }
 
 .header-nav a:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  background: var(--glass-bg);
   transform: translateY(-2px) scale(1.02);
   box-shadow: 
     0 12px 40px 0 rgba(0, 102, 255, 0.3),
@@ -153,7 +156,7 @@ body {
 }
 
 .nav-social a:hover {
-  color: #fff;
+  color: #ffffff;
 }
 
 .nav-social img {
@@ -208,7 +211,7 @@ body {
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #fff;
+  color: #ffffff;
   display: block;
   line-height: 1.05;
 }
@@ -229,14 +232,6 @@ body {
 .name-full {
   letter-spacing: 0px;
   color: #ffffff;
-  text-shadow: 
-    1px 1px 0 #999,
-    2px 2px 0 #888,
-    3px 3px 0 #777,
-    4px 4px 0 #666,
-    5px 5px 0 #555,
-    6px 6px 0 #444,
-    7px 7px 15px rgba(0, 0, 0, 0.6);
 }
 
 .name-line-2 {
@@ -279,7 +274,6 @@ body {
   color: rgba(255, 255, 255, 0.4);
   text-transform: uppercase;
   margin-bottom: 2rem;
-  animation: fadeUp 0.6s ease 1.6s both;
 }
 
 /* Typing role line */
@@ -289,11 +283,10 @@ body {
   color: rgba(255, 255, 255, 0.6);
   margin-bottom: 2rem;
   min-height: 1.5rem;
-  animation: fadeUp 0.6s ease 1.8s both;
 }
 
 .hero-typed {
-  color: #fff;
+  color: #ffffff;
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -306,7 +299,7 @@ body {
   line-height: 0.95;
   letter-spacing: -1px;
   text-transform: uppercase;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 1.8rem;
 }
 
@@ -316,14 +309,12 @@ body {
   line-height: 1.9;
   max-width: 420px;
   margin-bottom: 3rem;
-  animation: fadeUp 0.6s ease 2s both;
 }
 
 .hero-btns {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  animation: fadeUp 0.6s ease 2.2s both;
 }
 
 .hero-btn {
@@ -332,7 +323,7 @@ body {
   gap: 0.6rem;
   padding: 1rem 2.2rem;
   background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.05) 100%);
-  color: #fff;
+  color: #ffffff;
   border-top: 1px solid rgba(255,255,255,0.5);
   border-left: 1px solid rgba(255,255,255,0.3);
   border-right: 1px solid rgba(255,255,255,0.1);
@@ -356,7 +347,7 @@ body {
 
 .hero-btn-outline {
   background: linear-gradient(135deg, rgba(0,102,255,0.2) 0%, rgba(0,102,255,0.05) 100%);
-  color: #fff;
+  color: #ffffff;
   border-top: 1px solid rgba(0,102,255,0.5);
   border-left: 1px solid rgba(0,102,255,0.3);
   border-right: 1px solid rgba(0,102,255,0.1);
@@ -548,7 +539,7 @@ body {
 .detail-item .d-val {
   font-size: 0.88rem;
   font-weight: 600;
-  color: #fff;
+  color: #ffffff;
 }
 
 /* Tools chips */
@@ -572,7 +563,7 @@ body {
 
 .tool-chip:hover {
   border-color: rgba(255, 255, 255, 0.4);
-  color: #fff;
+  color: #ffffff;
 }
 
 /* Bottom row */
@@ -609,7 +600,7 @@ body {
 
 .soft-card:hover {
   border-color: rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--glass-bg);
 }
 
 .soft-icon {
@@ -636,13 +627,13 @@ body {
 }
 
 .skill-top span:last-child {
-  color: #fff;
+  color: #ffffff;
   font-weight: 600;
 }
 
 .skill-bg {
   height: 4px;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--glass-bg);
   border-radius: 4px;
   overflow: hidden;
 }
@@ -694,7 +685,7 @@ body {
 }
 
 .svc-card:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--glass-bg);
 }
 
 .svc-num {
@@ -710,7 +701,7 @@ body {
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.8rem;
-  color: #fff;
+  color: #ffffff;
 }
 
 .svc-card p {
@@ -758,14 +749,14 @@ body {
 }
 
 .port-stat:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--glass-bg);
 }
 
 .port-stat-num {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 2.8rem;
   font-weight: 900;
-  color: #fff;
+  color: #ffffff;
   line-height: 1;
   margin-bottom: 0.4rem;
 }
@@ -788,7 +779,7 @@ body {
 }
 
 .port-featured:hover {
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--glass-bg);
 }
 
 .port-featured-badge {
@@ -819,7 +810,7 @@ body {
   text-transform: uppercase;
   letter-spacing: -0.5px;
   margin: 0.6rem 0 1rem;
-  color: #fff;
+  color: #ffffff;
 }
 
 .port-featured-desc {
@@ -856,7 +847,7 @@ body {
 .meta-val {
   font-size: 0.88rem;
   font-weight: 600;
-  color: #fff;
+  color: #ffffff;
 }
 
 .status-done {
@@ -894,19 +885,19 @@ body {
 }
 
 .port-filter:hover {
-  color: #fff;
+  color: #ffffff;
   border-color: rgba(255, 255, 255, 0.3);
 }
 
 .port-filter.active {
   background: #fff;
   color: #1a1a1a;
-  border-color: #fff;
+  border-color: #ffffff;
   font-weight: 700;
 }
 
 .filter-count {
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--glass-bg);
   font-size: 0.68rem;
   font-weight: 700;
   padding: 0.1rem 0.45rem;
@@ -931,7 +922,7 @@ body {
   padding: 2.5rem 2rem;
   border-right: 1px solid var(--border);
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -946,8 +937,8 @@ body {
 }
 
 .proj-card-adv:hover {
-  background: rgba(255, 255, 255, 0.03);
-  color: #fff;
+  background: var(--glass-bg);
+  color: #ffffff;
 }
 
 .card-visible {
@@ -983,7 +974,7 @@ body {
   text-transform: uppercase;
   letter-spacing: -0.3px;
   line-height: 1.1;
-  color: #fff;
+  color: #ffffff;
 }
 
 .proj-card-desc {
@@ -1038,7 +1029,7 @@ body {
 }
 
 .proj-card-adv:hover .proj-arrow-adv {
-  color: #fff;
+  color: #ffffff;
   transform: translate(3px, -3px);
 }
 
@@ -1090,7 +1081,7 @@ body {
 .ci-val {
   font-size: 0.88rem;
   font-weight: 500;
-  color: #fff;
+  color: #ffffff;
 }
 
 .contact-socials {
@@ -1119,8 +1110,8 @@ body {
 }
 
 .c-social:hover {
-  border-color: #fff;
-  background: rgba(255, 255, 255, 0.05);
+  border-color: #ffffff;
+  background: var(--glass-bg);
 }
 
 .c-social:hover img {
@@ -1155,11 +1146,11 @@ body {
 
 .form-group input,
 .form-group textarea {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--glass-bg);
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 0.85rem 1rem;
-  color: #fff;
+  color: #ffffff;
   font-family: "Inter", sans-serif;
   font-size: 0.88rem;
   outline: none;
@@ -1196,7 +1187,7 @@ body {
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #fff;
+  color: #ffffff;
 }
 
 .footer-copy {
@@ -1365,8 +1356,8 @@ body {
   text-align: center;
   gap: 1rem;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-radius: 12px;
   transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 }
@@ -1374,7 +1365,7 @@ body {
 .education-card:hover {
   transform: translateY(-5px);
   border-color: var(--accent);
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--glass-bg);
 }
 
 .edu-image-wrapper {
@@ -1388,14 +1379,14 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-border);
 }
 
 .edu-badge {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
   letter-spacing: 2px;
 }
 
@@ -1420,7 +1411,7 @@ body {
   font-size: 1.3rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 0.3rem;
   letter-spacing: 0.5px;
 }
@@ -1438,7 +1429,7 @@ body {
   font-size: 0.95rem;
   color: var(--text-muted);
   margin-bottom: 0.8rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg);
   padding: 0.2rem 0.8rem;
   border-radius: 20px;
 }
@@ -1482,8 +1473,8 @@ body {
 }
 
 .new-proj-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-radius: 12px;
   overflow: hidden;
   display: flex;
@@ -1534,7 +1525,7 @@ body {
 .new-proj-title {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 1.6rem;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 0.3rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -1575,7 +1566,7 @@ body {
 }
 
 .new-proj-outcomes {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--glass-bg);
   padding: 1.2rem;
   border-radius: 8px;
   margin-bottom: 2rem;
@@ -1584,7 +1575,7 @@ body {
 
 .new-proj-outcomes strong {
   display: block;
-  color: #fff;
+  color: #ffffff;
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
@@ -1628,7 +1619,7 @@ body {
   padding: 0.6rem 1.2rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 6px;
-  color: #fff;
+  color: #ffffff;
   font-size: 0.9rem;
   text-decoration: none;
   font-weight: 500;
@@ -1636,8 +1627,8 @@ body {
 }
 
 .new-proj-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: #fff;
+  background: var(--glass-bg);
+  border-color: #ffffff;
 }
 
 @media (max-width: 768px) {
@@ -1664,8 +1655,8 @@ body {
 }
 
 .clean-contact-cta {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-radius: 16px;
   padding: 4rem;
   display: flex;
@@ -1685,7 +1676,7 @@ body {
 .cc-title {
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-family: "Barlow Condensed", sans-serif;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 1.5rem;
   line-height: 1.1;
   font-weight: 700;
@@ -1705,8 +1696,8 @@ body {
 
 
 .clean-contact-socials {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-radius: 16px;
   padding: 4rem;
   display: flex;
@@ -1734,7 +1725,7 @@ body {
   border-right: 1px solid transparent;
   border-radius: 8px;
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
   font-weight: 500;
   font-size: 1.1rem;
   transition: all 0.3s ease;
@@ -1773,7 +1764,7 @@ body {
 }
 
 .cc-social-item:hover .cc-social-arrow {
-  color: #fff;
+  color: #ffffff;
   transform: translateX(4px);
 }
 
@@ -1791,7 +1782,7 @@ body {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
 }
 
 .mf-copy {
@@ -1850,8 +1841,8 @@ body {
 }
 
 .glass-panel {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-radius: 16px;
   padding: 2.5rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -1872,7 +1863,7 @@ body {
 
 .intro-card h3 {
   font-size: 1.8rem;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
@@ -1891,7 +1882,7 @@ body {
 }
 
 .intro-content strong {
-  color: #fff;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -1917,13 +1908,13 @@ body {
 }
 
 .pd-value {
-  color: #fff;
+  color: #ffffff;
   font-size: 0.95rem;
 }
 
 .tech-card h3 {
   font-size: 1.5rem;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
@@ -1940,7 +1931,7 @@ body {
 }
 
 .tech-group-title {
-  color: #fff;
+  color: #ffffff;
   font-size: 0.95rem;
   margin-bottom: 0.8rem;
   font-weight: 600;
@@ -1980,7 +1971,7 @@ body {
 .soft-skills-section h3,
 .philosophy-section h3 {
   font-size: 1.3rem;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 1.5rem;
 }
 
@@ -2016,7 +2007,7 @@ body {
 .philosophy-section h3 {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 1.5rem;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -2071,7 +2062,7 @@ body {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 3rem;
   font-weight: 800;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 3rem;
   letter-spacing: 1px;
 }
@@ -2097,8 +2088,8 @@ body {
 }
 
 .skill-pill-dark {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   color: #ddd;
   padding: 0.25rem 0.6rem;
   border-radius: 4px;
@@ -2108,8 +2099,8 @@ body {
 }
 
 .skill-pill-dark:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background: var(--glass-bg);
+  color: #ffffff;
   border-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
 }
@@ -2122,7 +2113,7 @@ body {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
 }
@@ -2167,7 +2158,7 @@ body {
 }
 
 .pd-value {
-  color: #fff;
+  color: #ffffff;
 }
 
 /* --- Certificates Section --- */
@@ -2177,8 +2168,8 @@ body {
 }
 
 .cert-list-container {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-radius: 12px;
   overflow: hidden;
   max-width: 900px;
@@ -2202,7 +2193,7 @@ body {
   overflow: hidden;
   flex-shrink: 0;
   margin-right: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-border);
   background: #1a1a1a;
 }
 
@@ -2219,7 +2210,7 @@ body {
   overflow: hidden;
   flex-shrink: 0;
   margin-right: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-border);
   background: #fff;
   display: flex;
   align-items: center;
@@ -2242,7 +2233,7 @@ body {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 1.3rem;
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
   letter-spacing: 0.5px;
 }
 
@@ -2266,7 +2257,7 @@ body {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #fff;
+  color: #ffffff;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
