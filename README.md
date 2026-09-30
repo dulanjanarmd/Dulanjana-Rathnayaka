@@ -1,57 +1,121 @@
 <div align="center">
-  <h1>🚀 Dulanjana Rathnayaka | Personal Portfolio</h1>
-  <p><strong>Business Analyst & Systems Analyst</strong></p>
-  
-  <p>
-    <a href="https://dulanjanarmd.github.io/Dulanjana-Rathnayaka">View Live Website</a>
-    ·
-    <a href="https://github.com/dulanjanarmd/Dulanjana-Rathnayaka/issues">Report Bug</a>
-    ·
-    <a href="https://www.linkedin.com/in/dulanjanarmd/">LinkedIn</a>
-  </p>
-  
+
+<!-- You can replace the below image URL with a screenshot of your actual portfolio later -->
+<img src="https://via.placeholder.com/1000x300/1a1a1a/f7971e?text=DULANJANA+RATHNAYAKA+-+PORTFOLIO" alt="Portfolio Banner" />
+
+<br/>
+
+<h1>🚀 Dulanjana Rathnayaka | Personal Portfolio</h1>
+<p><strong>Business Analyst & Systems Analyst</strong></p>
+
+<p>
+  <a href="https://dulanjanarmd.github.io/Dulanjana-Rathnayaka">View Live Website</a>
+  ·
+  <a href="https://github.com/dulanjanarmd/Dulanjana-Rathnayaka/issues">Report Bug</a>
+  ·
+  <a href="https://www.linkedin.com/in/dulanjanarmd/">LinkedIn</a>
+</p>
+
+<!-- Technology Badges -->
+<p>
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
   <img src="https://img.shields.io/badge/Parcel-D3A74A?style=for-the-badge&logo=parcel&logoColor=white" alt="Parcel" />
+</p>
+
+<!-- Status Badges -->
+<p>
+  <img src="https://img.shields.io/badge/Status-Active-success.svg?style=flat-square" alt="Status" />
+  <img src="https://img.shields.io/badge/License-ISC-blue.svg?style=flat-square" alt="License" />
+  <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome" />
+</p>
+
 </div>
 
-<br />
+---
+
+## 📑 Table of Contents
+- [About The Project](#-about-the-project)
+  - [The Philosophy](#the-philosophy)
+  - [Key Architectural Features](#key-architectural-features)
+- [Design & UI/UX](#-design--uiux)
+- [Technology Stack](#️-technology-stack)
+- [Folder Structure](#-folder-structure)
+- [Getting Started](#-getting-started)
+- [Deployment](#-deployment)
+- [Future Enhancements](#-future-enhancements)
+- [Contact](#-contact)
+
+---
 
 ## 📖 About The Project
 
-This repository hosts my professional portfolio, designed from the ground up to reflect a sleek, modern, and abstract aesthetic. Built with React and optimized with Parcel, the application serves as a dynamic resume, showcasing my professional journey, skills, and projects in the realms of **Business Analysis** and **Systems Analysis**.
+This repository hosts my professional portfolio, custom-built from the ground up. Rather than relying on generic templates, this application serves as a testament to my ability to translate business requirements into functional, optimized, and beautiful digital solutions. 
 
-### ✨ Key Features
+It is designed to highlight my professional journey, Agile Scrum leadership, and core technical skills as an aspiring **Business Analyst** and **Systems Analyst**.
 
+### The Philosophy
+> *"Technology is only as good as the business problem it solves."*
+
+While my primary focus is on requirements engineering, system design, and product ownership, I built this portfolio to demonstrate that I can effectively bridge the gap between high-level business objectives and low-level technical execution. 
+
+### Key Architectural Features
 - **Dynamic Abstract Theme**: A fully custom-built CSS architecture featuring sweeping abstract ribbons, a dark neon palette (Orange & Magenta), and smooth glassmorphism.
-- **Interactive 3D UI**: Implements a universal 3D hover engine that applies parallax tilting, dynamic glowing borders, and spatial depth to cards and images based on mouse movement.
-- **Optimized Performance**: Bundled with Parcel for lightning-fast HMR (Hot Module Replacement) and optimized production builds.
-- **Responsive Design**: Fluid typography (`clamp()`), CSS Grid/Flexbox layouts, and mobile-first architectural decisions.
-- **Clean Codebase**: Strictly componentized React architecture with isolated pure CSS styles.
+- **Universal 3D Engine**: Employs an `IntersectionObserver` paired with mouse-tracking mathematics to create spatial depth, tilt effects, and glowing borders across major UI elements.
+- **Optimized Delivery**: Bundled with Parcel for lightning-fast HMR (Hot Module Replacement), asset minification, and optimized production builds.
+- **Responsive Fluid Typography**: Utilizes CSS `clamp()` functions to ensure perfect scaling across 4K monitors down to mobile devices without aggressive media query breakpoints.
+
+---
+
+## 🎨 Design & UI/UX
+
+This project adheres to modern web design principles:
+1. **Glassmorphism**: Translucent frosted-glass panels (`backdrop-filter`) over pure CSS animated background shapes.
+2. **Typography**: Formal, justified text layouts that mimic professional business reports, combined with striking `Barlow Condensed` headers.
+3. **Breathing Room**: Advanced use of negative space (whitespace) in project cards to prevent cognitive overload, emphasizing quality over raw text density.
 
 ---
 
 ## 🛠️ Technology Stack
 
-| Category | Technologies |
-| :--- | :--- |
-| **Core Framework** | React (v18) |
-| **Styling** | Pure CSS3 (Custom Properties, Grid, Keyframes, Backdrops) |
-| **Bundler** | Parcel (v2.7) |
-| **Deployment** | GitHub Pages (`gh-pages`) |
-| **Icons** | Devicon (SVGs) |
-| **Linting/Formatting**| ESLint & Prettier |
+| Category | Technology / Tool | Purpose |
+| :--- | :--- | :--- |
+| **Frontend Framework** | `React (v18)` | Component-based UI rendering |
+| **Styling** | `Pure CSS3` | Layout (Grid/Flexbox), Animations, Variables |
+| **Build Tool / Bundler**| `Parcel (v2.7)` | Zero-config build pipeline & minification |
+| **CI/CD & Hosting** | `GitHub Pages` | Automated deployment via `gh-pages` |
+| **Typography & Assets**| `Google Fonts`, `Devicon` | Brand-accurate SVG icons and custom fonts |
+| **Code Quality** | `ESLint`, `Prettier` | Maintaining clean, standardized code |
+
+---
+
+## 📁 Folder Structure
+
+A quick overview of the core project architecture:
+
+```text
+Dulanjana-Rathnayaka/
+├── build/                 # Production-ready minified files (generated)
+├── src/
+│   ├── Components/        # Reusable React components (Header, About, Portfolio, etc.)
+│   ├── images/            # Static assets and project screenshots
+│   ├── animations.css     # 3D engine, keyframes, and hover effects
+│   ├── styles.css         # Global variables, typography, and responsive layouts
+│   ├── App.jsx            # Main application shell and IntersectionObserver logic
+│   └── index.js           # React DOM entry point
+├── package.json           # Scripts and dependency management
+└── README.md              # Project documentation
+```
 
 ---
 
 ## 🚀 Getting Started
 
-To get a local copy up and running, follow these simple steps.
+Follow these instructions to run the project locally.
 
 ### Prerequisites
-
-* Node.js (v14 or higher recommended)
-* npm (v6 or higher)
+* **Node.js** (v14 or higher recommended)
+* **npm** (v6 or higher)
 
 ### Local Installation
 
@@ -71,26 +135,49 @@ To get a local copy up and running, follow these simple steps.
    ```bash
    npm start
    ```
-   > The app will automatically open at `http://localhost:1234`.
+   *The app will automatically open at `http://localhost:1234`.*
 
 ---
 
-## 📦 Deployment & Scripts
+## 📦 Deployment
 
-This project includes automated scripts for building and deploying directly to GitHub Pages.
+This project includes automated NPM scripts for building and deploying directly to GitHub Pages.
 
-- `npm start`: Runs the app in development mode with HMR.
-- `npm run build`: Compiles the application into the `/build` directory for production.
-- `npm run predeploy`: Clears cache and builds the site with the correct relative paths for GitHub Pages.
-- `npm run deploy`: Automatically pushes the `/build` directory to the `gh-pages` branch.
+To push a new version live:
+1. **Pre-deploy format check (Optional)**: Ensures paths are correct.
+   ```bash
+   npm run predeploy
+   ```
+2. **Deploy to Production**: Automatically builds the `/dist` folder and pushes it to the live environment.
+   ```bash
+   npm run deploy
+   ```
+
+---
+
+## 🔮 Future Enhancements
+- [ ] **Dark/Light Mode Toggle**: Implement a context-based theme switcher.
+- [ ] **Dynamic Data Fetching**: Move project and skills data to a headless CMS or JSON file for easier non-code updates.
+- [ ] **SEO Optimization**: Inject React Helmet to improve meta-tagging and search engine visibility.
 
 ---
 
 ## 📬 Contact
 
 **Dulanjana Rathnayaka**  
-Aspiring Business & Systems Analyst  
+Aspiring Business Analyst & Systems Analyst  
 📧 [dulanjanarmd@gmail.com](mailto:dulanjanarmd@gmail.com)  
-🔗 [LinkedIn](https://www.linkedin.com/in/dulanjanarmd/) | [GitHub](https://github.com/dulanjanarmd)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+**Connect with me:**
+<br/>
+<a href="https://www.linkedin.com/in/dulanjanarmd/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+<a href="https://github.com/dulanjanarmd"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
+
+<br/>
+<br/>
+<p align="center">
+  <i>Designed and developed by Dulanjana Rathnayaka</i>
+</p>
+<p align="center">
+  <a href="#top">🔼 Back to top</a>
+</p>
