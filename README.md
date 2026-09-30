@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🚀 Dulanjana Rathnayaka | Personal Portfolio</h1>
+  <h1>Dulanjana Rathnayaka | Personal Portfolio</h1>
   <p><strong>Business Analyst & Systems Analyst</strong></p>
   
   <p>
@@ -17,11 +17,11 @@
 
 <br />
 
-## 📖 About The Project
+## About The Project
 
 This repository hosts my professional portfolio, designed from the ground up to reflect a sleek, modern, and abstract aesthetic. Built with React and optimized with Parcel, the application serves as a dynamic resume, showcasing my professional journey, skills, and projects in the realms of **Business Analysis** and **Systems Analysis**.
 
-### ✨ Key Features
+### Key Features
 
 - **Dynamic Abstract Theme**: A fully custom-built CSS architecture featuring sweeping abstract ribbons, a dark neon palette (Orange & Magenta), and smooth glassmorphism.
 - **Interactive 3D UI**: Implements a universal 3D hover engine that applies parallax tilting, dynamic glowing borders, and spatial depth to cards and images based on mouse movement.
@@ -31,7 +31,7 @@ This repository hosts my professional portfolio, designed from the ground up to 
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 | Category | Technologies |
 | :--- | :--- |
@@ -44,7 +44,7 @@ This repository hosts my professional portfolio, designed from the ground up to 
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 To get a local copy up and running, follow these simple steps.
 
@@ -75,7 +75,7 @@ To get a local copy up and running, follow these simple steps.
 
 ---
 
-## 📦 Deployment & Scripts
+## Deployment & Scripts
 
 This project includes automated scripts for building and deploying directly to GitHub Pages.
 
@@ -86,11 +86,11 @@ This project includes automated scripts for building and deploying directly to G
 
 ---
 
-## 📬 Contact
+## Contact
 
 **Dulanjana Rathnayaka**  
 Aspiring Business & Systems Analyst  
-📧 [dulanjanarmd@gmail.com](mailto:dulanjanarmd@gmail.com)  
-🔗 [LinkedIn](https://www.linkedin.com/in/dulanjanarmd/) | [GitHub](https://github.com/dulanjanarmd)
+[dulanjanarmd@gmail.com](mailto:dulanjanarmd@gmail.com)  
+[LinkedIn](https://www.linkedin.com/in/dulanjanarmd/) | [GitHub](https://github.com/dulanjanarmd)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
