@@ -250,53 +250,90 @@ body {
 .letter {
   display: inline-block;
   opacity: 0;
-  transform: translateY(60px) skewX(-8deg);
+  transform: translateY(40px) scale(0.9);
   transition: opacity 0s;
 }
 
 .name-visible .letter {
-  animation: letterIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: letterIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes letterIn {
   0% {
     opacity: 0;
-    transform: translateY(60px) skewX(-8deg);
+    transform: translateY(40px) scale(0.9);
   }
-
   60% {
     opacity: 1;
   }
-
   100% {
     opacity: 1;
-    transform: translateY(0) skewX(0deg);
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Staggered entrance for subtitle, role, description, and buttons */
+.hero-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroItemIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heroItemIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 /* ISE subtitle line */
 .hero-ise {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.45);
   text-transform: uppercase;
   margin-bottom: 2rem;
 }
 
 /* Typing role line */
 .hero-role-line {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--muted);
+  font-size: 1.15rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
   margin-bottom: 2rem;
-  min-height: 1.5rem;
+  min-height: 1.6rem;
 }
 
 .hero-typed {
   color: var(--accent);
-  font-weight: 700;
-  letter-spacing: 1.5px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.35rem;
+  background-color: #ffffff;
+  margin-left: 6px;
+  vertical-align: middle;
+  border-radius: 1px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  animation: cursorBlink 0.9s step-end infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 /* keep hero-title class for other uses */

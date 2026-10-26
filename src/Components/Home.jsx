@@ -46,25 +46,37 @@ const Home = ({ name }) => {
       {/* LEFT */}
       <div className="hero-left">
         <h1 className={`hero-name-block${nameVisible ? " name-visible" : ""}`}>
-          <span className="name-line hero-greeting">HI, I&apos;M</span>
-          <span className="name-line name-full">DULANJANA RATHNAYAKA</span>
+          <span className="name-line hero-greeting">
+            {"HI, I'M".split("").map((ch, idx) => (
+              <span key={idx} className="letter" style={{ animationDelay: `${idx * 0.04}s` }}>
+                {ch === " " ? "\u00A0" : ch}
+              </span>
+            ))}
+          </span>
+          <span className="name-line name-full">
+            {"DULANJANA RATHNAYAKA".split("").map((ch, idx) => (
+              <span key={idx} className="letter" style={{ animationDelay: `${0.35 + idx * 0.035}s` }}>
+                {ch === " " ? "\u00A0" : ch}
+              </span>
+            ))}
+          </span>
         </h1>
 
-        <div className="hero-ise">
+        <div className={`hero-ise${nameVisible ? " hero-fade-in" : ""}`} style={{ animationDelay: "1.1s" }}>
           Information Systems Engineering Undergraduate at SLIIT
         </div>
 
-        <div className="hero-role-line">
+        <div className={`hero-role-line${nameVisible ? " hero-fade-in" : ""}`} style={{ animationDelay: "1.25s" }}>
           <span className="hero-typed">{displayText}</span>
           <span className="typing-cursor" />
         </div>
 
-        <p className="hero-desc">
+        <p className={`hero-desc${nameVisible ? " hero-fade-in" : ""}`} style={{ animationDelay: "1.4s" }}>
           Passionate about bridging technology and business through
           data-driven insights, analytical thinking, and smart system design.
         </p>
 
-        <div className="hero-btns">
+        <div className={`hero-btns${nameVisible ? " hero-fade-in" : ""}`} style={{ animationDelay: "1.55s" }}>
           <a href="#portfolio" className="hero-btn">View My Projects</a>
           <a href={cvDocument} download="Dulanjana_Rathanayaka_Resume.pdf" className="hero-btn hero-btn-outline">Download Resume</a>
         </div>
