@@ -184,7 +184,7 @@ body {
 #home {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 55% 45%;
+  grid-template-columns: 58% 42%;
   position: relative;
   overflow: hidden;
 }
@@ -196,7 +196,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 9rem 5rem 5rem 8rem;
+  padding: 9rem 3rem 5rem 6.5rem;
   position: relative;
   z-index: 2;
   gap: 0;
@@ -215,19 +215,20 @@ body {
 /* ALL lines — HI I'M + name — same font, same size */
 .name-line {
   font-family: "Barlow Condensed", sans-serif;
-  font-size: clamp(2rem, 3.8vw, 3.4rem);
+  font-size: clamp(1.8rem, 3.2vw, 3.2rem);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #ffffff;
   display: block;
   line-height: 1.05;
+  white-space: nowrap;
 }
 
-/* "HI, I'M" — same size, slightly dimmed */
+/* "HI, I'M" — slightly dimmed */
 .hero-greeting {
   font-family: "Barlow Condensed", sans-serif;
-  font-size: clamp(2rem, 3.8vw, 3.4rem);
+  font-size: clamp(1.8rem, 3.2vw, 3.2rem);
   font-weight: 900;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -235,11 +236,17 @@ body {
   display: block;
   line-height: 1.05;
   animation: none;
+  white-space: nowrap;
 }
 
 .name-full {
   letter-spacing: 0px;
   color: #ffffff;
+  white-space: nowrap;
+}
+
+.hero-ise {
+  white-space: nowrap;
 }
 
 .name-line-2 {
@@ -351,10 +358,11 @@ body {
 .hero-desc {
   font-size: 0.95rem;
   color: var(--muted);
-  line-height: 1.9;
-  max-width: 450px;
-  margin-bottom: 3rem;
-  text-align: justify;
+  line-height: 1.8;
+  max-width: 600px;
+  width: 100%;
+  margin-bottom: 2.8rem;
+  text-align: left;
 }
 
 .about-card p,
@@ -1473,10 +1481,16 @@ body {
 /* --- New Projects Section Redesign --- */
 .new-port-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 2.5rem;
-  max-width: 1200px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  max-width: 1280px;
   margin: 0 auto;
+}
+
+@media (max-width: 1100px) {
+  .new-port-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .new-proj-card {
@@ -1504,7 +1518,7 @@ body {
 
 .new-proj-img {
   width: 100%;
-  height: 220px;
+  height: 175px;
   overflow: hidden;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -1523,7 +1537,7 @@ body {
 }
 
 .new-proj-body {
-  padding: 2rem;
+  padding: 1.4rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -1531,9 +1545,9 @@ body {
 
 .new-proj-title {
   font-family: "Barlow Condensed", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.35rem;
   color: #ffffff;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.25rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -1542,34 +1556,34 @@ body {
 .new-proj-category {
   font-family: "Inter", sans-serif;
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--accent, #4dabf7);
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.9rem;
 }
 
 .new-proj-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-bottom: 1.5rem;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
 }
 
 .new-proj-tag {
-  background: rgba(77, 171, 247, 0.1);
-  color: var(--accent, #4dabf7);
-  padding: 0.35rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
+  background: rgba(247, 151, 30, 0.1);
+  color: var(--accent, #f7971e);
+  padding: 0.25rem 0.65rem;
+  border-radius: 16px;
+  font-size: 0.72rem;
   font-weight: 500;
-  border: 1px solid var(--accent);
+  border: 1px solid rgba(247, 151, 30, 0.4);
 }
 
 .new-proj-desc {
   font-family: "Inter", sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--text-muted, #aaa);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  line-height: 1.55;
+  margin-bottom: 1.2rem;
 }
 
 .new-proj-outcomes {

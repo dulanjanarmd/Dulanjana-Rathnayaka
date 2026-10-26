@@ -72,8 +72,8 @@ const Home = ({ name }) => {
         </div>
 
         <p className={`hero-desc${nameVisible ? " hero-fade-in" : ""}`} style={{ animationDelay: "1.4s" }}>
-          Passionate about bridging technology and business through
-          data-driven insights, analytical thinking, and smart system design.
+          Specializing in translating complex business challenges into scalable digital solutions.
+          Expertise in stakeholder management, requirements engineering, data modeling, and Agile product delivery.
         </p>
 
         <div className={`hero-btns${nameVisible ? " hero-fade-in" : ""}`} style={{ animationDelay: "1.55s" }}>
