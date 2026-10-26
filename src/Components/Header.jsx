@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import logoImg from "../images/logo.png";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -24,7 +25,7 @@ const Header = () => {
           window.location.reload();
         }}
       >
-        Dulanjana Rathnayaka
+        <img src={logoImg} alt="DR Logo" className="header-logo-full-img" />
       </a>
 
       <button 
