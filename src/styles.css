@@ -245,10 +245,6 @@ body {
   white-space: nowrap;
 }
 
-.hero-ise {
-  white-space: nowrap;
-}
-
 .name-line-2 {
   margin-top: 0;
 }
@@ -2531,19 +2527,37 @@ body {
 
 /* ══════════════════════════════════════════════════════
    MOBILE COMPATIBILITY — ANDROID & iOS
-   All fixes below target ≤ 768px (phones)
+   (replaces all previous mobile fragments)
 ══════════════════════════════════════════════════════ */
 
-/* ── Phone breakpoint (≤ 768px) ── */
+/* ════ Tablet & large phone (≤ 900px) — already declared above, extras: ════ */
+@media (max-width: 900px) {
+  /* Make hero photo wrapper not squash the image */
+  .hero-photo-wrapper {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* ════ Phone (≤ 768px) — primary mobile breakpoint ════ */
 @media (max-width: 768px) {
 
-  /* --- Viewport & overflow safety --- */
+  /* Prevent horizontal scroll */
   html, body {
     overflow-x: hidden;
     max-width: 100vw;
   }
 
-  /* --- NAVBAR: show hamburger, hide desktop nav links --- */
+  /* ── HEADER ── */
+  .header {
+    padding: 0.9rem 1.2rem !important;
+  }
+
+  .header-logo-full-img {
+    height: 36px;
+  }
+
+  /* Hamburger button */
   .mobile-toggle {
     display: flex !important;
     flex-direction: column;
@@ -2551,7 +2565,7 @@ body {
     background: transparent;
     border: none;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 1001;
     padding: 4px;
     min-width: 44px;
     min-height: 44px;
@@ -2559,96 +2573,198 @@ body {
     justify-content: center;
   }
 
-  .header {
-    padding: 1rem 1.25rem !important;
+  .mobile-toggle span {
+    width: 24px;
+    height: 2.5px;
+    background: #fff;
+    border-radius: 3px;
+    transition: 0.3s;
+    display: block;
   }
 
-  /* --- HERO: single column, centred --- */
+  .mobile-toggle.active span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+  }
+  .mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .mobile-toggle.active span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+  }
+
+  /* Slide-in nav panel */
+  .header-nav-container {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 260px;
+    height: 100vh;
+    background: rgba(6, 18, 36, 0.97);
+    backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: right 0.35s ease;
+    border-left: 1px solid rgba(255,255,255,0.08);
+    z-index: 1000;
+  }
+
+  .header-nav-container.mobile-visible {
+    right: 0;
+  }
+
+  /* Show nav links inside the panel */
+  .header-nav {
+    display: flex !important;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .header-nav a {
+    font-size: 1.1rem;
+    padding: 0.75rem 1rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* ── HERO SECTION ── */
   #home {
     grid-template-columns: 1fr !important;
-    padding-top: 80px;
+    min-height: 100vh;
+    padding-top: 70px;
     text-align: center;
   }
 
   .hero-left {
-    padding: 1.5rem 1.25rem 2rem !important;
-    align-items: center;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 2rem 1.25rem 1.5rem !important;
+    gap: 0;
+    text-align: center;
   }
 
-  /* Allow long name to wrap on small screens */
+  /* Name block: allow wrapping, readable size */
+  .hero-name-block {
+    align-items: center !important;
+    text-align: center !important;
+    margin-bottom: 1rem;
+  }
+
   .name-line,
   .hero-greeting,
   .name-full {
     white-space: normal !important;
-    word-break: break-word;
-    font-size: clamp(1.5rem, 7vw, 2.8rem) !important;
+    word-break: break-word !important;
+    font-size: clamp(1.6rem, 9vw, 3rem) !important;
+    letter-spacing: 0.5px !important;
+    line-height: 1.1 !important;
+    text-align: center !important;
   }
 
-  .hero-name-block {
-    align-items: center;
-    text-align: center;
-  }
-
-  .hero-ise {
-    text-align: center;
-    font-size: 0.78rem;
-  }
-
-  .hero-role-line {
-    justify-content: center;
-    text-align: center;
-  }
-
-  .hero-desc {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 0.88rem;
-  }
-
-  .hero-btns {
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-  }
-
-  .hero-btn {
-    min-width: 220px;
-    text-align: center;
-    padding: 0.9rem 1.8rem !important;
-  }
-
-  .hero-right {
-    padding: 1rem 1.25rem 3rem !important;
-    justify-content: center;
-  }
-
-  /* Photo: scale down for small phone screens */
-  .hero-photo-wrapper {
+  /* Animated letters — keep visible */
+  .letter {
+    opacity: 1 !important;
     transform: none !important;
     animation: none !important;
   }
 
-  .hero-photo-circle {
-    width: 220px !important;
-    height: 220px !important;
+  /* Subtitle under name */
+  .hero-ise {
+    white-space: normal !important;
+    word-break: break-word !important;
+    text-align: center !important;
+    font-size: 0.75rem !important;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Typed role line */
+  .hero-role-line {
+    justify-content: center !important;
+    text-align: center !important;
+    margin-bottom: 1.2rem;
+    flex-wrap: wrap;
+    animation: none !important;
+    opacity: 1 !important;
     transform: none !important;
   }
 
-  /* --- SECTIONS: comfortable padding --- */
+  .hero-typed {
+    font-size: 1.1rem;
+  }
+
+  /* Description paragraph */
+  .hero-desc {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: 0.85rem !important;
+    line-height: 1.7;
+    margin-bottom: 1.8rem !important;
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* CTA buttons */
+  .hero-btns {
+    justify-content: center !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.8rem !important;
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero-btn {
+    min-width: 200px !important;
+    max-width: 280px;
+    width: 100%;
+    text-align: center !important;
+    padding: 0.85rem 1.5rem !important;
+    font-size: 0.82rem !important;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── HERO PHOTO ── */
+  .hero-right {
+    padding: 0.5rem 1.25rem 3rem !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .hero-photo-wrapper {
+    transform: none !important;
+    animation: none !important;
+    perspective: none;
+  }
+
+  .hero-photo-circle {
+    width: 200px !important;
+    height: 200px !important;
+    transform: none !important;
+    border-radius: 40px !important;
+  }
+
+  /* ── ALL SECTIONS ── */
   section,
   .modern-about,
   .education-section,
-  .certificates-section {
-    padding: 4rem 1.25rem !important;
+  .certificates-section,
+  #portfolio,
+  .skills-section {
+    padding: 3.5rem 1.25rem !important;
   }
 
-  #portfolio {
-    padding: 4rem 1.25rem !important;
-  }
-
-  /* --- ABOUT --- */
+  /* ── ABOUT ── */
   .about-container {
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
@@ -2670,15 +2786,14 @@ body {
   }
 
   .glass-panel {
-    padding: 1.5rem 1.25rem;
+    padding: 1.5rem 1.25rem !important;
   }
 
   .soft-skills-grid {
     grid-template-columns: 1fr 1fr !important;
-    gap: 0.75rem;
   }
 
-  /* --- SERVICES --- */
+  /* ── SERVICES ── */
   .services-grid {
     grid-template-columns: 1fr !important;
   }
@@ -2686,26 +2801,25 @@ body {
   .svc-card {
     border-right: none !important;
     border-bottom: 1px solid var(--border);
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.25rem;
   }
 
-  /* --- PORTFOLIO STATS --- */
+  /* ── PORTFOLIO ── */
   .port-stats {
     grid-template-columns: 1fr 1fr !important;
   }
 
   .port-stat {
-    padding: 1.25rem 0.75rem;
+    padding: 1rem 0.75rem;
   }
 
   .port-stat-num {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
-  /* --- PROJECTS GRID --- */
   .new-port-grid {
     grid-template-columns: 1fr !important;
-    gap: 1.25rem;
+    gap: 1.25rem !important;
   }
 
   .port-grid-adv {
@@ -2722,35 +2836,31 @@ body {
     gap: 1.5rem;
   }
 
-  /* --- EDUCATION --- */
+  /* ── EDUCATION ── */
   .education-timeline {
     grid-template-columns: 1fr !important;
   }
 
-  .education-card {
-    padding: 1.5rem 1.25rem;
-  }
-
-  /* --- CERTIFICATES --- */
+  /* ── CERTIFICATES ── */
   .cert-list-container {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 1rem !important;
   }
 
   .cert-list-item {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column !important;
+    align-items: flex-start !important;
     gap: 0.75rem;
   }
 
   .cert-item-img-wrapper {
-    width: 100%;
-    max-width: 200px;
-    height: 120px;
-    margin-right: 0;
+    width: 100% !important;
+    max-width: 220px;
+    height: 130px;
+    margin-right: 0 !important;
   }
 
   .cert-actions {
-    margin-left: 0;
+    margin-left: 0 !important;
     width: 100%;
   }
 
@@ -2758,11 +2868,15 @@ body {
     display: block;
     width: 100%;
     text-align: center;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  /* --- FOOTER / CONTACT --- */
+  /* ── FOOTER / CONTACT ── */
   .modern-footer {
-    padding: 4rem 1.25rem 2rem !important;
+    padding: 3.5rem 1.25rem 2rem !important;
   }
 
   .clean-contact-cta,
@@ -2780,26 +2894,19 @@ body {
   }
 
   .modern-footer-bottom {
-    flex-direction: column;
+    flex-direction: column !important;
     gap: 1rem;
     text-align: center;
   }
 
-  .mf-copy {
-    text-align: center;
-  }
+  .mf-copy { text-align: center; }
 
   .footer-bar {
-    flex-direction: column;
+    flex-direction: column !important;
     text-align: center;
   }
 
-  /* --- CONTACT SOCIALS --- */
-  .cc-social-item {
-    padding: 1rem 0.5rem;
-  }
-
-  /* --- TOUCH TARGET SIZES (iOS / Android accessibility) --- */
+  /* ── TOUCH TARGETS ── */
   .hero-btn,
   .new-proj-btn,
   .cert-btn-small,
@@ -2808,9 +2915,9 @@ body {
     min-height: 44px;
   }
 
-  /* --- TYPOGRAPHY SCALE --- */
+  /* ── TYPOGRAPHY ── */
   .sec-title {
-    font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
+    font-size: clamp(1.8rem, 8vw, 2.8rem) !important;
   }
 
   .cc-title {
@@ -2818,29 +2925,30 @@ body {
   }
 }
 
-/* ── Extra-small phones (≤ 375px / SE-size) ── */
-@media (max-width: 375px) {
+/* ════ Extra-small phones (≤ 390px — iPhone SE, Galaxy A) ════ */
+@media (max-width: 390px) {
+
   .name-line,
   .hero-greeting,
   .name-full {
-    font-size: clamp(1.3rem, 8vw, 2rem) !important;
+    font-size: clamp(1.35rem, 9vw, 2.2rem) !important;
   }
 
   .hero-photo-circle {
-    width: 180px !important;
-    height: 180px !important;
+    width: 170px !important;
+    height: 170px !important;
   }
 
   .hero-btn {
-    min-width: 180px;
-    font-size: 0.8rem;
+    min-width: 160px !important;
+    font-size: 0.78rem !important;
   }
 
   .glass-panel {
-    padding: 1.25rem 1rem;
+    padding: 1.25rem 1rem !important;
   }
 
   .cert-list-container {
-    padding: 1.25rem 0.75rem;
+    padding: 1.25rem 0.75rem !important;
   }
 }
